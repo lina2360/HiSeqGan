@@ -1,0 +1,152 @@
+body {
+    font-size: 13px; font-family: luxi sans, arial, helvetica, sans-serif;
+}
+table.datapreview {
+    border: 0px;
+    font-size: 9px;
+}
+table.map {
+    border: 1px solid #000000;
+}
+td.map {
+    border: 1px solid #000000; padding: 2px;
+}
+span.marked {
+    background-color: #6cf36c;
+    border: dashed 1px #4baa4b;
+}
+span#datum100 {
+    color: #0000ff;
+}
+span#datum100 a {
+    color: #0000ff;
+}
+span#datum100 a:visited {
+    color: #ff0000;
+}
+span#datum90 {
+    color: #0000c0;
+}
+span#datum90 a {
+    color: #0000c0;
+}
+span#datum90 a:visited {
+    color: #c00000;
+}
+span#datum80 {
+    color: #0000a0;
+}
+span#datum80 a {
+    color: #0000a0;
+}
+span#datum80 a:visited {
+    color: #a00000;
+}
+span#datum70 {
+    color: #000090;
+}
+span#datum70 a {
+    color: #000090;
+}
+span#datum70 a:visited {
+    color: #900000;
+}
+span#datum60 {
+    color: #000080;
+}
+span#datum60 a {
+    color: #000080;
+}
+span#datum60 a:visited {
+    color: #800000;
+}
+span#datum50 {
+    color: #000060;
+}
+span#datum50 a {
+    color: #000060;
+}
+span#datum50 a:visited {
+    color: #600000;
+}
+span#datum40 {
+    color: #000050;
+}
+span#datum40 a {
+    color: #000050;
+}
+span#datum40 a:visited {
+    color: #500000;
+}
+span#datum30 {
+    color: #000040;
+}
+span#datum30 a {
+    color: #000040;
+}
+span#datum30 a:visited {
+    color: #400000;
+}
+span#datum20 {
+    color: #000030;
+}
+span#datum20 a {
+    color: #000030;
+}
+span#datum20 a:visited {
+    color: #300000;
+}
+span#datum10 {
+    color: #000020;
+}
+span#datum10 a {
+    color: #000020;
+}
+span#datum10 a:visited {
+    color: #200000;
+}
+span#label100 {
+    color: #000000;
+}
+span#label90 {
+    color: #151515;
+}
+span#label80 {
+    color: #353535;
+}
+span#label70 {
+    color: #474747;
+}
+span#label60 {
+    color: #565656;
+}
+span#label50 {
+    color: #707070;
+}
+span#label40 {
+    color: #808080;
+}
+span#label30 {
+    color: #909090;
+}
+span#label20 {
+    color: #a0a0a0;
+}
+span#label10 {
+    color: #b5b5b5;
+}
+table.miniview {
+    border: 1px solid #000000; font-size: 7px;
+}
+table.miniview td {
+    border: 1px solid #000000; padding-left: 0px; padding-right: 0px;
+}
+table.miniview td#full {
+    background-color: #000000;
+}
+table.miniview td#expanded {
+    background-color: #999999;
+}
+table.miniview td#expanded a {
+    text-decoration: none;
+}

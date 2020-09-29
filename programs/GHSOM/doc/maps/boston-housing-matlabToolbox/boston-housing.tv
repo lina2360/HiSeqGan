@@ -1,0 +1,18 @@
+$TYPE template
+$XDIM 7
+$YDIM 144
+$VEC_DIM 14
+0 crim 0 0 0 0 0.0
+1 zn 0 0 0 0 0.0
+2 indus 0 0 0 0 0.0
+3 chas 0 0 0 0 0.0
+4 nox 0 0 0 0 0.0
+5 rm 0 0 0 0 0.0
+6 age 0 0 0 0 0.0
+7 dis 0 0 0 0 0.0
+8 rad 0 0 0 0 0.0
+9 tax 0 0 0 0 0.0
+10 ptratio 0 0 0 0 0.0
+11 black 0 0 0 0 0.0
+12 lstat 0 0 0 0 0.0
+13 medv 0 0 0 0 0.0

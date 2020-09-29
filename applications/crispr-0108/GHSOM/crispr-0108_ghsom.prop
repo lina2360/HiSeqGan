@@ -1,0 +1,13 @@
+workingDirectory=./
+outputDirectory=./output/crispr-0108
+namePrefix=crispr-0108
+vectorFileName=./data/crispr-0108_ghsom.in
+sparseData=yes
+isNormalized=false
+randomSeed=7
+xSize=2
+ySize=2
+learnRate=0.7
+numIterations=20000
+tau=0.1
+tau2=0.01

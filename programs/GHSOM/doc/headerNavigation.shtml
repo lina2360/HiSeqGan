@@ -1,0 +1,59 @@
+<div id="topbar" class="topbar">
+  <span class="topbar-logos">
+    <a href="http://www.tuwien.ac.at/"><img src="images-style/TU_signet09.png" alt="TU Logo" width="73" height="73" border="0"/></a>
+    &nbsp;
+    <a href="http://www.ifs.tuwien.ac.at/"><img src="images-style/ifs_logo_new.gif" alt="IFS Logo" width="76" height="73"/></a>
+  </span>
+  <span class="topbar-navigation">
+    <span class="inst">Vienna University of Technology </span><br/>
+    <span class="lblu">Institute of Software Technology and Interactive Systems</span><br/>
+    <span class="header">Data Mining with the Java SOMToolbox</span><br/>
+    <span class="topbar-navigation">
+      <a href="http://www.ifs.tuwien.ac.at/dm/index.html" class="toplink">[DataMining Home]</a> 
+      <a href="http://www.ifs.tuwien.ac.at/dm/people.html" class="toplink">[People]</a> 
+      <a href="http://www.ifs.tuwien.ac.at/dm/publications.html" class="toplink">[Publications]</a>
+      <a href="index.html" class="toplink">[SOMToolbox]</a>
+    </span>    
+  </span>
+</div>
+
+<a name="top"></a>
+
+<div id="leftbar" class="leftbar">
+  <ul class="leftbarEntry">
+    <li class="leftbarEntry"><a href="index.html">Overview</a></li>
+    <li> <hr width="50%" align="right"/> </li>
+    <li class="leftbarEntry"><a href="visualisations.html">SOM Visualisations</a></li>
+    <li class="leftbarEntry"><a href="qualityMeasures.html">SOM Quality Measures</a></li>
+    <li class="leftbarEntry"><a href="networkModels.html">SOM Network Models</a></li>
+    <li class="leftbarEntry"><a href="somViewer.html">SOM Viewer</a></li>
+
+    <li> <hr width="50%" align="right"/> </li>
+
+    <li class="leftbarEntry"><a href="somtoolbox-guide.html">Step-by-step guide</a></li>
+    <li class="leftbarEntry">
+      <a href="datasets.html" title="Data sets & trained maps in the SOMLib format, along with sample properties and template vector files">Benchmark data & maps</a><br/>
+      <span style="font-size: smaller">(Iris, Boston housing, ...)</span>
+    </li>
+    <li class="leftbarEntry"><a href="somtoolbox-reference.html">SOMToolbox Usage Reference</a></li>
+
+    <li> <hr width="50%" align="right"/> </li>
+
+    <li class="leftbarEntry"><a href="somlibFileFormat.html">SOMLib File Format Documentation</a></li>
+    <li class="leftbarEntry"><a href="api/index.html">API Documentation</a></li>
+
+    <li> <hr width="50%" align="right"/> </li>
+
+    <li class="leftbarEntry"><a href="license.html">License</a></li>
+    <li class="leftbarEntry"><a href="http://www.ifs.tuwien.ac.at/dm/somtoolbox/download-releases.php">Download Releases</a></li>
+    <li class="leftbarEntry"><a href="http://www.ifs.tuwien.ac.at/dm/somtoolbox/download-latest.html">Download Latest</a></li>
+    <li class="leftbarEntry"><a href="team.html">Team</a></li>
+    <li class="leftbarEntry"><a href="contact.html">Contact</a></li>
+    
+    <li> <hr width="50%" align="right"/> </li>
+    
+    <li class="leftbarEntry"><a href="mailto:somtoolbox-users-subscribe@ifs.tuwien.ac.at">Subscribe to the somtoobox-users mailinglist</a></li>
+  </ul>
+</div>
+
+<div class="rightbar" id="tableOfContents" style="display: none;"> </div>

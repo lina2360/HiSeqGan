@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta http-equiv="Content-Style-Type" content="text/css"/>  
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+
+  <h1>Step-by-step guide to train and view Maps</h1>
+  
+  <div class="maintab">
+    To analyse data with a Self-Organising Map, you need to perform a series of steps:
+    <ol>
+      <li>Data Preprocessing</li>
+      <li>Feature Extraction</li>
+      <li>Feature Processing</li>
+      <li>SOM Training</li>
+      <li>SOM Viewing</li>
+    </ol>
+
+    <h2>Data preprocessing</h2>
+    Depending on your data, you might need to perform some preprocessing steps. Examples of preprocessing might be
+    <ul>
+      <li>Text data: converting different formats to plain text, applying a stemming algorithm, ...</li>
+      <li>Music: converting all the data to the same format, sample rate and stereo/mono setting</li>
+    </ul>
+    
+    <h2>Feature Extraction</h2>
+    <p>The Self-Organising Map can handle only numerical representations of data. Thus, you might need to apply some feature
+    extraction, which is the process of describing certain characteristics of the data with numeric attributes. Some data (such as
+    sales data) might already be in a numeric form and thus might require no feature extraction (but maybe some processing, such as
+    normalisation, see below).</p>
+
+    <p>Specifically, our implementation of the SOM requires the data to be in the <a href="somlibFileFormat.html">SOMLib file
+    format</a>, a rather simple ASCII format describing the features and the numeric representation of the data instances.</p>
+
+    Data that might need feature extraction may for example be:
+    <ul>
+      <li><b>Text documents</b>. Text can be represented in many ways, with simple bag-of-words approaches, phrase detection, or
+      Latent Semantic Indexing.<br />
+      Our group has developed a <a href="http://www.ifs.tuwien.ac.at/~andi/somlib/download/somlib_guide.html#parsing" target="_blank">Java
+      feature extractor</a> which describes text documens with bag-of-words features, and generates SOMLib files.</li>
+      <li><b>Music (Speech)</b>. A series of feature extractors exist that try to capture rhythmic information, beat,
+      instrumentation, etc. You may utilise our <a href="http://www.ifs.tuwien.ac.at/mir/howto_matlab_fe.html" target="_blank">suite
+      of Rhythm Patterns features</a> (available in Matlab)</li>
+      <li><b>Images</b>. Image may be described by colour histograms, objects, ...</li>
+    </ul>
+    
+    <h2>Feature processing: normalisation</h2>
+    <p>This is an optional step, and you should be aware what kind of normalisation you want to apply to your data. The Java
+    SOMToolbox provides the following normalisation methods:</p>
+    <ul>
+      <li>Unit length: all vectors will be scaled to the same length. This is useful e.g. when processing text documents, and you
+      don't a different length of text documents to have an influence on the values in the feature vector.</li>
+      <li>Min-Max: each vector attribute will be normalised between 0 and 1.</li>
+      <li>Standard score: each vector attribute will be scaled to have zero mean and the standard deviation as max value.</li>
+    </ul>
+
+    <pre>./somtoolbox.sh SOMLibVectorNormalization -m UNIT_LEN &lt;inputfile&gt; &lt;outputfile&gt;</pre>
+    <p>(in Windows use somtoolbox.bat instead of ./somtoolbox.sh)</p>
+    
+    <p>For a brief introduction on the SOMLib input vector format see the <a href="somlibFileFormatQuick.html">quick guide on input files</a>, or take
+    a look at the <a href="somlibFileFormat.html">detailed specification</a>.</p>
+    
+    <h2>Self-Organizing Map training</h2>
+    
+    <h3>Setup</h3>
+    
+    <p>Download the <a href="examples/som.prop">som.prop</a> properties file and edit:</p>
+    
+    <div class="box">    
+    workingDirectory = &lt;the directory with your data files&gt;<br/>    
+    outputDirectory = &lt;directory where files will be created; empty means use workingDirectory&gt;<br/>    
+    namePrefix = &lt;any project name you like&gt;<br/>    
+    vectorFileName = &lt;name of *normalized* vector file - see 1.&gt;<br/>    
+    sparseData = &lt;yes|no&gt; ... use yes if vectors are sparse (e.g. text data), no if vectors are not sparse (audio!)<br/>    
+    isNormalized = &lt;yes|no&gt; ... set yes if vectorFile has been previously normalized<br/>    
+    templateFileName=vector.tv (the template vector file - see below)    
+    </div>
+    
+    <p>Note: Under Windows use double backslashes \\ as path separator.</p>
+    
+    <p>The remaining parameters control the SOM algorithm and can be experimented with:</p>
+    
+    <div class="box">    
+    xSize=20 ... size of map in x direction<br/>    
+    ySize=14 ... size of map in y direction<br/>    
+    learnrate=0.75<br/>    
+    #sigma=12<br/>    
+    #tau=<br/>    
+    #metricName=<br/>    
+    numIterations=2000 ... should be larger than the # of vectors in vectorFile (recommended: 5*&lt;#_of_vectors&gt;)    
+    </div>
+    
+    <p>You have to provide an appropriate template vector file:</p>
+    <ul>
+      <li>For text vectors you have to create an individual vector file for each data. If you for example use the <em>TeSeTool</em>, those vectors will be automatically created for you.</li>
+      <li>For Rhythm Patterns vector files extracted from audio, use this <a href="examples/rhythm_patterns.tv">rhythm_patterns.tv</a> file.</li>
+    </ul>
+    
+    <p>Note: you can also take a look at the <a href="examples/PROPERTIES"> complete and documented properties file</a>.</p>
+    
+    <h3>Training</h3>
+    
+    <p>Now you are ready to train the SOM:</p>
+    
+    <pre> ./somtoolbox.sh GrowingSOM [path/to/]som.prop</pre>
+    
+    <p>If an error occurs, please check the parameters provided.</p>
+    
+    <p>At this point check if four files in your outputDirectory have been created with the namePrefix as provided in som.prop and the following
+    extensions:</p>
+    <ul>
+      <li>.dwm.gz - Data winner mapping file.</li>
+      <li>.map.gz - <a href="http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#som_map">Map description</a> file.</li>
+      <li>.unit.gz - <a href="http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#unit_descr">Unit description</a> file.</li>
+      <li>.wgt.gz - <a href="http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#weight_vectors">Weight vector</a> file.</li>
+    </ul>
+    
+    <h2>Analysing with the SOM Viewer</h2>
+    
+    <pre> ./somtoolbox.sh SOMViewer -u /path/to/file.unit.gz -w /path/to/file.wgt.gz --dw /path/to/file.dwm.gz</pre>
+  </div>
+
+  <script type="text/javascript"> var svnId = "$Id: somtoolbox-guide.html 4292 2014-01-08 15:25:50Z mayer $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+
+</div>
+
+</body>
+</html>

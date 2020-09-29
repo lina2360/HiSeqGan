@@ -1,0 +1,37 @@
+$TYPE som
+$GRID_TOPOLOGY planar
+$GRID_LAYOUT rectangular
+$XDIM 4
+$YDIM 2
+$ZDIM 1
+$VEC_DIM 4
+$STORAGE_DATE 2020/2/26 ¤U¤È 3:23
+$TRAINING_TIME 
+$LEARNRATE_TYPE exponential
+$LEARNRATE_INIT 0.7
+$NEIGHBORHOOD_TYPE exponential
+$NEIGHBORHOOD_INIT 1.0
+$RAND_INIT 7
+$ITERATIONS_TOTAL 20000
+$NR_TRAINVEC_TOTAL 2466
+$ADAPTIVE_COORDINATES_THRESHOLD 
+$VEC_NORMALIZED true
+$QUANTERROR_MAP 0.18474742234406083
+$QUANTERROR_VEC 7.491785172103035E-5
+$URL_TRAINING_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize-experiment-3\GHSOM/\./data/wm5-normalize-experiment-3_ghsom.in
+$URL_TRAINING_VEC_DESCR 
+$URL_WEIGHT_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize-experiment-3\GHSOM/\./output/wm5-normalize-experiment-3\wm5-normalize-experiment-3_submap_lvl2_2x2.wgt
+$URL_QUANTERR_MAP 
+$URL_MAPPED_INPUT_VEC 
+$URL_MAPPED_INPUT_VEC_DESCR 
+$URL_UNIT_DESCR C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize-experiment-3\GHSOM/\./output/wm5-normalize-experiment-3\wm5-normalize-experiment-3_submap_lvl2_2x2.unit
+$URL_TEMPLATE_VECTOR null
+$URL_DATA_WINNER_MAPPING C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize-experiment-3\GHSOM/\./output/wm5-normalize-experiment-3\wm5-normalize-experiment-3_submap_lvl2_2x2.dwm
+$URL_CLASS_INFO 
+$URL_LABELS 
+$METRIC at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+$LAYER_REVISION $Revision: 4300 $
+$DESCRIPTION 
+$AVAILABLE_VIS 
+$DATA_TYPE unknown
+$DATA_DIM 

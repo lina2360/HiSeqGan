@@ -1,0 +1,7 @@
+$TYPE template
+$XDIM 7
+$YDIM 800
+$VEC_DIM 3
+0 Key -1 -1 -1 -1 -1.0
+1 C1 -1 -1 -1 -1 -1.0
+2 C2 -1 -1 -1 -1 -1.0

@@ -1,0 +1,37 @@
+$TYPE som
+$GRID_TOPOLOGY planar
+$GRID_LAYOUT rectangular
+$XDIM 2
+$YDIM 2
+$ZDIM 1
+$VEC_DIM 18
+$STORAGE_DATE 2019/12/13 ¤W¤È 3:58
+$TRAINING_TIME 
+$LEARNRATE_TYPE exponential
+$LEARNRATE_INIT 0.7
+$NEIGHBORHOOD_TYPE exponential
+$NEIGHBORHOOD_INIT 1.0
+$RAND_INIT 7
+$ITERATIONS_TOTAL 20000
+$NR_TRAINVEC_TOTAL 144
+$ADAPTIVE_COORDINATES_THRESHOLD 
+$VEC_NORMALIZED true
+$QUANTERROR_MAP 0.04301489567581111
+$QUANTERROR_VEC 2.9871455330424384E-4
+$URL_TRAINING_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-reshape\GHSOM/\./data/wm5-reshape-item-seq_ghsom.in
+$URL_TRAINING_VEC_DESCR 
+$URL_WEIGHT_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-reshape\GHSOM/\./output/wm5-reshape-item-seq\wm5-reshape-item-seq_submap_lvl2_3x0.wgt
+$URL_QUANTERR_MAP 
+$URL_MAPPED_INPUT_VEC 
+$URL_MAPPED_INPUT_VEC_DESCR 
+$URL_UNIT_DESCR C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-reshape\GHSOM/\./output/wm5-reshape-item-seq\wm5-reshape-item-seq_submap_lvl2_3x0.unit
+$URL_TEMPLATE_VECTOR null
+$URL_DATA_WINNER_MAPPING C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-reshape\GHSOM/\./output/wm5-reshape-item-seq\wm5-reshape-item-seq_submap_lvl2_3x0.dwm
+$URL_CLASS_INFO 
+$URL_LABELS 
+$METRIC at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+$LAYER_REVISION $Revision: 4300 $
+$DESCRIPTION 
+$AVAILABLE_VIS 
+$DATA_TYPE unknown
+$DATA_DIM 

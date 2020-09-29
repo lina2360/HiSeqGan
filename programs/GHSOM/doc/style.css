@@ -1,0 +1,328 @@
+.topbar {
+	width: 100%;
+	margin-top: 50px;
+}
+
+.leftbar {
+	width: 18%;
+	float: left;
+	text-align: right;
+	margin-right: 20px;
+	padding-right: 20px;
+	clear: both;
+	height: 100%;
+}
+
+.leftbarEntry {
+	list-style: none;
+	padding-bottom: 5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.rightbar {
+	width: 16%;
+	float: right;
+	margin-right: 20px;
+	padding-right: 20px;
+	padding-top: 40px;
+}
+
+#tableOfContents {
+	border: 1px solid #000;
+	margin: 0px 0px 20px 20px;
+	padding: 5px;
+	margin-top: 60px;
+	background: #ddd;
+	font-size: 80%;
+	background: #ddd;
+}
+
+.tocHeader {
+	font-weight: bold;
+}
+
+.tocList {
+	list-style: outside disc;
+	margin-left: -10px;
+}
+
+.tocLevelH2 {
+	margin-left: 0em;
+}
+
+.tocLevelH3 {
+	list-style: outside square;
+	margin-left: 1em;
+}
+
+.tocLevelH4 {
+	list-style: outside circle;
+	margin-left: 2em;
+}
+
+.topbar-logos {
+	width: 18%;
+	float: left;
+	text-align: right;
+	vertical-align: middle;
+	height: 110px;
+}
+
+.topbar-navigation {
+	width: 60%;
+	padding-left: 50px;
+}
+
+.content {
+	width: 60%;
+	position: absolute;
+	left: 18%;
+	margin-left: 50px;
+	padding: 10px;
+	padding-top: 40px;
+	text-align: justify;
+}
+
+.maintab {
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+}
+
+a.refLink {
+	font-style: italic;
+}
+
+.maintab-image {
+	width: 20%;
+	position: relative;
+	left: 80%;
+	display: inline;
+}
+
+.maintab-content {
+	width: 75%;
+	text-align: justify;
+	margin-bottom: 50px;
+}
+
+.leftColumn {
+	width: 45%;
+	float: left;
+	clear: both;
+	border: dashed thin;
+	padding: 4pt;
+	margin-bottom: 10px;
+	border: dashed thin;
+}
+
+.rightColumn {
+	width: 45%;
+	float: right;
+	border: dashed thin;
+	padding: 4pt;
+	margin-bottom: 10px;
+}
+
+.box {
+	clear: both;
+	border: dashed thin;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: dashed thin;
+}
+
+.spacer {
+	clear: both;
+}
+
+img {
+	border: none;
+}
+
+body {
+  background-color: rgb(255, 255, 204);
+  background-image: url(images-style/background.gif);
+  color: #000000;
+}
+
+.thinrow {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.inst { /* TU + institute header */
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+
+.lblu { /* Color light blue */
+	color: rgb(160, 192, 216);
+	padding-left: 50px;
+}
+
+pre {
+	border: 1px dashed #c1b496;
+	padding: 4pt;
+	font-family: courier, monospace;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	background-color: #f0eee6;
+}
+
+div.bib {
+	margin: 16px 0 16px 0;
+}
+
+.bib p {
+	margin: 0;
+	padding-left: 1.8em;
+	text-indent: -1.8em;
+	text-align: left;
+}
+
+.bib p .title {
+	font-weight: bold;
+}
+
+.bib p .book {
+	font-style: italic;
+}
+
+img.info {
+	float: right;
+	margin: 0 0 1em 2em;
+}
+	
+.container:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+	
+.container {
+	display: block;
+}
+
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24pt;
+	font-weight: bold;
+	color: #CC0033;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-left: 50px
+}
+
+/* Header Font */
+h1,h2,h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+
+h5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-bottom: 5px;
+	font-size: medium;
+}
+
+a { /* Links: underlined only when hovered */
+	text-decoration: none;
+}
+
+a:hover { /* Links: underlined only when hovered */
+	text-decoration: underline;
+}
+
+a.toplink { /* Links at the top of the page */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+}
+
+a.int { /* internal Hyperlinks have arrow down */
+	padding-right: 14px;
+	background: url(images-style/arrow_down.gif) no-repeat right;
+}
+
+a.up { /* link up */
+	padding-left: 14px;
+	background: url(images-style/arrow_up.gif) no-repeat left;
+}
+
+a[href*="/download/"] { /* download links */
+	padding-left: 16px;
+	background-image: url('images-style/dl.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.detail { /* Link to details */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	color: rgb(204, 0, 51);
+}
+
+.memb { /* List of Project Members */
+	font-size: small;
+}
+
+li { /* 3p space after each enumeration point */
+	margin-bottom: 3px;
+}
+
+
+div#footer hr {
+	margin-top: 12px;
+	margin-bottom: 4px;
+}
+
+div#footer div.edited { /* footer edited by is smaller */
+	/* font-size: 0.8em; */
+	font-size: 80%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+div#footer div.edited > span {
+	float: right;
+}
+
+div#footer div.edited > :FIRST-CHILD {
+	float: left;
+}
+
+div#contact {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border: 1px solid silver;
+	padding: 10px;
+}
+
+div#contact table {
+	width: 100%;
+}
+
+div#contact table input,
+div#contact table textarea {
+	width: 100%;
+}
+
+table.license {
+	border: 1px solid silver;
+	border-collapse: collapse;
+	font-size: 80%;
+}
+
+table.license th {
+	
+}
+
+table.license td {
+	border: 1px solid silver;
+	padding: 2 2 2 2;
+}

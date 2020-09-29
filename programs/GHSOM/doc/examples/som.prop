@@ -1,0 +1,17 @@
+workingDirectory=/home/user/som
+outputDirectory=
+namePrefix=test
+vectorFileName=vector.norm.gz
+sparseData=no
+isNormalized=yes
+templateFileName=vector.tv
+#cacheSize=
+
+randomSeed=17
+xSize=12
+ySize=8
+learnRate=0.75
+#sigma=12
+#tau=
+#metricName=
+numIterations=2000

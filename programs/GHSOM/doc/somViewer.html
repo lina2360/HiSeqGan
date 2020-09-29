@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+  <h1>Analysing SOMs with the SOM Viewer</h1>
+  <p>The SOM Viewer is the main application provided by the Java SOMToolbox to interact with and analyse maps.</p>
+  <div class="maintab">
+    <h2>The SOMViewer main screen</h2>
+    <p>After starting the application, the following main screen of the SOM Viewer is presented. The user interface's largest part is covered by the interactive map on the right, where squares represent single units (nodes) of the Map. </p>
+    <a href="images/viewer/somviewer-large.png" target="_blank">
+      <img src="images/viewer/somviewer.png" width="420" height="306" alt="SOMViewer - main screen " />
+    </a>
+    
+    <p>The menu bar provides switching to different visualisations, exporting the map as static images or HTML files, as well as export to the PocketSOMPlayer format. Visualisations can be switched at any time.</p>
+
+    <div style="clear: both; padding: 20px">
+      <img src="images/viewer/map_overview2.png" height="147" width="277" align="left" style="padding-right: 20px;" alt="SOMViewer - map overview" />
+      The top left of the application provides a small overview of the map, also showing the current part which is zoomed.
+    </div>
+    
+    <div style="clear: both; padding: 20px">
+      <img src="images/viewer/toolbar.png" height="37" width="121" align="left" style="padding-right: 20px;" alt="SOMViewer - toolbar" />
+      The toolbar includes buttons for quick zoom out, drawing paths through map, or selecting rectangle areas on the map.
+    </div>
+
+    <h2>Drawing paths - selecting data</h2>
+    <img src="images/viewer/isrh_iom_sel_small.jpg" alt="SOMViewer - line selection tool" />
+    <p>By clicking and dragging the mouse a path drawn on the map. Paths can be drawn anywhere and are allowed to cross themselves.
+    The selected data items can be used in different manners. For text documents, a summarisation module will provide abstractive summaries of the selected documents, while with music, a playlist is created, with titles ordered alongside the path.</p>
+
+    <div style="clear: both; padding: 20px;">
+      <img src="images/viewer/playsom_control.png" height="323" width="277" align="left" style="padding-right: 20px;" alt="SOMViewer - selection control" />
+      Whenever an area is selected on the map or a path is drawn, the <em>PlaySOM</em> control shows the titles of the current selection or path. 
+      This playlist can be refined by removing single items, or it can be immediately played back by pushing the Play all button.
+      Additionally, playlists can be exported, i.e. written to a playlist file.
+    </div>
+
+    <div style="clear: both; padding: 20px; ">
+      <a href="images/viewer/ismir_sel_rectangle.png" target="_blank">
+        <img src="images/viewer/ismir_sel_rectangle.png" width="300" align="left" style="padding-right: 20px;" alt="SOMViewer - rectangle selection tool" />
+      </a> 
+      The rectangular selection tool allows to drag a rectangle selecting all data items belonging to units inside that rectangle.
+      This model is used to select data from one particular cluster or region on the map.
+    </div>
+
+    <h2 style="clear: both; padding-top: 20px;">Zooming and Panning</h2>
+    <p>The Map area of the PlaySOM application can be smoothly zoomed in and out. Additional information is displayed at certain zoom levels.</p>
+    <p>Zooming can be controlled with the scroll-wheel of the mouse, or with the "+" and "-" keys of the keyboard - but only when the Map-Frame is selected in the Viewer</p>
+    <a href="images/viewer/isrh_iom_large.png" target="_blank"> 
+      <img src="images/viewer/isrh_vis_iom_small.jpg" height="209" width="300" border="0" alt="SOMViewer - no zooming"/>
+    </a> 
+    <a href="images/viewer/isrh_iom_zoomed_large.png" target="_blank">
+      <img src="images/viewer/isrh_iom_zoomed_small.jpg" height="209" width="300" border="0" alt="SOMViewer - zoom to low details" />
+    </a>
+    <br/> 
+    <a href="images/viewer/isrh_iom_zoomed2_large.png" target="_blank">
+      <img src="images/viewer/isrh_iom_zoomed2_small.jpg" height="209" width="300" border="0" alt="SOMViewer - zoom to medium details" />
+    </a> 
+    <a href="images/viewer/playsom_semantic_zooming.png" target="_blank">
+      <img src="images/viewer/zooming3_small.jpg" height="209" width="300" border="0" alt="SOMViewer - zoom to full details" />
+    </a>
+
+    <p>The amount and type of data displayed is influenced by the zooming level: the higher the zooming level, the more
+    information is displayed ranging from information about the number of data items mapped to a particular unit to detailed
+    information about the data items.</p>
+
+    <p><strong>Panning</strong>, i.e. moving the visible area of the map, is supported as well, and can be controlled in two ways.
+    First, by keeping the right mouse button pressed and moving the mouse. Secondly, by using the arrow keys, as well as the
+    additional keys on the number block for diagonal panning.</p>
+
+  </div>
+  
+  <script type="text/javascript"> var svnId = "$Id: somViewer.html 3791 2010-09-06 14:58:46Z frank $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+  
+</div>
+
+</body>
+</html>
+  

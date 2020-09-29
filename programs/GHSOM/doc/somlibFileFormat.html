@@ -1,0 +1,717 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta http-equiv="Content-Style-Type" content="text/css"/>  
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+
+  <div align="center">
+    <h1> SOMLib Data Files </h1>
+    <b> Ver. 1.7 - 17.08.2010 (<a href="#history" style="font-weight: normal;">History</a>) </b>
+  </div>
+  
+  <div class="maintab">
+
+    <h2 id="general_info">General Information</a></h2>
+    
+    There are two different types of data files: files describing the input data used for training, and files describing the trained SOMs.
+
+    <ul>
+      <li>Input data files
+      <ol id="fileTypes">
+        <li><a href="#template_vector"> SOMLib Template Vector File</a></li>
+        <li><a href="#input_vectors"> SOMLib Input Vector File</a></li>
+        <li><a href="#vector_descr"> SOMLib Vector Descriptions </a></li>
+        <li>Class Information File:
+        <ul>
+          <li><a href="#classInfo-SOMLib"> SOMLib Class Information File </a></li>
+          <li><a href="#classInfo-tab"> Tab-separated Class Information File </a></li>
+        </ul>
+        </li>
+      </ol>
+      </li>
+      <li>SOM files
+      <ol>
+        <li><a href="#unit_descr"> SOMLib Unit Descriptions </a></li>
+        <li><a href="#weight_vectors"> SOMLib Weight Vectors</a></li>
+        <li><a href="#som_map"> SOMLib Map Description File </a></li>
+        <li><a href="#error_map"> SOMLib Quantization Error Map</a></li>
+        <li><a href="#dataWinnerMapping"> SOMLib Data Winner Mapping File </a></li>
+      </ol>
+      </li>
+    </ul>
+    
+    All of these files are built around the same basic structure which is defined as follows:
+    
+    <ul id="entryTypes">
+      <li>Entries can be comments or parameter values</li>
+      <li><strong>Comments</strong> are indicated by a <strong>#</strong> character at the beginning of a line</li>
+      <li><strong> Parameters</strong> are indicated by a <strong>$</strong> character at the beginning of the line</li>
+      <li>Comments are allowed
+      <ul>
+        <li>as a block of comment lines at the beginning of every file</li>
+        <li>after a parameter introduced by ' #' and running till end of line<br/>
+        (e.g. <em> $TYPE vec # input vector file</em>)</li>
+      </ul>
+      Note: no comment lines are allowed after the initial block of comments.</li>
+      <li>Parameters are identified by a certain KEYWORD, followed by a blank and the according value, which can be
+      either a <strong>real, integer,</strong> or <strong>string</strong> value or a <strong>list</strong> of these values separated by blanks</li>
+      <li>For real numbers the separator character is a dot.</li>
+      <li>If a value is not available, a default NULL value is given which is in the case of
+      <ul>
+        <li>string: VOID</li>
+        <li>real, integer: -1</li>
+      </ul>
+      </li>
+      <li>It is suggested to follow the order of the entries in the data files. If parameters are given in a different
+      order, a warning shall be printed to stdout/log when trying to read the file - however, it should not be relied upon.</li>
+      <li>Some of the parameters to be read are <strong>mandatory</strong>. When mandatory parameters are missing, reading fails
+      with an error message.</li>
+      <li>Some of the parameters to be read are <strong>optional</strong>. When optional parameters are missing, a warning shall
+      be printed to stdout/log when trying to read the file with the reading process continuing.</li>
+    </ul>
+    In the following sections the 6 files are described in more detail,
+    giving an idea of the contents and the intention of the file as well as
+    its very structure in terms of the order of parameters as well as the
+    distinction between mandatory (M) and optional (O) parameters.
+    Furthermore, the relationships between the parameters are listed. <br/>
+    
+    <hr/>
+
+    <h2 id="inputData">Input data files</h2>
+    
+    <h3 id="input_vectors"> SOMLib Input Vector File</h3>
+    
+    <strong> Standard filename:</strong> XXX.vec or XXX.in <br/>
+    <strong> Produced by:</strong> Parser, Vector Generator<br/>
+    
+    <strong> Modified by:</strong> - <br/>
+    <strong> Demo-File:</strong> <a href="demo-vectors/demo.tfxidf">demo.tfxidf</a>
+    <p>This file describes the input vectors to be used for the training process of a Self-Organizing Map. It is written
+    by the parser or vector generator program creating the vector structure<br/>
+    The files consists of two blocks, the first one describing the input vectors in order to follow the general file
+    structure of weight vector files, the second giving the input vectors<br/>
+    The file structure is identical to the SOMLib Weight Vector File. However, some semantical changes of the first 4 vector
+    entries are as follows</p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $TYPE &lt;</strong>string&gt; (mandatory)<br/>
+      <strong>vec, vec_tf, vec_tfxidf, vec_bin, vec_structure </strong> to indicate input vector file further information about the
+      type of quantization and encoding used can be packed into this string (usually defaults to vec, practically unused today) </li>
+      <li><strong>$EXTRACTOR &lt;string&gt; </strong>(optional)<br/>
+        The feature extraction program used to create this file should print its signature, i.e. name and version, here
+      </li>
+      <li><strong>$DATA_TYPE &lt;type&gt;[-&lt;subtype&gt;] </strong>(optional)<br/>
+    specifies the type of data used as analysis input to generate this
+    vector file, and an optional subtype (preceded by a dash); e.g.
+    "audio", "audio-rp" (specifies a Rhythm Pattern feature set extracted
+    from audio files) </li>
+      <li><strong>$DATA_DIM &lt;c&gt;x&lt;r&gt;</strong> (optional)<br/>
+    provides information about the original structure of the input vector.
+    E.g. the input vector may originally be a matrix of dimensions c * r =
+    n. The data is vectorized in this file, thus $VEC_DIM would then be
+    n=168, while $DATA_DIM 24x7 could give the original data dimensions. </li>
+      <li><strong> $XDIM </strong>&lt; integer&gt; (mandatory)<br/>
+      number of input vectors in file</li>
+      <li><strong> $YDIM </strong>&lt;integer&gt; (mandatory)<br/>
+      usually 1; this allows again for XDIM x YDIM to give the total number of vectors to be read from file. <strong> NOTE:</strong> for any
+      program reading this file: the number of vectors listed in the file is given by <strong> XDIM * YDIM</strong>, and not by XDIM
+      alone!</li>
+      <li><strong> $VEC_DIM</strong><strong> </strong>&lt;integer&gt; (mandatory)<br/>
+      dimensionality of vectors (i.e. weight vectors of map, = n)</li>
+      <li><strong> $ATTR</strong><strong> </strong><strong>&lt;attribute_id_1&gt; .......... &lt;attribute_id_n&gt; &lt;label_id&gt; </strong> (optional)<br/>
+    A list of strings giving the names (i.e. column headers) of each
+    attribute in the input feature vector(s), followed by a generic label
+    for the VEC_ID (e.g. "filename"). The list is space separated, thus the
+    <strong>attribute_id</strong>s must not contain spaces. These  <strong>attribute_id</strong>s are identical to the  <strong>&lt;attr&gt;</strong> label of the <a href="#template_vector">Template Vector File</a> below, an can be provided here for convenience (e.g. avoiding reading or even writing a separate template vector file). </li>
+    </ul>
+    The remainder of the file is identical to the <a href="#weight_vectors"> 
+    SOMLib Weigth Vector File</a>:
+    <ul>
+      <li><strong>&lt;x_1_1&gt; .......... &lt;x_1_n&gt; &lt;VEC_ID_1&gt;</strong></li>
+      <li>:::::::::::::::::::::::::::::::: :::::::</li>
+      <li><strong>&lt;x_m_1&gt; .......... &lt;x_m_n&gt; &lt;VEC_ID_m&gt;</strong><br/>
+    lists the n vector elements (n dimensions, i.e. n entries per line,
+    space separated) of m weight vectors where m = XDIM (i.e. = XDIM x YDIM
+    with YDIM being 1), being real values, followed by the <strong>&lt;VEC_ID&gt;</strong>, i.e. the label of the weight
+      vector, being a string value. All values are mandatory.<br/>
+      If the number of weight vectors m is smaller than XDIM x YDIM the program reading this file should print a warning
+      message.<br/>
+      If the number of vector elements does not match the given dimensionality VEC_DIM the program should print a detailed
+      error message and exit.<br/>
+      <strong>&lt;VEC_ID&gt;</strong>
+    may contain spaces, but programs reading this file must make a maximum
+    of m splits per line (as not all programs are following this rule, a <strong>&lt;VEC_ID&gt;</strong> without spaces is advisory).</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    
+    <h3 id="template_vector"> SOMLib Template Vector File</h3>
+    
+    <strong> Standard filename:</strong> XXX.tv <br/>
+    
+    <strong> Produced by:</strong> Parser, Vector Generator<br/>
+    <strong> Modified by:</strong> - <br/>
+    <strong> Demo-File:</strong> <a href="demo-vectors/demo.tv">demo.tv</a>
+    
+    <p>This file describes the template vectors providing the attribute structure of the input vectors used for the
+    training process of a Self-Organizing Map. It is written by the parser or vector generator program creating the vector
+    structure.</p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $TYPE </strong>: string, mandatory<br/>
+      <strong>template </strong> to indicate template vector file further information may be packed into this string</li>
+      <li><strong> $XDIM </strong>: integer, mandatory<br/>
+      nr. of columns used in layout, min.: 2 (Nr. and Attribute), max. currently 7</li>
+      <li><strong> $YDIM </strong>: integer, mandatory<br/>
+      number of feature vectors in corresponding SOMLib Input Vector File</li>
+      <li><strong> $VEC_DIM </strong>: integer, mandatory<br/>
+      dimensionality of weight vectors of map, = n</li>
+    </ul>
+    The remainder of this files lists the attributes of the vectors  by 7 columns of information as follows
+    <ul>
+      <li><strong>&lt;nr&gt; &lt;attr&gt; [&lt;df&gt; &lt;tf_coll&gt; &lt;max_tf&gt; &lt;min_tf&gt; &lt;mean_tf&gt; #
+      comment]</strong></li>
+      <li>:::::::::::::::::::::::::::::::: :::::::</li>
+      <li><strong>&lt;nr&gt; &lt;attr&gt; [&lt;df&gt; &lt;tf_coll&gt; &lt;max_tf&gt; &lt;min_tf&gt; &lt;mean_tf&gt; #
+      comment]</strong></li>
+      <li>with
+      <ul>
+        <li><strong>&lt;nr&gt;</strong>: int, consecutive numbering of attributes, starting with 0, up to VEC_DIM-1</li>
+        <li><strong>&lt;attr&gt;</strong>: string, label or name of the attribute, i.e. keyword etc.</li>
+        <li><strong>&lt;df&gt;</strong>: int, document frequency - in how many documents or feature vectors is this attribute
+        present, i.e. has an input vector value &lt;&gt; 0</li>
+        <li><strong>&lt;tf_coll&gt;</strong>: int, term frequency in the whole collection - how often does this attribute show
+        up in the whole collection of feature vectors, ako of counter for the attribute, sum of all values of the attribute
+        (sum across all feature vectors)</li>
+        <li><strong>&lt;min_tf&gt;</strong>: int, minimal value of this attribute in the collection of feature vectors</li>
+        <li><strong>&lt;max_tf&gt;</strong>: int, maximum value of this attribute in the collection of feature vectors</li>
+        <li><strong>&lt;mean_tf&gt;</strong>: real, mean value of this attribute in the collection of feature vectors</li>
+        <li><strong># comment</strong>: optional comment for attributes till end of line</li>
+      </ul>
+      </li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    
+    
+    
+    <h3 id="vector_descr"> SOMLib Vector Description File </h3>
+    
+    <strong> Standard filename:</strong> XXX.vec <br/>
+    <strong> Produced by:</strong> Parser or vector generator program <br/>
+    <strong> Modified by:</strong> SOM browsing software <br/>
+    <p>This file describes the input vectors for a self-organizing map. It is written by the parser or vector generator
+    program and describes the properties of each vector<br/>
+    The file consists of one set of attributes per vector with the very attributes still being subject to modification, or
+    rather, extension. The structure of the description of the vectors follows in general the structure of the unit
+    description file. Further attributes will be added as the necessity arises, especially in the context of metaphor
+    graphics. Furthermore, the question whether each of the description files should be kept as an independet file or be
+    part of one lare file comrising the whole collection has not been fully decided upon.<br/>
+    The attributes considered so far are:</p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong>$TYPE</strong>: string, mandatory<br/>
+      <strong>vecdescr</strong> to indicate input vector description file, further information may be packed into this string</li>
+      <li><strong>$NR_Files</strong>: int, mandatory<br/>
+      number of files / vectors described in this file</li>
+      <li><strong>$NR_METADATA_ATTR</strong>: int, mandatory<br/>
+      number of metadata attributes per entry</li>
+    </ul>
+    
+    The header above describes the general file structure.<br/>
+    
+    following this block, the second block contains the following set of attributes per vector/file:
+    
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $VEC_ID </strong>: string, mandatory<br/>
+      ID of vector, a kind of short label or unique ID specially for documents split into several vectors</li>
+      <li><strong> $LABEL </strong>: string, optional<br/>
+      label of vector, full name, file name, possibly identical to $VEC_ID</li>
+      <li><strong> $URL_DOC </strong>: string, optional<br/>
+      URL of document being the basis for the vector</li>
+      <li><strong> $TYPE </strong>: string, mandatory<br/>
+      giving the type of the vector with currently supported types being DOC, SOM and VEC, with <strong>DOC</strong> for vectors
+      describing documents (that can be referenced), <strong>SOM</strong> for other SOMs (that can be referenced) and <strong>VEC</strong> for
+      general vectors (that cannot be referenced)</li>
+      <li><strong>DUBLIN-CORE Metadata Attribute Set</strong>: All Attributes of the Dublin Core Metadata Set - recommended set
+      of attributes for Input Vector Description, such as <strong>creator, subject, keywords</strong> etc.<br/>
+      Additional attributes only where necessary, e.g. price, domain, etc.<br/>
+      May also be used to directly accomodate libViewer attributes.</li>
+      <li><strong> $SIZE </strong>: integer, optional<br/>
+      length of document in bytes, size of SOM in terms of units or documents mapped, details tbd.</li>
+      <li><strong>$PRICE</strong>: price for the document etc.</li>
+      <li><strong> $NR_TIMES_REFERENCED </strong>: integer, optional<br/>
+      number of times this vector was referenced. initialized to 0 by parser program, modified by SOM browsing software</li>
+      <li><strong> $LAST_REFERENCED </strong>: string / date, optional<br/>
+      date of last reference to vector modified by SOM browsing software</li>
+      <li><strong> $DESCRIPTION </strong>: string, optional<br/>
+      free form text description of unit, terminated by newline</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    <h3 id="classInfo"> Class Information File </h3>
+    
+    <strong> Standard filename:</strong> XXX.cls <br/>
+    <strong> Produced by:</strong> Parser or vector generator program <br/>
+    <strong> Modified by:</strong> SOM browsing software <br/>
+    <p>This file provides a mapping from the input vectors to a class assignment. This class assignment can be used by the SOMViewer to display the class distribution over the map, using pie-charts or the <a href="visualisations.html#ClassVisualisation">class map visualisation</a>.
+    It is written by the parser or vector generator, such as the <a href="http://www.ifs.tuwien.ac.at/mir/audiofeatureextraction-java/">Audio Feature Extraction</a>, or generated manually by the user.<br/>
+    The file simply contains for each input vector an assignment to a certain class. Two different formats exist:
+    <h4 id="classInfo-SOMLib">SOMLib Class Information File</h4>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+  
+      <li><strong>$NUM_CLASSES</strong>: &lt;integer&gt;, mandatory<br />
+      Indicates the number of different classes</li>
+      <li><strong>$CLASS_NAMES</strong>: list of strings, mandatory<br />
+      A space-separated list of the class names</li>
+      <li><strong>$XDIM</strong>: &lt;integer&gt;, mandatory<br />
+      number of entities per line; fixed to 2</li>
+      <li><strong>$YDIM</strong>: &lt;integer&gt;, mandatory<br />
+      number of input vectors in file</li>
+    </ul>
+  
+    The header above describes the general file structure.<br />
+    Following this block, the second block contains a space-separated mapping vector label =&gt; class index </p>
+
+    <ul>
+      <li><strong> &lt;VEC_ID_1&gt; &lt;CLASS_INDEX_VECTOR_1&gt;</strong></li>
+      <li>:::::::::::::::::::::::::::::::::::::::</li>
+      <li><strong> &lt;VEC_ID_n&gt; &lt;CLASS_INDEX_VECTOR_n&gt;</strong></li>
+    
+      The &lt;VEC_ID_1&gt; is of type string and denotes the label of the vector. &lt;CLASS_INDEX&gt; is of type &lt;integer&gt;, and
+      gives the numerical index of the class, starting with 0 and in the order given in the header. Both fields are mandatory.
+    </ul>
+    <br/>
+    </li>
+    <h4 id="classInfo-tab">Tab-separated Class Information File</h4>
+    <p>This file-format doesn't use any header, just provides a tab-separated mapping vector label =&gt; class name </p>
+    <ul>
+      <li><strong> &lt;VEC_ID_1&gt;\t&lt;CLASS_NAME_1&gt;</strong></li>
+      <li>:::::::::::::::::::::::::::::::::::::::</li>
+      <li><strong> &lt;VEC_ID_n&gt;\t&lt;CLASS_NAME_n&gt;</strong></li>
+      
+      The &lt;VEC_ID_1&gt; is of type string and denotes the label of the vector. &lt;CLASS_NAME&gt; is of type &lt;string&gt;, and
+      gives the name of the class. Both fields are mandatory.
+
+    </ul>    
+    
+    <p><a href="#top">^top</a></p>    
+    
+
+    <h2 id="SOMLib">SOM files</h2>
+
+    <h3 id="unit_descr"> SOMLib Unit Description File </h3>
+    
+    <strong> Standard filename:</strong> XXX.unit <br/>
+    <strong> Produced by:</strong> SOM training program <br/>
+    <strong> Modified by:</strong> SOM mapping program, LabelSOM program <br/>
+    <strong> Demo-File:</strong> <a href="demo-vectors/demo.unit">demo.unit</a>
+    
+    <p>This file describes the units of the trained Self-Organizing Map. It is written by the SOM training program.<br/>
+    The files consists of two blocks, the first one describing the general SOM structure, the second giving a specific
+    description of every unit<br/>
+    The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector
+    file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
+    </p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $TYPE </strong>: string, mandatory<br/>
+      describes the network model of the map, currently used values: <strong> som, ghsom, gg, mnemonic, gcs </strong></li>
+      <li><strong> $GRID_LAYOUT </strong>: string, mandatory<br/>
+      describes the grid layout of the map. Currently used values <strong> triangular, rectangular, hexagonal </strong></li>
+      <li><strong> $GRID_TOPOLOGY </strong>: string, mandatory<br/>
+      describes the topology of the map. Currently used values <strong> planar, cylindrical, toroid, spherical </strong></li>
+      <li><span style="font-weight: bold;">$FILE_FORMAT_VERSION</span> : real (optional)<br/>indicates a version &gt; 1.0 of the Unit Description File, with a changed internal structure (see below).<br/>Currently, version 1.1 is implemented e.g. in somtoolbox, supporting filenames with spaces for $MAPPED_VECS (see below).</li>
+      <li><strong> $XDIM </strong>: integer, mandatory<br/>
+      number of units in x-direction</li>
+      <li><strong> $YDIM </strong>: integer, mandatory<br/>
+      number of units in y-direction</li>
+    </ul>
+    This header describes the general SOM structure. <br/>
+    
+    Following this block, the second block contains the following set of attributes per unit:
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $POS_X </strong>: integer, mandatory<br/>
+      x coordinate of unit in standard visualization of SOM (column)</li>
+      <li><strong> $POS_Y </strong>: integer, mandatory<br/>
+      y coordinate of unit in standard visualization of SOM (line)</li>
+      <li><strong> $UNIT_ID </strong>: string, optional<br/>
+      short label / id of unit as free text string, e.g. (0/0), (1/0), etc.</li>
+      <li><strong> $QUANTERROR_UNIT </strong>: real, optional<br/>
+      quantization error of unit</li>
+      <li><strong> $QUANTERROR_UNIT_AVG </strong>: real, optional<br/>
+      average input vector quantization error of unit, i.e. QUANTERROR_UNIT divided by the number of weight vectors mapped
+      onto this unit (NR_VEC_MAPPED)</li>
+      <li><strong> $AC_POS_X </strong>: real, optional<br/>
+      x coordinate of unit in AC visualization of SOM</li>
+      <li><strong> $AC_POS_Y </strong>: real, optional<br/>
+      y coordinate of unit in AC visualization of SOM</li>
+      <li><strong> $UMAT_UNIT </strong>: real, optional <br/>
+      averaged distance for U-Matrix representation for unit</li>
+      <li><strong> $UMAT_RIGHT </strong>: real, optional <br/>
+      distance to the right neighbor for U-Matrix representation</li>
+      <li><strong> $UMAT_DOWN </strong>: real, optional <br/>
+      averaged distance to the lower neighbor for U-Matrix representation in case of hexagonal map arrangement distance to
+      the lower neighbor for U-Matrix representation in case of rectangle map arrangement</li>
+      <li><strong> $UMAT_DOWN_LEFT </strong>: real, optional <br/>
+      averaged distance to the left lower neighbor for U-Matrix representation in case of hexagonal map arrangement averaged
+      distance to the lower left neighbor for U-Matrix representation in case of rectangle map arrangement</li>
+      <li><strong> $UMAT_DOWN_RIGHT </strong>: real, optional <br/>
+      averaged distance to the right lower neighbor for U-Matrix representation in case of hexagonal map arrangement
+      averaged distance to the lower right neighbor for U-Matrix representation in case of rectangle map arrangement</li>
+      <li><strong> $NR_VEC_MAPPED </strong>: integer, optional<br/>
+      number of input vectors mapped onto this unit written by SOM training program</li>
+      <li><strong> $MAPPED_VECS </strong>: list of string, optional<br/>
+      list of strings giving the VEC_IDs of input vectors (labels) mapped onto this unit. Used for static referencing The
+      number should be identical to NR_VEC_MAPPED. If not a warning should be printed. Written by SOM mapping program.<br/>In
+    the original version (1.0) of the Unit Description File, the list of
+    VEC_IDs is stored as space-separated strings on a single line. Starting
+    with version 1.1,&nbsp;VEC_ID lables containing spaces are supported,
+    by storing them as one VEC_ID per line after stating&nbsp;<strong>$MAPPED_VECS</strong> only on a single line. To use this format,&nbsp;<span style="font-weight: bold;">$FILE_FORMAT_VERSION 1.1 </span>(or greater) must be stated in the header.</li>
+      <li><strong> $MAPPED_VECS_DIST </strong>: list of real, optional<br/>
+      distances by which vectors are mapped onto the unit</li>
+      <li><strong> $NR_SOMS_MAPPED </strong>: integer, optional<br/>
+      number of other SOMs mapped onto this unit written by hierarchical SOM training program or by integrating SOM training
+      program</li>
+      <li><strong> $URL_MAPPED_SOMS </strong>: list of strings, optional<br/>
+      list of strings giving the URL's of SOM Map Description Files (filename XXX.map) Used for dynamic referencing The
+      number should be identical to NR_SOMs_MAPPED. IF not a warning should be printed. Written by SOM mapping program</li>
+      <li><strong> $MAPPED_SOM_DIST </strong>: list of real, optional<br/>
+      distances by which SOM vectors are mapped onto the unit. for GHSOM: mqe of that unit</li>
+      <li><strong> $NR_UNIT_LABELS </strong>: int, optional<br/>
+      number of labels for this unit, written by LabelSOM program</li>
+      <li><strong> $UNIT_LABELS </strong>: list of strings, optional<br/>
+      list of labels for unit, written by LabelSOM program</li>
+      <li><strong> $UNIT_LABELS_QE </strong>: list of real, optional<br/>
+      quantization error of the labels</li>
+      <li><strong> $UNIT_LABELS_WGT </strong>: list of real, optional<br/>
+      weight of the labels</li>
+      <li><strong> $UNIT_LABELS_LEFT </strong>: list of strings, optional<br/>
+      list of labels for unit, written by LabelSOM program</li>
+      <li><strong> $UNIT_LABELS_LEFT_DIFF </strong>: list of real, optional<br/>
+      difference to left neighbor labels of the labels</li>
+      <li><strong> $UNIT_LABELS_RIGHT </strong>: list of strings, optional<br/>
+      list of labels for unit, written by LabelSOM program</li>
+      <li><strong> $UNIT_LABELS_RIGHT_DIFF </strong>: list of real, optional<br/>
+      difference to right neighbor labels of the labels</li>
+      <li><strong> $UNIT_LABELS_UP </strong>: list of strings, optional<br/>
+      list of labels for unit, written by LabelSOM program</li>
+      <li><strong> $UNIT_LABELS_UP_DIFF </strong>: list of real, optional<br/>
+      difference to upper neighbor labels of the labels</li>
+      <li><strong> $UNIT_LABELS_DOWN </strong>: list of strings, optional<br/>
+      list of labels for unit, written by LabelSOM program</li>
+      <li><strong> $UNIT_LABELS_DOWN_DIFF </strong>: list of real, optional<br/>
+      difference to down neighbor labels of the labels</li>
+      <li><strong> $URL_RELATED_UNITS </strong>: list of string, optional<br/>
+      list of strings giving URLs of related units. These can be links to units within the same map or to units on other SOM
+      maps. The URL willmost probably consist of the URL of the SOM map file (XXX.map) plus the unit location within the map
+      given as '#(x/y)', details tbd.</li>
+      <li><strong> $DESCRIPTION </strong>: string, optional<br/>
+      free form text description of unit, terminated by newline</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    
+    
+    <h3 id="weight_vectors"> SOMLib Weight Vector File </h3>
+    
+    <strong> Standard filename:</strong> XXX.wgt <br/>
+    <strong> Produced by:</strong> SOM init program, SOM training program<br/>
+    <strong> Modified by:</strong> - <br/>
+    <strong> Demo-File:</strong> <a href="demo-vectors/demo.wgt">demo.wgt</a>
+    
+    <p>This file describes the weight vectors of the trained Self-Organizing Map. It is initially written as result of
+    the SOM init program, read by the SOM training program as initialized map and finally written by the SOM training
+    program after training<br/>
+    The files consists of two blocks, the first one describing the general SOM structure, the second giving the weight
+    vectors of the SOM<br/>
+    The first 4 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector
+    file match. If any of the 4 first parameters does not match the program should print a detailed error message and exit.
+    </p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $TYPE </strong>: string, mandatory<br/>
+      describes the network model of the map, currently used values: <strong> som, ghsom, gg, mnemonic, gcs </strong></li>
+      <li><strong> $GRID_LAYOUT </strong>: string, mandatory<br/>
+      describes the grid layout of the map. Currently used values <strong> triangular, rectangular, hexagonal </strong></li>
+      <li><strong> $GRID_TOPOLOGY </strong>: string, mandatory<br/>
+      describes the topology of the map. Currently used values <strong> planar, cylindrical, toroid, spherical </strong></li>
+      <li><strong> $XDIM </strong>: integer, mandatory<br/>
+      number of units in x-direction</li>
+      <li><strong> $YDIM </strong>: integer, mandatory<br/>
+      number of units in y-direction</li>
+      <li><strong> $VEC_DIM </strong>: integer, mandatory<br/>
+      dimensionality of weight vectors of map, = n</li>
+      <li><strong>&lt;x_1_1&gt; .......... &lt;x_1_n&gt; &lt;label_1&gt;</strong></li>
+      <li>:::::::::::::::::::::::::::::::: :::::::</li>
+      <li><strong>&lt;x_m_1&gt; .......... &lt;x_m_n&gt; &lt;label_m&gt;</strong><br/>
+      lists the n vector elements (n dimensions, i.e. n entries per line) of m weight vectors where m = XDIM x YDIM, being
+      real values, followed by the label of the weight vector, being a string value like "SOM_MAP_Name_(X/Y)". All values
+      are mandatory.<br/>
+      If the number of weight vectors m is smaller than XDIM x YDIM the program reading this file should print a warning
+      message.<br/>
+      the order of vectors should be line by line, i.e. (0/0), (1/0), (2/0), from left to right, starting with (0/0) in the
+      upper left corner of the map.<br/>
+      If the number of vector elements does not match the given dimensionality VEC_DIM the program should print a detailed
+      error message and exit.</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    
+    
+    <h3 id="som_map"> SOMLib Map Description File</h3>
+    
+    <strong> Standard filename:</strong> XXX.map <br/>
+    <strong> Produced by:</strong> SOM training program<br/>
+    
+    <strong> Modified by:</strong> SOM mapping program, SOM quant-error program <br/>
+    <strong> Demo-File:</strong> <a href="demo-vectors/demo.mapdescr">demo.mapdescr</a>
+    <p>This file describes the basic structure of the Self-Organizing Map, giving all the parameters used in the
+    training process. It is initially written as result of the training process of the SOM. Additional Information
+    attributes may be added as required by various programs.<br/>
+    </p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $TYPE </strong>: string, mandatory<br/>
+      describes the network model of the map, currently used values: <strong> som, ghsom, gg, mnemonic, gcs </strong></li>
+      <li><strong> $GRID_LAYOUT </strong>: string, mandatory<br/>
+      describes the grid layout of the map. Currently used values <strong> triangular, rectangular, hexagonal </strong></li>
+      <li><strong> $GRID_TOPOLOGY </strong>: string, mandatory<br/>
+      describes the topology of the map. Currently used values <strong> planar, cylindrical, toroid, spherical </strong></li>
+      <li><strong> $XDIM </strong>: integer, mandatory<br/>
+      number of units in x-direction</li>
+      <li><strong> $YDIM </strong>: integer, mandatory<br/>
+      number of units in y-direction</li>
+      <li><strong> $VEC_DIM </strong>: integer, mandatory<br/>
+      dimensionality of weight vectors of map</li>
+      <li><strong> $STORAGE_DATE </strong>: string (or date, format tbd), optional<br/>
+      date of storage time of trained map</li>
+      <li><strong> $STORAGE_TIME </strong>: string (or time, format tbd), optional<br/>
+      time of storage time of trained map, probably combined with $STORAGE_DATE in one string?</li>
+      <li><strong> $TRAINING_TIME </strong>: integer, optional<br/>
+      training time for map in seconds</li>
+      <li><strong> $LEARNRATE_TYPE </strong>: string, optional<br/>
+      type of learn rate given as free text string</li>
+      <li><strong> $LEARNRATE_INIT </strong>: real, optional<br/>
+      initial learn rate a0</li>
+      <li><strong> $NEIGHBORHOOD_TYPE </strong>: string, optional<br/>
+      type of neighborhood region as free text string</li>
+      <li><strong> $NEIGHBORHOOD_INIT </strong>: real, optional<br/>
+      initial neighborhood range e0</li>
+      <li><strong> $RAND_INIT </strong>: integer, optional<br/>
+      init value for random number generator</li>
+      <li><strong> $ITERATIONS_TOTAL </strong>: integer, optional<br/>
+      number of iterations of training process</li>
+      <li><strong> $ITERATIONS_BUFFERED </strong>: integer, optional<br/>
+      number of iterations of one training process cycle when using buffered reading</li>
+      <li><strong> $NR_TRAINVEC_TOTAL </strong>: integer, optional<br/>
+      number of input vectors used for training in total</li>
+      <li><strong> $NR_TRAINVEC_BUFFERED </strong>: integer, optional<br/>
+      number of input vectors used for training on cycle when using buffered reading of input vectors</li>
+      <li><strong> $VEC_NORMALIZED </strong>: integer, optional<br/>
+      indicator whether input vectors were normalized prior to the training process. permitted values 0, 1</li>
+      <li><strong> $QUANTERROR_MAP </strong>: real, optional<br/>
+      quantization error of map</li>
+      <li><strong> $QUANTERROR_VEC </strong>: real, optional<br/>
+      average input vector quantization error of map, i.e. the quantization error of the map divided by the number of
+      vectors mapped onto the SOM ($QUANTERROR_MAP / $NR_TRAINVEC_TOTAL)</li>
+      <li><strong> $URL_TRAINING_VEC </strong>: string, optional<br/>
+      URL of file containing input vectors used for training (Input Vector File, XXX.in)</li>
+      <li><strong> $URL_TRAINING_VEC_DESCR </strong>: string, optional<br/>
+      URL of file containing description of input vectors used for training (Input Vector Description File, XXX.vec)</li>
+      <li><strong> $URL_WEIGHT_VEC </strong>: string, optional<br/>
+      URL of file containing weight vectors of trained map (Weight Vector File, XXX.wgt)</li>
+      <li><strong> $URL_QUANTERR_MAP </strong>: string, optional<br/>
+      URL of file containing quantization error vectors of trained map (Quantization Error File, XXX.err) written by SOM
+      quant-error program</li>
+      <li><strong> $URL_MAPPED_INPUT_VEC </strong>: list of strings, optional<br/>
+      URLs of files containing input vectors mapped onto trained map (Input Vector File, XXX.in) written by SOM mapping
+      program</li>
+      <li><strong> $URL_MAPPED_INPUT_VEC_DESCR </strong>: list of strings, optional<br/>
+      URLs of files containing descriptions of input vectors mapped onto trained map (Input Vector Description File,
+      XXX.vec) written by SOM mapping program</li>
+      <li><strong> $URL_UNIT_DESCR </strong>: string, optional<br/>
+      URL of file containing description of units of trained map (Unit Description File, XXX.unit)</li>
+      <li><strong> $DESCRIPTION</strong>: string or memo, optional free form text description of map to be used for display. Read
+      to TO_EOF, i.e. description may span multiple lines.</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+
+    
+    
+    <h3 id="error_map">  SOMLib Quantization Error Map File</h3>
+    
+    <strong> Standard filename:</strong> XXX.err <br/>
+    <strong> Produced by:</strong> SOM quantization error program<br/>
+    
+    <strong> Modified by:</strong> - <br/>
+    <strong> Demo-File:</strong> none
+    <p>This file describes the quantization error vectors of the trained Self-Organizing Map. It is written by the SOM
+    quantization error program based on a trained map and given input vectors<br/>
+    The files consists of two blocks, the first one describing the general SOM structure, the second giving the quantization
+    error vectors of the SOM.<br/>
+    The file structure is identical to the general weight vector description file. The first 4 parameter entries are given
+    as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 4 first
+    parameters does not match the program should print a detailed error message and exit.</p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li>the parameters and the file structure is identical to the <a href="#weight_vectors"> SOMLib Weigth Vector
+      File</a>, with the $TYPE Parameter being set to <strong>qerr, qerr_rect, qerr_hex, err </strong> etc.</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    
+    <h3 id="dataWinnerMapping"> SOMLib Data Winner Mapping File </h3>
+    
+    <strong> Standard filename:</strong> XXX.dwm <br/>
+    <strong> Produced by:</strong> SOM training program<br/>
+    <strong> Modified by:</strong> - <br/>
+    <strong> Demo-File:</strong> <a href="maps/iris/iris.dwm">demo.wgt</a>
+    
+    <p>This file provides information about the best-matching units for all input vectors. It is used primarily by the <a href="visualisations.html#SDH">Smoothed Data Histograms</a> visualisation.<br/>
+    The files consists of two blocks, the first one describing the general SOM structure, the second giving the winners for each input vector.<br/>
+    The first 4 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector
+    file match. If any of the 4 first parameters does not match the program should print a detailed error message and exit.
+    </p>
+    <p>Parameter Entries:</p>
+    <ul>
+      <li><strong> # Block of Comments</strong>: (optional) several lines of comments each starting with <strong>#</strong></li>
+      <li><strong> $$FILE_FORMAT_VERSION </strong>: real, optional<br/>
+      indicates a version > 1.0 of the Data Winner Mapping File, with a changed internal structure.  
+      <li><strong> $NUM_WINNERS </strong>: integer, mandatory<br/>
+      the number of winners</li>
+      <li><strong> $NUM_VECTORS </strong>: integer, mandatory<br/>
+      the number of input vectors</li>
+      <li><strong> $METRIC </strong>: string, mandatory<br/>
+      the metric used to compute the winners. Default is the Euclidean (L2) metric</li>
+    </ul>
+    
+      The header above describes the general file structure.
+      Following this block, the second block contains the winners for each input datum 
+
+    <ul>
+      <li><strong> &lt;VEC_ID_1&gt;<br/>
+      &lt;X_POS_WINNER_1_1&gt; &lt;Y_POS_WINNER_1_1&gt; &lt;Distance_1_1&gt; ... &lt;X_POS_WINNER_m_1&gt; &lt;Y_POS_WINNER_m_1&gt; &lt;Distance_m_1&gt;</strong></li>
+      <li>:::::::::::::::::::::::::::::::::::::::</li>
+      <li><strong> &lt;VEC_ID_n&gt;<br/>
+      &lt;X_POS_WINNER_1_n&gt; &lt;Y_POS_WINNER_1_n&gt; &lt;Distance_1_n&gt; ... &lt;X_POS_WINNER_m_n&gt; &lt;Y_POS_WINNER_m_n&gt; &lt;Distance_m_n&gt;</strong></li>
+
+      <br />
+      lists the <i>m</i> winners (and their distance) for each of the <i>n</i> input vectors. VEC_ID are string, X_POS and Y_POS are integer, and DISTANCE are real data types; all are mandatory</li>
+    </ul>
+    
+    <p><a href="#top">^top</a></p>
+    
+    <h2 id="history"> History </a></h2>
+    
+    <ul>
+      <li>Vers. 1.7: (17.08.2010): (RM)
+      <ul>
+        <li>Added documentation for SOMLib ClassInformation and Data Winner Mapping; re-ordered file descriptions.</li>
+      </ul>
+      <li>Vers. 1.6: (22.09.2009): (TL)
+      <ul>
+        <li>Added information about $FILE_FORMAT_VERSION 1.1&nbsp;of the Unit Description File (introduced a while ago) allowing
+        the string labels of $MAPPED_VECS containing spaces by storing them one per line.</li>
+      </ul>
+      </li>
+      <li>Vers. 1.5: (21.09.2009): (TL)
+      <ul>
+        <li>Added a description of the several extensions to the input vector file header made in several
+        programs/implementations/scripts throughout the last years, namely: $EXTRACTOR, $DATA_TYPE, $DATA_DIM, $ATTR</li>
+      </ul>
+      </li>
+      <li>Vers. 1.4: (23.11.2006): (RM)<br />
+      <ul>
+        <li>Integrated into SOMToolbox</li>
+      </ul>
+      </li>
+      <li>Vers. 1.3.5: (18.7.2000):<br />
+      <ul>
+        <li>fixed formatting</li>
+        <li>changed SOMLib Input Vector Description File structure and setup</li>
+        <li>renamed file to SOMLib Vector Description File</li>
+      </ul>
+      </li>
+      <li>Vers. 1.3.4: (17.7.2000):<br />
+      <ul>
+        <li>fixed formatting (added $)</li>
+        <li>changed structure and occurrence of comments</li>
+        <li>added Dublin Core recommendation to Input Vector Description File</li>
+      </ul>
+      </li>
+      <li>Vers. 1.3.3: (11.7.2000):<br />
+      * fixed formatting errors<br />
+      * added Distances in Unit Description Files for mapped vecs, soms, and labels<br />
+      * added $NR_UNIT_LABELS<br />
+      </li>
+      <li>Vers. 1.3.2: (10.7.2000):<br />
+      * fixed formatting errors<br />
+      * added 7. attribute for template vector file: mean<br />
+      </li>
+      <li>Vers. 1.3.1: (8.7.2000):<br />
+      * fixed formatting errors</li>
+      <li>Vers. 1.3: (6.7.2000):<br />
+      * adapted SOM Input Vector File<br />
+      * changed $TOPOLOGY into $TYPE<br />
+      * changed NODE into UNIT<br />
+      * removed $SIGNATURE<br />
+      * added template vector file description<br />
+      * added some demo-files (artificially created - real ones to be added)<br />
+      * removed hex-SOM required condition for x/y-Pos values<br />
+      </li>
+      <li>Vers. 1.2: (18.11.1998): <br />
+      * SOM Unit Description File: X_POS, Y_POS mandatory instead of optional <br />
+      * 0 &lt;= POS_X &lt; 2*XDIM and 0 &lt;= POS_Y &lt; 2*YDIM to accommodate hex-location<br />
+      * 0 &lt;= AC_POS_X &lt; 2*XDIM and 0 &lt;= AC_POS_Y &lt; 2*YDIM to accommodate hex-location <br />
+      </li>
+      <li>Vers. 1.1: (03.11.1998): <br />
+      * added UMAT_RIGHT, UMAT_UNIT, UMAT_DOWNRIGHT, UMAT_DOWNLEFT to SOM Unit Description <br />
+      * changed URL_VEC to URL_DOC in Input Vector Descriptions <br />
+      * added (keyword) to SOM Map Description File to indicate whether a description follows <br />
+      * spelling <br />
+      </li>
+      <li>Vers. 1.0: (17.09.1998): <br />
+      * basic Datafile Structure <br />
+      </li>
+    </ul>
+
+  </div>
+
+  <script type="text/javascript"> var svnId = "$Id: somlibFileFormat.html 3816 2010-09-15 14:48:45Z frank $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+
+</div>
+
+</body>
+</html>

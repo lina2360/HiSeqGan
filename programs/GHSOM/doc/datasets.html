@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta http-equiv="Content-Style-Type" content="text/css"/>  
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+  <style>
+    <!--
+    
+    -->
+  </style>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+  <h1>Benchmark Data Sets, Trained Maps, Sample Files</h1>
+
+  <div class="maintab">
+    <h2 id="iris">Iris</h2>
+    <p>The Iris data set is one of the best known databases in the machine learning domain, and was first published in <a href="#bib_FIS36_eug">[1]</a>.<br />
+    The dataset contains of 3 classes of iris plants, each with 50 instances. The plants are described by four attributes, sepal
+    length and width, and petal length and width. One class (setoas) is linearly separable from the other two (virginica and
+    versicolor), while the latter are not linearly separable from each other.</p>
+    <div class="bib">
+      <p id="bib_FIS36_eug">[1] Fisher, R. A. "<span class="title">The use of multiple measurements in taxonomic problems</span>". In <span class="book">Annual Eugenics, 7, Part II</span>, 179-188 (1936)</p>
+      <p>[2] <a href="http://archive.ics.uci.edu/ml/datasets/Iris" target="_blank">Iris dataset in the UCI Machine Learning Repository</a></p>
+    </div>
+    <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/iris/iris.tv">Template vector file</a></li>
+        <li><a href="datasets/iris/iris.vec">Input vector file</a></li>
+        <li><a href="datasets/iris/iris.cls">Class information file</a></li>
+        <li><a href="datasets/iris/iris.prop">Properties file to train a SOM with the Iris files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/iris/iris.unit">Unit file</a></li>
+        <li><a href="maps/iris/iris.wgt">Weight Vector file</a></li>
+        <li><a href="maps/iris/iris.map">Map file</a></li>
+      </ul>
+    </div>
+    </div>
+    
+    <h2 id="boston_housing">Boston Housing</h2>
+    <p>This dataset describes housing values in the suburbs of Boston <a href="#bib_HAR78_envec">[1]</a>. The dataset contains 506 instances, which are described
+    by 13 attributes. The dataset can be categorised into 92 classes, each representing a district or suburb of Boston.</p>
+    <div class="bib">
+      <p id="bib_HAR78_envec">[1] Harrison, D. and Rubinfeld, D.L. "<span class="title">Hedonic prices and the demand for clean air</span>". In <span class="book">Journal on Environ. Economics &
+      Management, vol.5</span>, 81-102, 1978.</p>
+      <p>[2] <a href="http://mlearn.ics.uci.edu/ml/datasets/housing/" target="_blank">Boston Housing dataset in the UCI Machine Learning Repository</a></p>
+    </div>
+    <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/boston-housing/boston-housing.tv">Template vector file</a></li>
+        <li><a href="datasets/boston-housing/boston-housing.vec">Input vector file</a></li>
+        <li><a href="datasets/boston-housing/boston-housing.cls">Class information file</a></li>
+        <li><a href="datasets/boston-housing/boston-housing.prop">Properties file to train a SOM with the Boston Housing files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/boston-housing/boston-housing.unit">Unit file</a></li>
+        <li><a href="maps/boston-housing/boston-housing.wgt">Weight Vector file</a></li>
+        <li><a href="maps/boston-housing/boston-housing.map">Map file</a></li>
+      </ul>
+    </div>
+    </div>
+
+    <h2 id="animals">Animals (16 animals)</h2>
+    <p>This data set has been used for several experiments with SOMs. It comprises 16 records of different kinds of animals,
+    described by 13 binary-valued attributes. The animals can be categorised into three classes: birds, carnivores, and herbivores.</p>
+    <div class="bib">
+      <p id="bib_RIT89_biocyb">[1] Helge Ritter and Teuvo Kohonen: "<span class="title">Self-organizing semantic maps</span>". In <span class="book">Biological Cybernetics, 61(4)</span>:241-254. Springer, 1989</p>
+    </div>
+    <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/animals/animals.tv">Template vector file</a></li>
+        <li><a href="datasets/animals/animals.vec">Input vector file</a></li>
+        <li><a href="datasets/animals/animals.cls">Class information file</a></li>
+        <li><a href="datasets/animals/animals.prop">Properties file to train a SOM with the Animals files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/animals/animals.unit">Unit file</a></li>
+        <li><a href="maps/animals/animals.wgt">Weight Vector file</a></li>
+        <li><a href="maps/animals/animals.map">Map file</a></li>
+        <li><a href="maps/animals/animals.html">View map as HTML</a></li>
+      </ul>
+    </div>
+    </div>
+    
+    <h2 id="zoo">Zoo (101 animals)</h2>
+      <p>This data set is similar to the Animals data set above, but contains a larger number of 101 animals. They are described by
+      20 boolean-valued attributes, and can be categorised into seven different classes.</p>
+      <div class="bib">
+      	<p>[1] <a href="http://mlearn.ics.uci.edu/ml/datasets/Zoo/" target="_blank">Zoo dataset in the UCI Machine Learning Repository</a></p>
+      </div>
+      <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/zoo/zoo.tv">Template vector file</a></li>
+        <li><a href="datasets/zoo/zoo.vec">Input vector file</a></li>
+        <li><a href="datasets/zoo/zoo.cls">Class information file</a></li>
+        <li><a href="datasets/zoo/zoo.prop">Properties file to train a SOM with the Zoo files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/zoo/zoo.unit">Unit file</a></li>
+        <li><a href="maps/zoo/zoo.wgt">Weight Vector file</a></li>
+        <li><a href="maps/zoo/zoo.map">Map file</a></li>
+        <li><a href="maps/zoo/zoo.html">View map as HTML</a></li>
+      </ul>
+    </div>
+    </div>
+    
+    <h2 id="spambase">Spambase</h2>
+    <div class="bib">
+      <p>[1] <a href="http://archive.ics.uci.edu/ml/datasets/Spambase">Spambase dataset in the UCI Machine Learning Repository</a></p>
+    </div>
+    <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/spambase/spambase.tv">Template vector file</a></li>
+        <li><a href="datasets/spambase/spambase.vec">Input vector file</a></li>
+        <li><a href="datasets/spambase/spambase.cls">Class information file</a></li>
+        <li><a href="datasets/spambase/spambase.prop">Properties file to train a SOM with the Spambase files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/spambase/spambase.unit">Unit file</a></li>
+        <li><a href="maps/spambase/spambase.wgt">Weight Vector file</a></li>
+        <li><a href="maps/spambase/spambase.map">Map file</a></li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="spacer"></div>
+    
+  </div>
+  
+  <h1>Artificial data sets</h1>
+  <div class="maintab">        
+    <h2 id="chain_link">Chain link</h2>
+    <img class="info" src="datasets/chainlink/chainlink-info.png" alt="Projection of the chainlink data set" width="40%" />
+    <p>The chain link data set, sometimes also called <em>intertwined rings</em>, is a classic
+    example of a data set that provokes topology preservation vialitions. The data set contains two rings, each two-dimensional, that
+    are intertwined in a three-dimensional space. When projecting this data set to a two-dimensional output space, the rings have to
+    "break".</p>
+    <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/chainlink/chainlink.tv">Template vector file</a></li>
+        <li><a href="datasets/chainlink/chainlink.vec">Input vector file</a></li>
+        <li><a href="datasets/chainlink/chainlink.cls">Class information file</a></li>
+        <li><a href="datasets/chainlink/chainlink.prop">Properties file to train a SOM with the chain link files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/chainlink/chainlink.unit">Unit file</a></li>
+        <li><a href="maps/chainlink/chainlink.wgt">Weight Vector file</a></li>
+        <li><a href="maps/chainlink/chainlink.map">Map file</a></li>
+        <li><a href="maps/chainlink/chainlink.html">View map as HTML</a></li>
+      </ul>
+    </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <h2>10 clusters</h2>
+    <img class="info" src="datasets/10clusters/10clusters-info.png" alt="Projection of the 10-clusters data set" />
+    <p>This artificial data set consists of data points arranged in 10 distinctive clusters. The
+    clusters were generated from gaussian distributions, with different densities (standard deviations). The data set contains ten
+    dimensions.</p>
+    <div class="container">
+    <div class="leftColumn">
+      <strong>Vectors</strong>
+      <ul>
+        <li><a href="datasets/10clusters/10clusters.tv">Template vector file</a></li>
+        <li><a href="datasets/10clusters/10clusters.vec">Input vector file</a></li>
+        <li><a href="datasets/10clusters/10clusters.cls">Class information file</a></li>
+        <li><a href="datasets/10clusters/10clusters.prop">Properties file to train a SOM with the chain link files</a></li>
+      </ul>
+    </div>
+    <div class="rightColumn">
+      <strong>Trained Map</strong>
+      <ul>
+        <li><a href="maps/10clusters/10clusters.unit">Unit file</a></li>
+        <li><a href="maps/10clusters/10clusters.wgt">Weight Vector file</a></li>
+        <li><a href="maps/10clusters/10clusters.map">Map file</a></li>
+        <li><a href="maps/10clusters/10clusters.html">View map as HTML</a></li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="spacer"></div>
+    
+    <h2>Sample properties files</h2>
+    <ul>
+      <li><a href="examples/PROPERTIES">Properties file with all possible properties</a></li>
+      <li><a href="examples/som.prop">Properties file with only "commonly used" properties</a></li>
+    </ul>
+    
+    <h2>Sample template vector files</h2>
+    <p>Below is a range of sample template vector files that can be used together when analysing music described by the Rhythm
+    Patterns suite of audio features. For more details, please visit the <a
+      href="http://www.ifs.tuwien.ac.at/mir/audiofeatureextraction.html">Audio Feature Extraction</a> website of our <a
+      href="http://www.ifs.tuwien.ac.at/mir/">Music Information Retrieval Group</a>, and check the <a
+      href="http://www.ifs.tuwien.ac.at/mir/howto_matlab_fe.html">how-to for feature extraction</a>.</p>
+    <ul>
+      <li><a href="examples/rhythm_patterns.tv"><strong>Rhythm patterns (RP)</strong> template vector file</a></li>
+      <li><a href="examples/rhythm_hist.tv"><strong>Rhythm histograms (RH)</strong> template vector file</a></li>
+      <li><a href="examples/ssd.tv"><strong>Statistical Spectrum Descriptor (SSD)</strong> template vector file</a></li>
+      <li><a href="examples/ssd+rh.tv"><strong>SSD + RH</strong> template vector file</a></li>
+    </ul>    
+    
+  </div>
+  
+  <script type="text/javascript"> var svnId = "$Id: datasets.html 3820 2010-09-16 14:25:53Z frank $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+  
+</div>
+
+</body>
+</html>

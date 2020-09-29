@@ -1,0 +1,22 @@
+02-26 16:38:38 root         INFO     ./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_0x1.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_1x2.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_2x0.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_2x1.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_2x2.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl3_0x1_0x1.unit
+layer: [9, 6, 6]
+max_layer: 3
+number_of_digits: [1, 1, 1]
+
+02-26 16:38:40 root         INFO     ./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_0x1.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_1x2.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_2x0.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_2x1.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl2_2x2.unit
+./applications/wm5-normalize-experiment-2/GHSOM/output/wm5-normalize-experiment-2-item-seq\wm5-normalize-experiment-2-item-seq_submap_lvl3_0x1_0x1.unit
+layer: [9, 6, 6]
+max_layer: 3
+number_of_digits: [1, 1, 1]
+

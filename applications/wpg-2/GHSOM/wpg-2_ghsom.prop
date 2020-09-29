@@ -1,0 +1,13 @@
+workingDirectory=./
+outputDirectory=./output/wpg-2
+namePrefix=wpg-2
+vectorFileName=./data/wpg-2_ghsom.in
+sparseData=yes
+isNormalized=false
+randomSeed=7
+xSize=2
+ySize=2
+learnRate=0.7
+numIterations=20000
+tau=0.9
+tau2=0.01

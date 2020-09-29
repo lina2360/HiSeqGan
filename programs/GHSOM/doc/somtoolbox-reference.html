@@ -1,0 +1,1171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta http-equiv="Content-Style-Type" content="text/css"/>  
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+  <h1>Java SOMToolbox Applications &amp; Tools</h1>
+  <div class="maintab">
+
+    <p>This page contains a reference documentation of the applications and tools available in the Java SOMToolbox.<br />
+    The overview on existing applications is also available when running the <code>somtoolbox.sh</code> script (<code>somtoolbox.bat</code>
+    on Windows systems), while the detailed help for each application is available when running <code>somtoolbox.sh
+    &lt;applicationName&gt; --help</code> (<code>somtoolbox.bat &lt;applicationName&gt; --help</code> on Windows systems).</p>
+    
+<!-- MARKER BEGIN GENERATED CONTENT --> 
+<table border="0">
+  <tr> <td colspan="2"> <h5> Training Applications </h5> </td> </tr>
+  <tr>
+    <td> <a href="#GHSOM">GHSOM</a> </td>
+    <td> The Growing Hierarchical SOM grows a hierarchy of maps, depending on the structure of the data set. </td>
+  </tr>
+  <tr>
+    <td> <a href="#GrowingSOM">GrowingSOM</a> </td>
+    <td> Provides a Growing Grid and a static SOM (with the growth parameters disabled) </td>
+  </tr>
+  <tr>
+    <td> <a href="#MnemonicSOM">MnemonicSOM</a> </td>
+    <td> MenmonicSOM has a grid which is not fully occupied with units. </td>
+  </tr>
+  <tr>
+    <td> <a href="#SOMTrainer">SOMTrainer</a> </td>
+    <td> Graphical Interface to train a SOM </td>
+  </tr>
+  <tr> <td colspan="2"> <h5> Viewer Applications </h5> </td> </tr>
+  <tr>
+    <td> <a href="#SOMViewer">SOMViewer</a> </td>
+    <td> An interactive viewer for exploring SOMs, using different visualisations </td>
+  </tr>
+  <tr>
+    <td> <a href="#UnitFileViewer">UnitFileViewer</a> </td>
+    <td> Plots a unit file, can be used especially to plot a 3D-SOM </td>
+  </tr>
+  <tr> <td colspan="2"> <h5> Utils Applications </h5> </td> </tr>
+  <tr>
+    <td> <a href="#AttendeeMapper">AttendeeMapper</a> </td>
+    <td> Writes an HTML output of the map, with highlighting certain data items </td>
+  </tr>
+  <tr>
+    <td> <a href="#DataMapper">DataMapper</a> </td>
+    <td> Maps inputs to an already trained SOM. </td>
+  </tr>
+  <tr>
+    <td> <a href="#DataSetViewer">DataSetViewer</a> </td>
+    <td>  </td>
+  </tr>
+  <tr>
+    <td> <a href="#HTMLOutputter">HTMLOutputter</a> </td>
+    <td> Creates an HTML representation of the Map. </td>
+  </tr>
+  <tr>
+    <td> <a href="#RhythmPatternsMatrixVisualisationSaver">RhythmPatternsMatrixVisualisationSaver</a> </td>
+    <td> Save rhythm patterns matrix visualisation of an input file as images to a file. </td>
+  </tr>
+  <tr>
+    <td> <a href="#SOMMerger">SOMMerger</a> </td>
+    <td> Combines the weight vectors of one or more SOM maps to an input vector file </td>
+  </tr>
+  <tr>
+    <td> <a href="#SimilarityRetrieval">SimilarityRetrieval</a> </td>
+    <td> Performs similarity retrieval in a given database (vector file) </td>
+  </tr>
+  <tr>
+    <td> <a href="#SimilarityRetrievalGUI">SimilarityRetrievalGUI</a> </td>
+    <td> GUI for similarity retrieval </td>
+  </tr>
+  <tr>
+    <td> <a href="#SimilarityRetrievalWriter">SimilarityRetrievalWriter</a> </td>
+    <td> Performs similarity retrieval in a given database (vector file) </td>
+  </tr>
+  <tr>
+    <td> <a href="#SomFilePacker">SomFilePacker</a> </td>
+    <td> Packer to create autonomous SomFiles </td>
+  </tr>
+  <tr>
+    <td> <a href="#TemplateVectorComparator">TemplateVectorComparator</a> </td>
+    <td> Compares the contents of two template vectors </td>
+  </tr>
+  <tr>
+    <td> <a href="#TrajectoryOutputter">TrajectoryOutputter</a> </td>
+    <td> Generates a graphical representation of a trajectory of the given points over the map </td>
+  </tr>
+  <tr>
+    <td> <a href="#VisualisationImageSaver">VisualisationImageSaver</a> </td>
+    <td> Save Visualisations of a map as images to a file. </td>
+  </tr>
+  <tr> <td colspan="2"> <h5> Helper Applications </h5> </td> </tr>
+  <tr>
+    <td> <a href="#ClassSubsetGenerator">ClassSubsetGenerator</a> </td>
+    <td> Generates a subset and class assignment based on the given class file </td>
+  </tr>
+  <tr>
+    <td> <a href="#DataWinnerMappingWriter">DataWinnerMappingWriter</a> </td>
+    <td> Writes a data winner mapping file from a trained map </td>
+  </tr>
+  <tr>
+    <td> <a href="#DatasetRandomiser">DatasetRandomiser</a> </td>
+    <td> Randomises data sets </td>
+  </tr>
+  <tr>
+    <td> <a href="#DistanceMatrixWriter">DistanceMatrixWriter</a> </td>
+    <td> Writes a distance matrix for the given data </td>
+  </tr>
+  <tr>
+    <td> <a href="#InputDataFileFormatConverter">InputDataFileFormatConverter</a> </td>
+    <td> Converts between various file formats for input data. </td>
+  </tr>
+  <tr>
+    <td> <a href="#LabelSOM">LabelSOM</a> </td>
+    <td> Implements the LabelSOM labelling method </td>
+  </tr>
+  <tr>
+    <td> <a href="#LagusKeywordLabeler">LagusKeywordLabeler</a> </td>
+    <td> Implements the LagusKeyword labelling method </td>
+  </tr>
+  <tr>
+    <td> <a href="#MapFileFormatConverter">MapFileFormatConverter</a> </td>
+    <td> Converts between various file formats for trained SOMs. </td>
+  </tr>
+  <tr>
+    <td> <a href="#MapRotator">MapRotator</a> </td>
+    <td> Rotates a map by the given degrees, and writes a new unit- and weight-vector file </td>
+  </tr>
+  <tr>
+    <td> <a href="#MnemonicSOMGenerator">MnemonicSOMGenerator</a> </td>
+    <td> MnemonicSOMGenerator allows to create an arbitrary shaped SOM (unit file) </td>
+  </tr>
+  <tr>
+    <td> <a href="#QualityMeasureComputer">QualityMeasureComputer</a> </td>
+    <td> Wrapper for the individual Quality Measures </td>
+  </tr>
+  <tr>
+    <td> <a href="#RGBPaletteConverter">RGBPaletteConverter</a> </td>
+    <td> Converts palettes given as RGB values to the XML format used in the SOMToolbox. </td>
+  </tr>
+  <tr>
+    <td> <a href="#SOMLibInputConcatenator">SOMLibInputConcatenator</a> </td>
+    <td> Merges two or more SOMLib Input files, i.e. vector and template files </td>
+  </tr>
+  <tr>
+    <td> <a href="#SOMLibVectorNormalization">SOMLibVectorNormalization</a> </td>
+    <td> Handles the normalization of vector files in SOMLib format </td>
+  </tr>
+  <tr>
+    <td> <a href="#SOMLibZeroVectorRemover">SOMLibZeroVectorRemover</a> </td>
+    <td> Removes zero vectors (i.e. with 0 in all their components) from files in SOMLib format </td>
+  </tr>
+  <tr>
+    <td> <a href="#StringReplacer">StringReplacer</a> </td>
+    <td> Replaces strings by a replacement in the given file </td>
+  </tr>
+  <tr>
+    <td> <a href="#VectorFile2DatabaseImporter">VectorFile2DatabaseImporter</a> </td>
+    <td> Imports input and template vector files to a database </td>
+  </tr>
+  <tr>
+    <td> <a href="#VectorFileAppender">VectorFileAppender</a> </td>
+    <td> Append SOMLibVectorFiles </td>
+  </tr>
+  <tr>
+    <td> <a href="#VectorFileConcatenator">VectorFileConcatenator</a> </td>
+    <td> Merge SOMLibVectorFiles </td>
+  </tr>
+  <tr>
+    <td> <a href="#VectorFileRewriter">VectorFileRewriter</a> </td>
+    <td> Replace labels in SOMLibVectorFiles </td>
+  </tr>
+</table>
+
+
+<h2> Training Applications </h2>
+<h3 id="GHSOM">GHSOM</h3>
+<p>The Growing Hierarchical SOM grows a hierarchy of maps, depending on the structure of the data set.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.models.GHSOM [-h] [-l &lt;labeling&gt;] [-n &lt;numberLabels&gt;] [--numberWinners &lt;numberWinners&gt;] [--skipDWM] &lt;properties&gt;
+
+Options:
+  -h
+        Generate HTML output.
+
+  -l &lt;labeling&gt;
+        Labeling algorithm to use.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Useless if no labeling algorithm is specified.
+
+  --numberWinners &lt;numberWinners&gt;
+        Number of winners to write. Default is 300. default: 300
+
+  --skipDWM
+        Skip writing the data winner mapping file
+
+  &lt;properties&gt;
+        Name of property file.
+
+</pre><h3 id="GrowingSOM">GrowingSOM</h3>
+<p>Provides a Growing Grid (Bernd Fritzke, 1995), i.e. a Self-Organising Map that can dynamically grow by inserting whole rows or cells. When setting the growth-controlling parameters to disable growth, it can also be used to train a standard SOM.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.models.GrowingSOM [-h] [-l &lt;labeling&gt;] [-n &lt;numberLabels&gt;] [-w &lt;weightVectorFile&gt;] [-m &lt;mapDescriptionFile&gt;] [--skipDWM] [--numberWinners &lt;numberWinners&gt;] &lt;properties&gt; [--cpus &lt;cpus&gt;]
+
+Options:
+  -h
+        Generate HTML output.
+
+  -l &lt;labeling&gt;
+        Labeling algorithm to use.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Useless if no labeling algorithm is specified.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file used for initialization of the map.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  --skipDWM
+        Skip writing the data winner mapping file
+
+  --numberWinners &lt;numberWinners&gt;
+        Number of winners to write. Default is 300. default: 300
+
+  &lt;properties&gt;
+        Name of property file.
+
+  --cpus &lt;cpus&gt;
+        Numbers of CPUs to use. default: 1
+
+</pre><h3 id="MnemonicSOM">MnemonicSOM</h3>
+<p>MenmonicSOM has a grid which is not fully occupied with units.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.models.MnemonicSOM [-h] [-l &lt;labeling&gt;] [-n &lt;numberLabels&gt;] --dim &lt;dimension&gt; -m &lt;mapDescriptionFile&gt; -u &lt;unitDescriptionFile&gt; [--numberWinners &lt;numberWinners&gt;] [--skipDWM] &lt;properties&gt;
+
+Options:
+  -h
+        Generate HTML output.
+
+  -l &lt;labeling&gt;
+        Labeling algorithm to use.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Useless if no labeling algorithm is specified.
+
+  --dim &lt;dimension&gt;
+        The dimension of the input data.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  --numberWinners &lt;numberWinners&gt;
+        Number of winners to write. Default is 300. default: 300
+
+  --skipDWM
+        Skip writing the data winner mapping file
+
+  &lt;properties&gt;
+        Name of property file.
+
+</pre><h3 id="SOMTrainer">SOMTrainer</h3>
+<p>The SOMTrainer provides a graphical Interface to create a SOM based on different SOM Models.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.trainer.SOMTrainer 
+
+Options:
+
+</pre><h2> Viewer Applications </h2>
+<h3 id="SOMViewer">SOMViewer</h3>
+<p>An interactive viewer for exploring SOMs, using different visualisations</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.viewer.SOMViewer -u &lt;unitDescriptionFile&gt; -w &lt;weightVectorFile&gt; [--dw &lt;dataWinnerMappingFile&gt;] [-m &lt;mapDescriptionFile&gt;] [(-t|--tv) &lt;templateVectorFile&gt;] [-v &lt;inputVectorFile&gt;] [-c &lt;classInformationFile&gt;] [-r &lt;regressionInformationFile&gt;] [-i &lt;dataInformationFile&gt;] [-d &lt;dataNamesFile&gt;] [--linkage &lt;linkageMapFile&gt;] [--corrections &lt;inputCorrections&gt;] [--colours &lt;classColours&gt;] [-p &lt;fileNamePrefix&gt;] [-s &lt;fileNameSuffix&gt;] [--imagePrefix &lt;imagePrefix&gt;] [--imageSuffix &lt;imageSuffix&gt;] [--appdir &lt;applicationDirectory&gt;] [--datadir &lt;viewerWorkingDirectory&gt;] [--vis &lt;initialVisualisation&gt;] [--visParams &lt;initialVisParams&gt;] [--palette &lt;initialPalette&gt;] [(-2|--secondSOM) &lt;secondSOMPrefix&gt;] [-o|--documenMode] [--noplayer] [--pDdecode &lt;probabilityDecode&gt;] [--decodeDir &lt;decodedOutputDir&gt;]
+
+Options:
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  --dw &lt;dataWinnerMappingFile&gt;
+        Unit description file describing the winners mapped onto a unit for a SOM/GHSOM.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  -r &lt;regressionInformationFile&gt;
+        Regression information file containing the predicted values for each data item.
+
+  -i &lt;dataInformationFile&gt;
+        Data information file containing information such as location of each data item.
+
+  -d &lt;dataNamesFile&gt;
+        File containing the names of data items to be highlighted.
+
+  --linkage &lt;linkageMapFile&gt;
+        File containing data item linkage mapping.
+
+  --corrections &lt;inputCorrections&gt;
+        Name of the file containing input corrections.
+
+  --colours &lt;classColours&gt;
+        File listing the RGB values of the colours to be used for the class-based visualisations Pie-charts, Thematic
+        class map.
+
+  -p &lt;fileNamePrefix&gt;
+        Prefix for the relative path to the files. This option is only to be used if no absolute paths are available.
+
+  -s &lt;fileNameSuffix&gt;
+        Suffix to the filenames aka file endings, e.g. &quot;.mp3&quot;. This option is only to be used if no absolute paths are
+        available.
+
+  --imagePrefix &lt;imagePrefix&gt;
+        Prefix to prepend to the labels to find the images
+
+  --imageSuffix &lt;imageSuffix&gt;
+        Suffix to append to the labels to find the images
+
+  --appdir &lt;applicationDirectory&gt;
+        Directory containing the SOMViewer application start file and the somviewer.prop file.
+
+  --datadir &lt;viewerWorkingDirectory&gt;
+        Directory containing the input data items needed for the visualisations.
+
+  --vis &lt;initialVisualisation&gt;
+        The name of the initial visualisation.
+
+  --visParams &lt;initialVisParams&gt;
+        Parameters for the initial visualisation. Currently only implemented for SmoothedDataHistograms visualisations.
+
+  --palette &lt;initialPalette&gt;
+        The name of the initial palette to be used.
+
+  -2, --secondSOM &lt;secondSOMPrefix&gt;
+        Prefix for the set of files representing second SOM
+
+  -o, --documenMode
+        Activates the Document mode, which hides the PlaySOM toolbar for exporting playlists and instead activates a
+        document preview. For this to work properly, you have to specify the document path prefix denoting the base path
+        for the files, e.g. 'file:///c:/somemap/files/', and the suffix, like .html.
+
+  --noplayer
+        Don't use the internal player PlaySOMPlayer, create the classic PlaySOMPanel
+
+  --pDdecode &lt;probabilityDecode&gt;
+        When using multi-channel audio playback Probability to decode a mp3 file to wav before playing.
+
+  --decodeDir &lt;decodedOutputDir&gt;
+        When using multi-channel audio playback Decoded mp3 files will be saved to and loaded from this directory.
+
+</pre><h3 id="UnitFileViewer">UnitFileViewer</h3>
+<p>Plots a unit file, can be used especially to plot a 3D-SOM</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.UnitFileViewer -u &lt;unitDescriptionFile&gt; [--showLabels &lt;showLabels&gt;] [--verbose]
+
+Options:
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  --showLabels &lt;showLabels&gt;
+        How many labels per unit should be displayed default = 0 default: 0
+
+  --verbose
+        Be more verbose...
+
+</pre><h2> Utils Applications </h2>
+<h3 id="AttendeeMapper">AttendeeMapper</h3>
+<p>Writes an HTML output of the map, with highlighting certain data items</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.output.AttendeeMapper -d &lt;dataNamesFile&gt; [-l &lt;labeling&gt;] -u &lt;unitDescriptionFile&gt; &lt;htmlFile&gt;
+
+Options:
+  -d &lt;dataNamesFile&gt;
+        File containing the names of data items to be highlighted.
+
+  -l &lt;labeling&gt;
+        Labeling algorithm to use.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  &lt;htmlFile&gt;
+        Name of HTML file to write.
+
+</pre><h3 id="DataMapper">DataMapper</h3>
+<p>Maps inputs to an already trained SOM. If a unit-file is given, the data items are added to the loaded map, without a unti file the mapping starts with an empty map.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.DataMapper -w &lt;weightVectorFile&gt; [-m &lt;mapDescriptionFile&gt;] -v &lt;inputVectorFile&gt; [-u &lt;unitDescriptionFile&gt;] [-c &lt;classInformationFile&gt;] [--classlist classList1:classList2:...:classListN ] [-l &lt;labeling&gt;] [-n &lt;numberLabels&gt;] [--numberWinners &lt;numberWinners&gt;] [--skipDWM] [&lt;output&gt;]
+
+Options:
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  --classlist classList1:classList2:...:classListN 
+        A List of class names
+
+  -l &lt;labeling&gt;
+        Labeling algorithm to use.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Useless if no labeling algorithm is specified.
+
+  --numberWinners &lt;numberWinners&gt;
+        Number of winners to write. Default is 300. default: 300
+
+  --skipDWM
+        Skip writing the data winner mapping file
+
+  &lt;output&gt;
+        Name of the output file.
+
+</pre><h3 id="DataSetViewer">DataSetViewer</h3>
+<p></p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.DataSetViewer [-v &lt;inputVectorFile&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+</pre><h3 id="HTMLOutputter">HTMLOutputter</h3>
+<p>Creates an HTML representation of the Map. The representation displays a hit histogram, and shows the names of the mapped inputs.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.output.HTMLOutputter [--metric &lt;metric&gt;] [--normalized] [-v &lt;inputVectorFile&gt;] [--dense] [-l &lt;labeling&gt;] [--ignoreZero] [-n &lt;numberLabels&gt;] [(-t|--tv) &lt;templateVectorFile&gt;] [-w &lt;weightVectorFile&gt;] [-u &lt;unitDescriptionFile&gt;] [-m &lt;mapDescriptionFile&gt;] &lt;htmlFile&gt;
+
+Options:
+  --metric &lt;metric&gt;
+        Name of the metric to be used for distance calculation in input space. default:
+        at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+
+  --normalized
+        Set, if vectors are normalized to unit length. At the moment this option is not crucial.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  --dense
+        Set if input data vectors are densely populated.
+
+  -l &lt;labeling&gt;
+        Labeling algorithm to use.
+
+  --ignoreZero
+        Ignore labels with zero mean value and que.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Useless if no labeling algorithm is specified.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  &lt;htmlFile&gt;
+        Name of HTML file to write.
+
+</pre><h3 id="RhythmPatternsMatrixVisualisationSaver">RhythmPatternsMatrixVisualisationSaver</h3>
+<p>Provides a batch mode to save rhythm patterns matrix visualisation of all inputs in a vector file to image files.</p>
+<pre>Usage: java at.tuwien.ifs.feature.evaluation.RhythmPatternsMatrixVisualisationSaver -v &lt;inputVectorFile&gt; [--width &lt;width&gt;] [--type &lt;filetype&gt;] [(-g|--unitGrid) &lt;unitGrid&gt;] [(-o|--output) &lt;basename&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  --width &lt;width&gt;
+        The width of a unit. default: 10
+
+  --type &lt;filetype&gt;
+        default: png
+
+  -g, --unitGrid &lt;unitGrid&gt;
+        Whether to draw the grid of units. default: true
+
+  -o, --output &lt;basename&gt;
+
+</pre><h3 id="SOMMerger">SOMMerger</h3>
+<p>Combines the weight vectors of one or more SOM maps to an input vector file</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.SOMMerger [--mode &lt;mode&gt;] [--skipConversion] [--mapSize &lt;mapSize&gt;] [--inputDir &lt;inputDir&gt;] &lt;output&gt; [maps1 maps2 ... mapsN]
+
+Options:
+  --mode &lt;mode&gt;
+        The merging mode to use, i.e. Union, Intersection, or a number of vectors the term occurrs.
+        If no mode is provided, all possible combinations will be generated. default: All
+
+  --skipConversion
+        Skip conversion of map files to input vector files, if you already did that before.
+
+  --mapSize &lt;mapSize&gt;
+        The size of the map to be used to write the properties files, e.g. 4x5.
+        If not specified, a default map size will be computed, depending on the number of input vectors.
+
+  --inputDir &lt;inputDir&gt;
+        Path to the input directory.
+
+  &lt;output&gt;
+        Name of the output file.
+
+  maps1 maps2 ... mapsN
+        Prefix for the SOM maps to merge i.e. file name w/o .unit/.wgt extension
+
+</pre><h3 id="SimilarityRetrieval">SimilarityRetrieval</h3>
+<p>Performs similarity retrieval in a given database (vector file)</p>
+<pre>Usage: java at.tuwien.ifs.feature.evaluation.SimilarityRetrieval -v &lt;inputVectorFile&gt; -l &lt;inputLabel&gt; [(-n|--numberNeighbours) &lt;numberNeighbours&gt;] [--metric &lt;metric&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -l &lt;inputLabel&gt;
+        Name/label of the input vector
+
+  -n, --numberNeighbours &lt;numberNeighbours&gt;
+        Number of neighbours to find.
+
+  --metric &lt;metric&gt;
+        Name of the metric to be used for distance calculation in input space. default:
+        at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+
+</pre><h3 id="SimilarityRetrievalGUI">SimilarityRetrievalGUI</h3>
+<p>Provides a graphical interface for similarity retrieval. Allows to load multiple vector files</p>
+<pre>Usage: java at.tuwien.ifs.feature.evaluation.SimilarityRetrievalGUI 
+
+Options:
+
+</pre><h3 id="SimilarityRetrievalWriter">SimilarityRetrievalWriter</h3>
+<p>Performs similarity retrieval in a given database (vector file), and writes the results in one file per data itme</p>
+<pre>Usage: java at.tuwien.ifs.feature.evaluation.SimilarityRetrievalWriter -v &lt;inputVectorFile&gt; [(-n|--numberNeighbours) &lt;numberNeighbours&gt;] [--metric &lt;metric&gt;] --outputDir &lt;outputDirectory&gt; [--startIndex &lt;startIndex&gt;] [--numberItems &lt;numberItems&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -n, --numberNeighbours &lt;numberNeighbours&gt;
+        Number of neighbours to find. default: 1000
+
+  --metric &lt;metric&gt;
+        Name of the metric to be used for distance calculation in input space. default:
+        at.tuwien.ifs.somtoolbox.layers.metrics.L1Metric
+
+  --outputDir &lt;outputDirectory&gt;
+        Name of the output directory.
+
+  --startIndex &lt;startIndex&gt;
+        The start index. default: 0
+
+  --numberItems &lt;numberItems&gt;
+        Number of items
+
+</pre><h3 id="SomFilePacker">SomFilePacker</h3>
+<p>Packer to create autonomous SomFiles</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.SomFilePacker &lt;output&gt; -u &lt;unitDescriptionFile&gt; -w &lt;weightVectorFile&gt; [-d &lt;dataNamesFile&gt;] [-c &lt;classInformationFile&gt;] [-r &lt;regressionInformationFile&gt;] [-m &lt;mapDescriptionFile&gt;] [-i &lt;dataInformationFile&gt;] [-p &lt;fileNamePrefix&gt;] [-s &lt;fileNameSuffix&gt;] [--dw &lt;dataWinnerMappingFile&gt;] [-v &lt;inputVectorFile&gt;] [(-t|--tv) &lt;templateVectorFile&gt;] [--linkage &lt;linkageMapFile&gt;] [--colours &lt;classColours&gt;] [--corrections &lt;inputCorrections&gt;]
+
+Options:
+  &lt;output&gt;
+        Name of the output file.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -d &lt;dataNamesFile&gt;
+        File containing the names of data items to be highlighted.
+
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  -r &lt;regressionInformationFile&gt;
+        Regression information file containing the predicted values for each data item.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  -i &lt;dataInformationFile&gt;
+        Data information file containing information such as location of each data item.
+
+  -p &lt;fileNamePrefix&gt;
+        Prefix for the relative path to the files. This option is only to be used if no absolute paths are available.
+
+  -s &lt;fileNameSuffix&gt;
+        Suffix to the filenames aka file endings, e.g. &quot;.mp3&quot;. This option is only to be used if no absolute paths are
+        available.
+
+  --dw &lt;dataWinnerMappingFile&gt;
+        Unit description file describing the winners mapped onto a unit for a SOM/GHSOM.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  --linkage &lt;linkageMapFile&gt;
+        File containing data item linkage mapping.
+
+  --colours &lt;classColours&gt;
+        File listing the RGB values of the colours to be used for the class-based visualisations Pie-charts, Thematic
+        class map.
+
+  --corrections &lt;inputCorrections&gt;
+        Name of the file containing input corrections.
+
+</pre><h3 id="TemplateVectorComparator">TemplateVectorComparator</h3>
+<p>Compares the contents of two template vectors</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.TemplateVectorComparator &lt;templateVectorFile&gt; &lt;templateVectorFile2&gt;
+
+Options:
+  &lt;templateVectorFile&gt;
+        First template vector file.
+
+  &lt;templateVectorFile2&gt;
+        Second template vector file.
+
+</pre><h3 id="TrajectoryOutputter">TrajectoryOutputter</h3>
+<p>Generates a graphical representation of a trajectory of the given points over the map</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.output.TrajectoryOutputter -d &lt;dataNamesFile&gt; -u &lt;unitDescriptionFile&gt; [-m &lt;mapDescriptionFile&gt;] [-l|--drawLines] &lt;imageFile&gt;
+
+Options:
+  -d &lt;dataNamesFile&gt;
+        File containing the names of data items to be highlighted.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  -l, --drawLines
+        Draw trajectory lines on map.
+
+  &lt;imageFile&gt;
+        Name of image file to write. No Suffix needed. Writes as PNG and EPS.
+
+</pre><h3 id="VisualisationImageSaver">VisualisationImageSaver</h3>
+<p>Provides a batch mode to save several/all visualisations of a map to image files.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.VisualisationImageSaver -u &lt;unitDescriptionFile&gt; -w &lt;weightVectorFile&gt; [-v &lt;inputVectorFile&gt;] [(-t|--tv) &lt;templateVectorFile&gt;] [--dw &lt;dataWinnerMappingFile&gt;] [-c &lt;classInformationFile&gt;] [(-o|--output) &lt;basename&gt;] [--width &lt;width&gt;] [--height &lt;height&gt;] [--type &lt;filetype&gt;] [(-g|--unitGrid) &lt;unitGrid&gt;] [vis1 vis2 ... visN]
+
+Options:
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  --dw &lt;dataWinnerMappingFile&gt;
+        Unit description file describing the winners mapped onto a unit for a SOM/GHSOM.
+
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  -o, --output &lt;basename&gt;
+
+  --width &lt;width&gt;
+        The width of a unit. default: 10
+
+  --height &lt;height&gt;
+        The height of a unit.
+
+  --type &lt;filetype&gt;
+        default: png
+
+  -g, --unitGrid &lt;unitGrid&gt;
+        Whether to draw the grid of units. default: true
+
+  vis1 vis2 ... visN
+        The visualisations to create.
+
+</pre><h2> Helper Applications </h2>
+<h3 id="ClassSubsetGenerator">ClassSubsetGenerator</h3>
+<p>Generates a subset and class assignment based on the given class file</p>
+<pre>Usage: java at.tuwien.ifs.feature.ClassSubsetGenerator -c &lt;classInformationFile&gt; [(-z|--gzip) &lt;gzip&gt;] &lt;input&gt; &lt;output&gt;
+
+Options:
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  -z, --gzip &lt;gzip&gt;
+        Whether or not to gzip the output. default: true
+
+  &lt;input&gt;
+        Name of input vector file to be read.
+
+  &lt;output&gt;
+        Name of the output file.
+
+</pre><h3 id="DataWinnerMappingWriter">DataWinnerMappingWriter</h3>
+<p>Writes a data winner mapping file from a trained map</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.DataWinnerMappingWriter -v &lt;inputVectorFile&gt; -w &lt;weightVectorFile&gt; -u &lt;unitDescriptionFile&gt; [-m &lt;mapDescriptionFile&gt;] --numberWinners &lt;numberWinners&gt; &lt;output&gt; [--outputDir &lt;outputDirectory&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  --numberWinners &lt;numberWinners&gt;
+        Number of winners to write. Default is 300. default: 300
+
+  &lt;output&gt;
+        Name of the output file.
+
+  --outputDir &lt;outputDirectory&gt;
+        Name of the output directory.
+
+</pre><h3 id="DatasetRandomiser">DatasetRandomiser</h3>
+<p>Randomises data sets by swapping the order of columns (features/attributes) and/or rows (vectors)</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.DatasetRandomiser -v &lt;inputVectorFile&gt; [(-t|--tv) &lt;templateVectorFile&gt;] [--variants &lt;variants&gt;] [--interleave &lt;interleave&gt;] [--startIndex &lt;startIndex&gt;] [--preserveFeatureOrder] [--preserveVectorOrder] [(-z|--gzip) &lt;gzip&gt;] &lt;output&gt;
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  --variants &lt;variants&gt;
+        Number of variants to generate. default: 1
+
+  --interleave &lt;interleave&gt;
+        Interleave between the indices. default: 1
+
+  --startIndex &lt;startIndex&gt;
+        The start index. default: 1
+
+  --preserveFeatureOrder
+        Wether or not preserve the order of features.
+
+  --preserveVectorOrder
+        Wether or not preserve the order of vectors.
+
+  -z, --gzip &lt;gzip&gt;
+        Whether or not to gzip the output. default: true
+
+  &lt;output&gt;
+        Name of the output file.
+
+</pre><h3 id="DistanceMatrixWriter">DistanceMatrixWriter</h3>
+<p>Writes a distance matrix for the given data, in ASCII or binary format</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.data.distance.DistanceMatrixWriter -v &lt;inputVectorFile&gt; [-c &lt;classInformationFile&gt;] [--metric &lt;metric&gt;] [--metricParams &lt;metricParams&gt;] &lt;output&gt; [--outputFormat &lt;outputFormat&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  --metric &lt;metric&gt;
+        Name of the metric to be used for distance calculation in input space. default:
+        at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+
+  --metricParams &lt;metricParams&gt;
+        Parameters for the metric.
+
+  &lt;output&gt;
+        Name of the output file.
+
+  --outputFormat &lt;outputFormat&gt;
+        Format of the output file, valid values are: SOMLib, plain, Binary, Orange default: SOMLib
+
+</pre><h3 id="InputDataFileFormatConverter">InputDataFileFormatConverter</h3>
+<p>Converts between various file formats for input data. Currently supported formats are [randomAccess, simpleMatrix, SOMPak, Marsyas0.2ARFF, SOMLib, ESOM, ARFF] and [SOMLib, ARFF, randomAccess, ESOM, SOMPak, Orange, CSV, vowpal], respective</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.data.InputDataFileFormatConverter [--inputFormat &lt;inputFormat&gt;] &lt;input&gt; [(-t|--tv) &lt;templateVectorFile&gt;] [-c &lt;classInformationFile&gt;] [--outputFormat &lt;outputFormat&gt;] [(-z|--gzip) &lt;gzip&gt;] &lt;output&gt; [--skipInstanceNames] [--skipInputsWithoutClass] [--tabSeparated]
+
+Options:
+  --inputFormat &lt;inputFormat&gt;
+        Format of the input file, valid values are: randomAccess, simpleMatrix, SOMPak, Marsyas0.2ARFF, SOMLib, ESOM,
+        ARFF
+        If not specified, the format will be determined from the file extension.
+
+  &lt;input&gt;
+        Name of input vector file to be read.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  -c &lt;classInformationFile&gt;
+        Class information file containing the class for each data item.
+
+  --outputFormat &lt;outputFormat&gt;
+        Format of the output file, valid values are: SOMLib, ARFF, randomAccess, ESOM, SOMPak, Orange, CSV, vowpal
+        If not specified, the format will be determined from the file extension.
+
+  -z, --gzip &lt;gzip&gt;
+        Whether or not to gzip the output. default: true
+
+  &lt;output&gt;
+        Name of the output file.
+
+  --skipInstanceNames
+        Skipping writing of instance names in ARFF file
+
+  --skipInputsWithoutClass
+        Skipping writing instances without assigned class to ARFF file
+
+  --tabSeparated
+        Write the class-file tab separated.
+
+</pre><h3 id="LabelSOM">LabelSOM</h3>
+<p>Implements the LabelSOM labelling method</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.output.labeling.LabelSOM -v &lt;inputVectorFile&gt; (-t|--tv) &lt;templateVectorFile&gt; -w &lt;weightVectorFile&gt; -u &lt;unitDescriptionFile&gt; [-n &lt;numberLabels&gt;] [--dense] [--ignoreZero] [-m &lt;mapDescriptionFile&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Default value is 5.  default: 5
+
+  --dense
+        Set if input data vectors are densely populated.
+
+  --ignoreZero
+        Ignore labels with zero mean value and que.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+</pre><h3 id="LagusKeywordLabeler">LagusKeywordLabeler</h3>
+<p>Implements the LagusKeyword labelling method</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.output.labeling.LagusKeywordLabeler -v &lt;inputVectorFile&gt; (-t|--tv) &lt;templateVectorFile&gt; -w &lt;weightVectorFile&gt; -u &lt;unitDescriptionFile&gt; [-n &lt;numberLabels&gt;] [--dense] [-m &lt;mapDescriptionFile&gt;] --inputDir &lt;inputDir&gt;
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -n &lt;numberLabels&gt;
+        Number of labels per unit. Default value is 5.  default: 5
+
+  --dense
+        Set if input data vectors are densely populated.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  --inputDir &lt;inputDir&gt;
+        Path to the input directory.
+
+</pre><h3 id="MapFileFormatConverter">MapFileFormatConverter</h3>
+<p>Converts between various file formats for trained SOMs.Currently supported formats are [SOMLib, SOMPak, ESOM]</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.input.MapFileFormatConverter --inputFormat &lt;inputFormat&gt; &lt;input&gt; [-v &lt;inputVectorFile&gt;] [(-t|--tv) &lt;templateVectorFile&gt;] [-u &lt;unitDescriptionFile&gt;] [--outputDir &lt;outputDirectory&gt;] --outputFormat &lt;outputFormat&gt; [(-z|--gzip) &lt;gzip&gt;] &lt;output&gt;
+
+Options:
+  --inputFormat &lt;inputFormat&gt;
+        Format of the input file, valid values are: SOMLib, SOMPak, ESOM
+
+  &lt;input&gt;
+        Name of input vector file to be read.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  --outputDir &lt;outputDirectory&gt;
+        Name of the output directory.
+
+  --outputFormat &lt;outputFormat&gt;
+        Format of the output file, valid values are: SOMLib, SOMPak, ESOM
+
+  -z, --gzip &lt;gzip&gt;
+        Whether or not to gzip the output. default: true
+
+  &lt;output&gt;
+        Name of the output file.
+
+</pre><h3 id="MapRotator">MapRotator</h3>
+<p>Rotates a map by the given degrees, and writes a new unit- and weight-vector file</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.MapRotator -u &lt;unitDescriptionFile&gt; -w &lt;weightVectorFile&gt; [--dw &lt;dataWinnerMappingFile&gt;] &lt;output&gt; [(-r|--rotation) &lt;rotation&gt;] [(-f|--flip) &lt;flip&gt;]
+
+Options:
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  --dw &lt;dataWinnerMappingFile&gt;
+        Unit description file describing the winners mapped onto a unit for a SOM/GHSOM.
+
+  &lt;output&gt;
+        Name of the output file.
+
+  -r, --rotation &lt;rotation&gt;
+        Rotation of the new map, values are: 90, 180, 270.
+
+  -f, --flip &lt;flip&gt;
+        Flip the map, values are horizontal or vertical.
+
+</pre><h3 id="MnemonicSOMGenerator">MnemonicSOMGenerator</h3>
+<p>MnemonicSOMGenerator allows to create an arbitrary shaped SOM (unit file)</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.util.mnemonic.MnemonicSOMGenerator &lt;backgroundImage&gt; [(-n|--nodes) &lt;totalNodes&gt;] [(-r|--rows) &lt;rows&gt;] [(-c|--columns) &lt;cols&gt;]
+
+Options:
+  &lt;backgroundImage&gt;
+        The Background Image png, jpg
+
+  -n, --nodes &lt;totalNodes&gt;
+
+  -r, --rows &lt;rows&gt;
+
+  -c, --columns &lt;cols&gt;
+
+</pre><h3 id="QualityMeasureComputer">QualityMeasureComputer</h3>
+<p>Wrapper for the individual Quality Measures</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.QualityMeasureComputer -w &lt;weightVectorFile&gt; -m &lt;mapDescriptionFile&gt; -u &lt;unitDescriptionFile&gt; -v &lt;inputVectorFile&gt; [(-t|--tv) &lt;templateVectorFile&gt;] [--dw &lt;dataWinnerMappingFile&gt;] --qualityClass &lt;qualityMeasureClass&gt; --qualityVariant &lt;qualityMeasureVariant&gt; [-k &lt;k&gt;] &lt;output&gt; [&lt;properties&gt;]
+
+Options:
+  -w &lt;weightVectorFile&gt;
+        Weight vector file describing a SOM/GHSOM.
+
+  -m &lt;mapDescriptionFile&gt;
+        Map description file describing a mapped SOM/GHSOM.
+
+  -u &lt;unitDescriptionFile&gt;
+        Unit description file describing a mapped SOM/GHSOM.
+
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  --dw &lt;dataWinnerMappingFile&gt;
+        Unit description file describing the winners mapped onto a unit for a SOM/GHSOM.
+
+  --qualityClass &lt;qualityMeasureClass&gt;
+        Quality measure class.
+
+  --qualityVariant &lt;qualityMeasureVariant&gt;
+        Quality measure variant.
+
+  -k &lt;k&gt;
+
+  &lt;output&gt;
+        Name of the output file.
+
+  &lt;properties&gt;
+        Name of property file.
+
+</pre><h3 id="RGBPaletteConverter">RGBPaletteConverter</h3>
+<p>Converts palettes given as RGB values to the XML format used in the SOMToolbox.</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.RGBPaletteConverter -f &lt;inputFile&gt; [--name &lt;name&gt;] [--shortName &lt;shortName&gt;] [--description &lt;description&gt;] &lt;output&gt;
+
+Options:
+  -f &lt;inputFile&gt;
+        Name of input file to be read.
+
+  --name &lt;name&gt;
+        Name of the palette.
+
+  --shortName &lt;shortName&gt;
+        Short name of the palette.
+
+  --description &lt;description&gt;
+        Description of the palette.
+
+  &lt;output&gt;
+        Name of the output file.
+
+</pre><h3 id="SOMLibInputConcatenator">SOMLibInputConcatenator</h3>
+<p>Merges two or more SOMLib Input files, i.e. vector and template files. Template vectors can be off different dimensionality, and may contain different features, but some features may also be overlapping. Different merge strategies are available: union of all features sets, intersection of features sets, and strategies in between, retaining a feature if it appears in at least x sets</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.SOMLibInputConcatenator [--mode &lt;mode&gt;] [--inputDir &lt;inputDir&gt;] &lt;output&gt; [inputs1 inputs2 ... inputsN]
+
+Options:
+  --mode &lt;mode&gt;
+        The merging mode to use, i.e. Union, Intersection, or a number of vectors the term occurrs.
+        If no mode is provided, all possible combinations will be generated. default: All
+
+  --inputDir &lt;inputDir&gt;
+        Path to the input directory.
+
+  &lt;output&gt;
+        Name of the output file.
+
+  inputs1 inputs2 ... inputsN
+        Prefix for the input files to merge i.e. file name w/o .tv/.vec extension
+
+</pre><h3 id="SOMLibVectorNormalization">SOMLibVectorNormalization</h3>
+<p>Handles the normalization of vector files in SOMLib format</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.data.SOMLibVectorNormalization [-m &lt;method&gt;] &lt;input&gt; &lt;output&gt;
+
+Options:
+  -m &lt;method&gt;
+        Normalization method.
+        UNIT_LEN normalises the vectors in the input file to unit length.
+        MIN_MAX normalises each attributes between 0 and 1.
+        STANDARD_SCORE normalises each attribute to a mean of 0, and a max value of the standard deviation.
+        default: UNIT_LEN
+
+  &lt;input&gt;
+        Name of input vector file to be read.
+
+  &lt;output&gt;
+        Name of new vector file to be created.
+
+</pre><h3 id="SOMLibZeroVectorRemover">SOMLibZeroVectorRemover</h3>
+<p>Removes zero vectors (i.e. with 0 in all their components) from files in SOMLib format</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.data.SOMLibZeroVectorRemover &lt;input&gt; &lt;output&gt;
+
+Options:
+  &lt;input&gt;
+        Name of input vector file to be read.
+
+  &lt;output&gt;
+        Name of new vector file to be created.
+
+</pre><h3 id="StringReplacer">StringReplacer</h3>
+<p>Replaces strings by a replacement in the given file</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.StringReplacer --replace &lt;replace&gt; [--replacement &lt;replacement&gt;] [-f &lt;inputFile&gt;] [--inputDir &lt;inputDir&gt;]
+
+Options:
+  --replace &lt;replace&gt;
+        The string to be replace.
+
+  --replacement &lt;replacement&gt;
+        The string to replace with.
+
+  -f &lt;inputFile&gt;
+        Name of input file to be read.
+
+  --inputDir &lt;inputDir&gt;
+        Path to the input directory.
+
+</pre><h3 id="VectorFile2DatabaseImporter">VectorFile2DatabaseImporter</h3>
+<p>Imports input and template vector files to a database</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.database.VectorFile2DatabaseImporter -v &lt;inputVectorFile&gt; (-t|--tv) &lt;templateVectorFile&gt; --dbName &lt;databaseName&gt; --tablePrefix &lt;databaseTableNamePrefix&gt; [--server &lt;databaseServerAddress&gt;] [--user &lt;databaseUser&gt;] [--password &lt;databasePassword&gt;]
+
+Options:
+  -v &lt;inputVectorFile&gt;
+        Input file containing the input vectors to be mapped.
+
+  -t, --tv &lt;templateVectorFile&gt;
+        Template vector file containing vector element labels.
+
+  --dbName &lt;databaseName&gt;
+        Name of the database.
+
+  --tablePrefix &lt;databaseTableNamePrefix&gt;
+        Prefix for the tables in the database.
+
+  --server &lt;databaseServerAddress&gt;
+        Servername or IP of the database server. Defaults to 'localhost'. default: localhost
+
+  --user &lt;databaseUser&gt;
+        Username for the database acccess. Defaults to 'root'. default: root
+
+  --password &lt;databasePassword&gt;
+        Password for the database acccess. Defaults to an empty password. default: 
+
+</pre><h3 id="VectorFileAppender">VectorFileAppender</h3>
+<p>Append multilple VectorFiles containing the same type of features into one Vector file</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.VectorFileAppender &lt;output&gt; input1 input2 ... inputN
+
+Options:
+  &lt;output&gt;
+        Name of new vector file to be created.
+
+  input1 input2 ... inputN
+        The input files
+
+</pre><h3 id="VectorFileConcatenator">VectorFileConcatenator</h3>
+<p>Merge two or more VectorFiles containing different Features of the same Data into one Vector file</p>
+<pre>Usage: java at.tuwien.ifs.somtoolbox.apps.helper.VectorFileConcatenator &lt;output&gt; input1 input2 ... inputN [(-q|--weights) weights1:weights2:...:weightsN ] [--outputFormat &lt;outputFormat&gt;] [--tv]
+
+Options:
+  &lt;output&gt;
+        Name of new vector file to be created.
+
+  input1 input2 ... inputN
+        The input files
+
+  -q, --weights weights1:weights2:...:weightsN 
+        Apply different weights when normalising the vectors. No normalisation if skipped, missing values default to 1
+
+  --outputFormat &lt;outputFormat&gt;
+        Format of the output file, valid values are: SOMLib, ARFF, randomAccess, ESOM, SOMPak, Orange, CSV, vowpal
+        If not specified, the format will be determined from the file extension.
+
+  --tv
+        Create and write an apropriate TemplateVector file: &lt;outfile&gt;.tv
+
+</pre><h3 id="VectorFileRewriter">VectorFileRewriter</h3>
+<p>Replaces labels in SOMLibVectorFiles by means of a mapping file; labels in the mapping file must be separated by a tab</p>
+
+ <!-- MARKER END GENERATED CONTENT -->
+
+  </div>
+
+  <script type="text/javascript"> var svnId = "$Id: somtoolbox-reference.html 4326 2014-12-29 20:11:15Z mayer $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+</div>
+
+</body>
+</html>

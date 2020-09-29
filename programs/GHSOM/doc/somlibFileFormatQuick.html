@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta http-equiv="Content-Style-Type" content="text/css"/>  
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+  <h1>SOMLib Input files: Quick guide</h1>
+  <p>For a more detailed description of all File Formats, see the <a href="somlibFileFormat.html">complete specification</a></p>
+
+  <div class="maintab">
+    <p>The data to be clustered using the GHSOM is represented by 2 input files that are in plain-text ASCII file format. The
+    fields enclosed in brackets have to be substituted by the actual values. You can use any of the demo files provided on the web or
+    build your own data files following this format:</p>
+    <h2>Inputvector file</h2>
+    <p>The number of features and input vectors are integer values and the single vector elements may be integer or real values &gt;=0.</p>
+    <pre>
+    $TYPE inputvec
+    $XDIM &lt;# of input vectors&gt;
+    $YDIM 1
+    $VECDIM &lt;# of features&gt;
+    
+    &lt;feat 1&gt; &lt;feat 2&gt; ... &lt;name of input vector 1&gt;
+    &lt;feat 1&gt; &lt;feat 2&gt; ... &lt;name of input vector 2&gt;
+                .
+                .
+                .
+    </pre>
+  
+    <p>The first line<em>TYPE</em> contains just a free-form text tag (a single word) allowing you to label the vector file.<br/>
+    <em>XDIM</em> lists the number of input vectors you have in your file.<br/>
+    <em>YDIM</em> for an input vector file always has to be set to 1. (If you want to know why, drop me an e-mail. It has its reasons)<br/>
+    <em>VECDIM</em> gives the dimensionality of your feature space.<br/>
+    </p>
+    
+    <p>Following the general header, you have 1 line for each vector, listing the values of the attributes as space-separated real
+    numbers, followed by a label for th evector, which again can be any text/id. The matrix thus is VECDIM+1 x XDIM.</p>
+  
+    <h2>Template vector file</h2>
+    <p>The template vector file basically describes the dimensions of your feature space, and may be used to assign labels to the
+    clusters by selecting the dimension identifiers that are most characteristic for a given cluster. The file format is basically as
+    follows:</p>  
+  
+    <pre>
+    $TYPE template
+    $XDIM 7
+    $YDIM  &lt;# of input vectors&gt;
+    $VECDIM &lt;# of features&gt;
+    0 &lt;name of feature 1&gt; &lt;df&gt; &lt;tf&gt; &lt;min_tf&gt; &lt;max_tf&gt; &lt;mean_tf&gt;
+    
+    1 &lt;name of feature 2&gt; &lt;df&gt; &lt;tf&gt; &lt;min_tf&gt; &lt;max_tf&gt; &lt;mean_tf&gt;
+    2 &lt;name of feature 3&gt; &lt;df&gt; &lt;tf&gt; &lt;min_tf&gt; &lt;max_tf&gt; &lt;mean_tf&gt;
+    
+    :
+    :
+    :
+    &lt;# of features - 1&gt;  &lt;name of feature n&gt; &lt;df&gt; &lt;tf&gt; &lt;min_tf&gt; &lt;max_tf&gt; &lt;mean_tf&gt;
+    </pre>
+
+    <p><em>TYPE</em> again is a free-text identifier characterizing the file.<br/>
+    <em>XDIM</em> always is set to 7 as the vector file contains 7 columns of information<br/>
+    <em>YDIM</em> usually is set to the number of vectors you want to analyze. This may be used in text analysis to calculate weighted
+    values such as tfxidf.<br/>
+    <em>VECDIM</em> again gives the dimensionality of your feature space.<br/>
+    </p>
+
+    <p>Following this header you have &lt;vecdim&gt; lines describing each dimension, with the columns representing, respectively,
+    the number of the dimension (a counter starting with 0), the name of the dimension (a single word), the term frequency of the
+    attribute in your data collection, the document frequency of the attribute, as well as the min, max and average term frequencies.<br/>
+    This information has been optimized for text data analysis. If you want to use the GHSOM for different purposes, you can savely
+    set all the frequency values to 1 - they are not used during the training process.</p>
+  </div>
+
+  <script type="text/javascript"> var svnId = "$Id: somlibFileFormatQuick.html 3791 2010-09-06 14:58:46Z frank $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+
+</div>
+
+</body>
+</html>

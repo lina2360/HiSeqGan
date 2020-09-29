@@ -1,0 +1,20 @@
+02-25 21:25:45 root         INFO     ./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_0x0.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_1x1.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_2x1.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_3x1.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl3_1x1_0x0.unit
+layer: [8, 6, 6]
+max_layer: 3
+number_of_digits: [1, 1, 1]
+
+02-25 21:25:47 root         INFO     ./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_0x0.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_1x1.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_2x1.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl2_3x1.unit
+./applications/wm5-normalize-new-2/GHSOM/output/wm5-normalize-new-2-item-seq\wm5-normalize-new-2-item-seq_submap_lvl3_1x1_0x0.unit
+layer: [8, 6, 6]
+max_layer: 3
+number_of_digits: [1, 1, 1]
+

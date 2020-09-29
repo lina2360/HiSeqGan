@@ -1,0 +1,7 @@
+06-21 20:30:39 root         INFO     ./applications/wm5_all_reshape_1/GHSOM/output/wm5_all_reshape_1-item-seq\wm5_all_reshape_1-item-seq.unit
+./applications/wm5_all_reshape_1/GHSOM/output/wm5_all_reshape_1-item-seq\wm5_all_reshape_1-item-seq_submap_lvl2_0x1.unit
+./applications/wm5_all_reshape_1/GHSOM/output/wm5_all_reshape_1-item-seq\wm5_all_reshape_1-item-seq_submap_lvl2_1x1.unit
+layer: [4, 6]
+max_layer: 2
+number_of_digits: [1, 1]
+

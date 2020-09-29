@@ -1,0 +1,13 @@
+workingDirectory=./
+outputDirectory=./output/wm5-normalize-item-seq
+namePrefix=wm5-normalize-item-seq
+vectorFileName=./data/wm5-normalize-item-seq_ghsom.in
+sparseData=yes
+isNormalized=false
+randomSeed=7
+xSize=2
+ySize=2
+learnRate=0.7
+numIterations=20000
+tau=0.1
+tau2=0.01

@@ -1,0 +1,8 @@
+ Source Code
+
+The source code is free, but if you find the code useful I would appreciate hearing about how you are using it.
+
+
+------------------
+
+From http://www.cs.cornell.edu/home/chew/Delaunay.html, last accessed on 2009-12-16

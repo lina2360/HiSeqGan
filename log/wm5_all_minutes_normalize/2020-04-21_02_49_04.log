@@ -1,0 +1,6 @@
+04-21 02:49:11 root         INFO     ./applications/wm5_all_minutes_normalize/GHSOM/output/wm5_all_minutes_normalize-item-seq\wm5_all_minutes_normalize-item-seq.unit
+./applications/wm5_all_minutes_normalize/GHSOM/output/wm5_all_minutes_normalize-item-seq\wm5_all_minutes_normalize-item-seq_submap_lvl2_1x0.unit
+layer: [8, 8]
+max_layer: 2
+number_of_digits: [1, 1]
+

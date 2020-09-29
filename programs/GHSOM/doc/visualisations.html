@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The Java SOMToolbox @ IFS, TU Vienna</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta http-equiv="Content-Style-Type" content="text/css"/>  
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" /> 
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+
+<!--#include virtual="headerNavigation.shtml" -->
+<script type="text/javascript" src="insertHeaderNavigation.js"></script>
+
+<div class="content" id="content">
+  <h1>SOM Visualisations available in the Java SOMToolbox</h1>
+  <p>Self-Organising Maps have been applied in various industrial applications, and have proven to be a valuable data mining tool.
+   In order to fully benefit from their potential, the user needs to be assisted in analysing and interpreting the maps by advanced visualisation techniques assist.</p>
+  <p>The Java SOMToolbox provides implementations of the following visualisations:</p>
+
+  <div class="maintab">
+    <h2>Vector Activity Histogram</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_ActivityHistogram_64.png" width="180" align="right" alt="Activity Histogram Visualisation"/></div>
+    <div class="maintab-content">
+      Displays a colour-coding of the activity of a certain input vector over the whole map, i.e. in principle the vector's distances to all weight vectors.
+      <br/><br/><br/><br/>
+    </div>
+  </div>  
+
+  <div class="maintab">
+    <h2 id="ClassVisualisation">Class Visualisation</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_ClassMap_class5p-voronoi-chessBoard.png" width="180" align="right" alt="Class Map Visualisation"/></div>
+    <div class="maintab-content">
+      <p>Even though labelled data is not required for the training process of Self-Organising Maps, in many applications class
+      labelling of some sort is available. The Class Visualisation is a visualisation uncovering the distribution and arrangement of the
+      classes over the map. This visualisation helps the user to gain a better understanding and analysis of the mapping created by the
+      SOM, e.g. through comparing the results of the manual labelling and automatic arrangement. The Class Map visualisation technique
+      smoothly colours a SOM according to the distribution and location of the given class labels. It allows the user to easier assess
+      the quality of the manual labelling by highlighting outliers and border data close to different classes.</p>
+      <p>Rudolf Mayer, Taha Abdel Aziz, and Andreas Rauber. <strong>Visualising Class Distribution on Self-Organising Maps</strong>. In <em>Proceedings
+      of the <a href="http://www.icann2007.org/" target="_blank">International Conference on Artificial Neural Networks (ICANN'07)</a></em>,
+      Porto, Portugal, September 9-13 2007. Springer Verlag.
+      <a href="http://www.ifs.tuwien.ac.at/~mayer/publications/pdf/may_icann07.pdf"><img border="0" src="images-style/icon-pdf.png"></a>      
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Cluster Connections</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_ClusterConn_0.70_1.00_1.50.png" width="180" align="right" alt="Cluster Connections Visualisation" /></div>
+    <div class="maintab-content">
+      <p>Visualises the relationship of SOM-nodes, to facilitate the detection of cluster boundaries without modifying the
+      architecture or the basic training process of SOM. This is achieved by displaying a grid of connected nodes, where the intensity
+      of the connection, indicated by colour coding, mirrors the similarity of the underlying data items.</p>
+      <p>Dieter Merkl and Andreas Rauber. <strong>Alternative Ways for Cluster Visualization in Self-Organizing Maps</strong>. In <em>Proceedings
+      of the Workshop on Self-Organizing Maps (WSOM97)</em>, Helsinki, Finland, June 4-6 1997.
+      <a href="http://www.ifs.tuwien.ac.at/ifs/research/pub_ps/mer_wsom97.ps.gz"><img border="0" src="images-style/icon-pdf.png"></a>      
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Component Planes</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_ComponentPlanes_pet_width.png" width="180" align="right" alt="Component Planes Visualisation" /></div>
+    <div class="maintab-content">
+      <p>Component planes show the values of a single component (attribute, feature) over the whole map, thus they are useful to see
+      in which map areas a certain attribute has high influence.</p>
+      <p>They can also be used to identify related attributes, by <strong>clustering</strong> the component planes</p>
+      <p>A special type of component planes visualisation is the <strong>Rhythm Pattern Attributes Visualisation</strong>, which groups a
+      certain set of components together.</p>
+      <p>Juha Vesanto:<strong>SOM-Based Data Visualization Methods.</strong> In <em>Intelligent Data Analysis</em>, 3(2):111-126, 1999.</p>
+      <p>Juha Vesanto and Jussi Ahola: <strong>Hunting for Correlations in Data Using the Self-Organizing Map</strong>. In <em>Proceeding
+      of the International ICSC Congress on Computational Intelligence Methods and Applications (CIMA '99)</em>, pp 279-285. ICSC Academic
+      Press, 1999.</p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Vector Fields</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_FlowBorder_sigma_1.8.png" width="180" align="right" alt="Vector Fields Visualisation" /></div>
+    <div class="maintab-content">
+      <p>This visualisation provides two different methods for depicting the SOM based on vector fields, namely the Gradient Field
+      and Borderline visualisations, to show the clustering structure at various levels of detail. This method can be used on aggregated
+      parts of the SOM to show which factors contribute to the clustering structure, and for finding correlations and dependencies in
+      the underlying data.</p>
+      <p>Georg Poelzlbauer, Michael Dittenbach, Andreas Rauber. <strong>Advanced visualization of Self-Organizing Maps with vector
+      fields.</strong> <a class="refLink"
+        href="http://www.sciencedirect.com/science?_ob=GatewayURL&amp;_method=citationSearch&amp;_urlVersion=4&amp;_origin=SDVIALERTHTML&amp;_version=1&amp;_uoikey=B6T08-4K7166Y-4&amp;md5=f8260f66027afdb1d445893049cad9d6">Neural
+      Networks, 19(6-7):911-922</a>, July-August 2006.</p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Hit Histogram</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_HitHistogram.png" width="180" align="right" alt="Hit Histogram Visualisation" /></div>
+    <div class="maintab-content">
+      <p>The <strong>Hit Histogram</strong> visualises density on the SOM, by counting how many input vectors are mapped onto each SOM node.
+      In the Java SOMToolbox, this densitiy is indicated by colour-coding the SOM nodes.</p>
+      <br/><br/><br/>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Metro Map</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_MetroMap_bins6_snapped.png" width="180" align="right" alt="Metro Map Visualisation" /></div>
+    <div class="maintab-content">
+      <p>To help in understanding the influence of single variables or components on clusterings, the Metro-Map is a novel method
+      for the visualisation of Component Planes for SOMs. Metro maps are based on the discretisation of the components, and makes use of
+      the well-known metro-map metaphor. It depicts consistent values and their ordering across the map for discretisations of various
+      components and their correlations in terms of directions on the map. Component Lines are drawn for each component of the data,
+      allowing the combination of numerous Component Planes into one plot. It is also possible to further aggregate the visualisation,
+      by grouping highly correlated variables, i.e. similar lines on the map. Further, the most significant components can be selected.</p>
+      <p>Robert Neumayer, Rudolf Mayer, Georg Pölzlbauer, and Andreas Rauber. <strong>The metro visualisation of component
+      planes for self-organising maps.</strong> In <em>Proceedings of the International Joint Conference on Neural Networks (IJCNN'07)</em>,
+      Orlando, FL, USA, August 12 - 17 2007. IEEE Computer Society.
+      <a href="http://www.ifs.tuwien.ac.at/~mayer/publications/pdf/NEU07_ijcnn.pdf"><img border="0" src="images-style/icon-pdf.png"></a>
+      </p>
+      <p>Robert Neumayer, Rudolf Mayer, and Andreas Rauber. <strong>Component selection for the metro visualisation of the
+      SOM</strong>. In <em>Proceedings of the <a href="http://www.wsom07.org/" target="_blank">6th International Workshop on
+      Self-Organizing Maps (WSOM'07)</a></em>, Bielefeld, Germany, September 3 - 6 2007. 
+      <a href="http://www.ifs.tuwien.ac.at/~mayer/publications/pdf/NEU07_wsom.pdf"><img border="0" src="images-style/icon-pdf.png"></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Minimum Spanning Tree</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_MSTdata.png" width="180" align="right" alt="Minimum Spanning Tree Visualisation" /></div>
+    <div class="maintab-content">
+      <br/><br/><br/><br/>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Neighbourhood Graph</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_NeighbourhoodKnn_k22.png" width="180" align="right" alt="Neighbourhood Graph Visualisation" /></div>
+    <div class="maintab-content">
+      <p>The Neighbourhood Graph is a novel visualisation technique that takes the density of the data into account. The method
+      defines graphs resulting from nearest neighbor- and radius-based distance calculations in the data space, and shows projections of
+      these graph structures on the map. It can then be observed how relations between the data are preserved by the projection,
+      yielding interesting insights into the topology of the mapping, and helping to identify outliers as well as dense regions.</p>
+      <p>Georg Poelzlbauer, Andreas Rauber, and Michael Dittenbach: ><strong>Advanced visualization techniques for
+      self-organizing maps with graph-based methods.</strong> In <em>Proceedings of the Second International Symposium on Neural Networks
+      (ISNN'05)</em>, pp 75-80, Chongqing, China, May 30 - June 1 2005. Springer-Verlag.
+      <a href="http://www.ifs.tuwien.ac.at/~poelzlbauer/publications/Poe05ISNN.pdf"><img border="0" src="images-style/icon-pdf.png"></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2 id="SDH">Smoothed Data Histograms</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_SDH_smooth22.png" width="180" align="right" alt="Smoothed Data Histograms Visualisation" /></div>
+    <div class="maintab-content">
+      <p>Smoothed Data Histograms are a visualization method that show the data distribution of the data samples by counting a
+      number of most likely positions for each sample. The results can be visualized in a very intuitive landscape-like way, with
+      islands and mountains in densely occupied regions and oceans in between.</p>
+      <p>Besides the original algorithm, the Java SOMToolbox provides two additional variations, with weighted and normalised
+      weighted distances.</p>
+      <p>Elias Pampalk, Andreas Rauber, Dieter Merkl. <strong>Using Smoothed Data Histograms for Cluster Visualization in
+      Self-Organizing Maps</strong>. In <em>Proceedings of the Intl Conf on Artificial Neural Networks (ICANN 2002)</em>, pp.871-876, August
+      27.-30. 2002, Madrid, Spain.
+      <a href="http://www.ifs.tuwien.ac.at/ifs/research/pub_pdf/pam_icann02.pdf"><img border="0" src="images-style/icon-pdf.png"></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>Sky Metaphor Visualisation</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_Sky_SDH_smoothing30_Yellow.png" width="180" align="right" alt="Sky Metahpor Visualisation" /></div>
+    <div class="maintab-content">
+      <p>Although various visualisations have been proposed for Self-Organising Maps, these techniques lack in distinguishing
+      between the items mapped to the same unit. The Sky Metaphor Visualisation is a novel technique for the visualisation of
+      Self-Organising Maps that displays inputs not in the centre of the map units, but shifts them towards the closest neighbours, the
+      degree of the movement depending on the similarity to the neighbours. The night-sky visualisation facilitates better understanding
+      of the underlying data.</p>
+      <p>Khalid Latif and Rudolf Mayer. <strong>Sky-Metaphor Visualisation for Self-Organising Maps</strong>. In <em>Proceedings of the <a
+        href="http://i-know.know-center.tugraz.at/i_know_07" target="_blank">7th International Conference on Knowledge Management
+      (I-KNOW'07)</a></em>, Graz, Austria, September 5 - 7 2007.
+      <a href="http://www.ifs.tuwien.ac.at/~mayer/publications/pdf/lat_iknow07.pdf"><img border="0" src="images-style/icon-pdf.png"></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>U-Matrix</h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_UMatrix.png" width="180" align="right" alt="U-Matrix Visualisation" /></div>
+    <div class="maintab-content">
+      <p>The unified distance matrix, or U-Matrix, is calculated as the distance in the input space between weight vectors that are
+      neighbouring each other on the map. For visualization purposes, the average for each node is computed of its topological
+      neighbors. The U-Matrix can be depicted in two ways, either by showing the inter-node distances, or by showing only the average
+      values. The former method requires insertion of additional patches to the map between nodes, and the original positions of the
+      nodes are assigned the average distance values The U-Matrix is suitable to identify possible interpolating units and outliers, as
+      well as dense regions, where inter-node distances are low.</p>
+    </div>
+    <div class="maintab-image"><img src="images/visualisations/iris_DMatrix.png" width="180" align="right" alt="D-Matrix Visualisation" /></div>
+    <div class="maintab-content">
+      <p>An alternative display is to depict the distance values only</p>
+      <p>Alfred Ultsch and H. Peter Siemon. <strong>Kohonen's self-organizing feature maps for exploratory data analysis.</strong> In <em>Proceedings
+      of the International Neural Network Conference (INNC'90)</em>, pages 305-308. Kluwer, 1990.
+      <a href="http://www.uni-marburg.de/fb12/datenbionik/pdf/pubs/1990/UltschSiemon90"><img src="images-style/icon-pdf.png"/></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>P-Matrix </h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_PMatrix.png" width="180" align="right" alt="P-Matrix Visualisation" /></div>
+    <div class="maintab-content">
+      <p>The P-Matrix is a display of the density relationships in the data space using Pareto Density Estimation. While the
+      P-Matrix is useful for clustering, it can also be used for a non-ambiguous display of a non planar neuron space.</p>
+      <p>Alfred Ultsch. <strong>Maps for the Visualization of high-dimensional Data Spaces</strong>. In <em>Proceedings
+      Workshop on Self-Organizing Maps (WSOM 2003)</em>, Kyushu, Japan, (2003), pp. 225-230. 
+      <a href="http://www.mathematik.uni-marburg.de/~databionics/de/downloads/papers/ultsch03maps.pdf"><img src="images-style/icon-pdf.png"/></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="maintab">
+    <h2>U*-Matrix </h2>
+    <div class="maintab-image"><img src="images/visualisations/iris_UStarMatrix.png" width="180" align="right" alt="U*-Matrix Visualisation" /></div>
+    <div class="maintab-content">
+      <p>Using the U-Matrix methods for clustering has the advantage of a nonlinear disentanglement of complex cluster structures.
+      Distances inside a cluster are, however, depicted in the same manner as distances between different clusters on an U-Matrix. This
+      may prevent the detection of clusters in some data sets. An enhancement of the U-Matrix by taking density information into account
+      is called U*-Matrix. The U*-Matrix shows structures compatible with a clustering of the data by other algorithms. The combination
+      of distance and density information is expected to be very useful for data mining and knowledge discovery.</p>
+      <p>Alfred Ultsch. <strong>U*-Matrix: a Tool to visualize Clusters in high dimensional Data</strong>, <em>Technical Report No. 36</em>,
+      Dept. of Mathematics and Computer Science, University of Marburg, Germany, (2003).
+      <a href="http://www.mathematik.uni-marburg.de/~databionics/en/downloads/papers/ultsch03ustar.pdf"><img src="images-style/icon-pdf.png"/></a>
+      </p>
+    </div>
+  </div>
+  
+  <script type="text/javascript"> var svnId = "$Id: visualisations.html 3816 2010-09-15 14:48:45Z frank $"; </script>
+  <!--#include virtual="footer.shtml" -->
+  <script type="text/javascript" src="insertFooter.js"></script>    
+
+</div>
+
+</body>
+</html>
+  

@@ -1,0 +1,27 @@
+#SOM Map Decription File
+#created by ghsom 1.4 (Growing Hierarchical Self-Organizing Map)
+#Michael Dittenbach
+#
+$TYPE rect
+$XDIM 6
+$YDIM 5
+$VEC_DIM 481
+$STORAGE_DATE Thu Apr  5 16:19:14 2001
+$TRAINING_TIME 3.519999981
+$LEARNRATE_TYPE ghsom-specific (sawtooth)
+$LEARNRATE_INIT 0.5
+$NEIGHBORHOOD_TYPE ghsom-specific (sawtooth)
+$NEIGHBORHOOD_INIT 3
+$RAND_INIT 17
+$ITERATIONS_TOTAL 5100
+$NR_TRAINVEC_TOTAL 51
+$VEC_NORMALIZED 1
+$URL_TRAINING_VEC vectors/demo_1.tfxidf
+$URL_WEIGHT_VEC output/som_demo1_a_1_1_0_0.wgt
+$URL_MAPPED_INPUT_VEC vectors/demo_1.tfxidf
+$URL_NODE_DESCR output/som_demo1_a_1_1_0_0.node
+$DESCRIPTION NONE
+$GHSOM_EXPAND_CYCLES 100
+$GHSOM_MAX_CYCLES 0
+$GHSOM_TAU_1 1
+$GHSOM_TAU_2 1

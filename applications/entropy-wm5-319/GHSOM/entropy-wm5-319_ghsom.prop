@@ -1,0 +1,13 @@
+workingDirectory=./
+outputDirectory=./output/entropy-wm5-319
+namePrefix=entropy-wm5-319
+vectorFileName=./data/entropy-wm5-319_ghsom.in
+sparseData=yes
+isNormalized=false
+randomSeed=7
+xSize=2
+ySize=2
+learnRate=0.7
+numIterations=20000
+tau=0.03
+tau2=0.004

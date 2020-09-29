@@ -1,0 +1,217 @@
+#SOM Node Description File
+#created by ghsom1.4 (Growing Hierarchical Self-Organizing Map)
+#Michael Dittenbach
+#
+$TYPE rect
+$XDIM 6
+$YDIM 5
+$POS_X 0
+$POS_Y 0
+$NODE_ID 1_1_0/0_0/0
+$QUANTERROR_NODE 0.9115136862
+$NR_VEC_MAPPED 3
+$MAPPED_VECS parser/histo/mer_fns97.html.idv parser/histo/mer_wirn97.html.idv parser/histo/mer_wsom97.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 1
+$POS_Y 0
+$NODE_ID 1_1_0/0_1/0
+$QUANTERROR_NODE 0.02221841365
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/rau_esann98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 2
+$POS_Y 0
+$NODE_ID 1_1_0/0_2/0
+$QUANTERROR_NODE 0.4625679255
+$NR_VEC_MAPPED 3
+$MAPPED_VECS parser/histo/mik_ecp97.html.idv parser/histo/mik_ijcai97.html.idv parser/histo/mik_keml97.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 3
+$POS_Y 0
+$NODE_ID 1_1_0/0_3/0
+$QUANTERROR_NODE 0.6043214798
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/kor_twd98.html.idv parser/histo/mik_aips98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 4
+$POS_Y 0
+$NODE_ID 1_1_0/0_4/0
+$QUANTERROR_NODE 0.004877102561
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/duf_vv98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 5
+$POS_Y 0
+$NODE_ID 1_1_0/0_5/0
+$QUANTERROR_NODE 0.7105499506
+$NR_VEC_MAPPED 3
+$MAPPED_VECS parser/histo/sha_aime97.html.idv parser/histo/sha_jaim98.html.idv parser/histo/sha_scamc96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 0
+$POS_Y 1
+$NODE_ID 1_1_0/0_0/1
+$QUANTERROR_NODE 0.004835476633
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/koh_icann96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 1
+$POS_Y 1
+$NODE_ID 1_1_0/0_1/1
+$QUANTERROR_NODE 0.0045653251
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/rau_caise98dc.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 2
+$POS_Y 1
+$NODE_ID 1_1_0/0_2/1
+$QUANTERROR_NODE 0.01348932087
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/mik_aa97.html.idv parser/histo/mik_scamc96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 3
+$POS_Y 1
+$NODE_ID 1_1_0/0_3/1
+$QUANTERROR_NODE 0.974142611
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/ell_dexa96b.html.idv parser/histo/ell_sast96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 4
+$POS_Y 1
+$NODE_ID 1_1_0/0_4/1
+$QUANTERROR_NODE 0.01387515943
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/tjo_01.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 5
+$POS_Y 1
+$NODE_ID 1_1_0/0_5/1
+$QUANTERROR_NODE 0.003065147204
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/hor_jieee98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 0
+$POS_Y 2
+$NODE_ID 1_1_0/0_0/2
+$QUANTERROR_NODE 0.008776702918
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/rau_icann98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 1
+$POS_Y 2
+$NODE_ID 1_1_0/0_1/2
+$QUANTERROR_NODE 0.003981261048
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/rau_wirn98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 2
+$POS_Y 2
+$NODE_ID 1_1_0/0_2/2
+$QUANTERROR_NODE 0
+$NR_VEC_MAPPED 0
+$MAPPED_VECS 
+$NR_SOMS_MAPPED 0
+$POS_X 3
+$POS_Y 2
+$NODE_ID 1_1_0/0_3/2
+$QUANTERROR_NODE 0.3072415292
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/ell_compsac96.html.idv parser/histo/ell_dexa96a.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 4
+$POS_Y 2
+$NODE_ID 1_1_0/0_4/2
+$QUANTERROR_NODE 0.01011002716
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/tjo_02.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 5
+$POS_Y 2
+$NODE_ID 1_1_0/0_5/2
+$QUANTERROR_NODE 0.9394692183
+$NR_VEC_MAPPED 3
+$MAPPED_VECS parser/histo/hor_jcbm97.html.idv parser/histo/mik_bidamap97.html.idv parser/histo/mik_jaim96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 0
+$POS_Y 3
+$NODE_ID 1_1_0/0_0/3
+$QUANTERROR_NODE 0.6679286957
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/mer_dexa98.html.idv parser/histo/mer_wsom97a.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 1
+$POS_Y 3
+$NODE_ID 1_1_0/0_1/3
+$QUANTERROR_NODE 0.0009341284167
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/mer_codas96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 2
+$POS_Y 3
+$NODE_ID 1_1_0/0_2/3
+$QUANTERROR_NODE 0.005564979278
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/alb_lisa98.html.idv parser/histo/democollection.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 3
+$POS_Y 3
+$NODE_ID 1_1_0/0_3/3
+$QUANTERROR_NODE 0.8621683121
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/ber_hicss98.html.idv parser/histo/mer_cise98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 4
+$POS_Y 3
+$NODE_ID 1_1_0/0_4/3
+$QUANTERROR_NODE 0.005361608695
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/win_nlp96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 5
+$POS_Y 3
+$NODE_ID 1_1_0/0_5/3
+$QUANTERROR_NODE 0.04960148409
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/han_idamap97.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 0
+$POS_Y 4
+$NODE_ID 1_1_0/0_0/4
+$QUANTERROR_NODE 1.035631537
+$NR_VEC_MAPPED 3
+$MAPPED_VECS parser/histo/mer_nlp98.html.idv parser/histo/mer_pkdd97.html.idv parser/histo/mer_sigir97.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 1
+$POS_Y 4
+$NODE_ID 1_1_0/0_1/4
+$QUANTERROR_NODE 0.3800856471
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/mer_dexa97.html.idv parser/histo/mer_icail97.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 2
+$POS_Y 4
+$NODE_ID 1_1_0/0_2/4
+$QUANTERROR_NODE 0.3454012573
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/has_eann97.html.idv parser/histo/mer_eann98.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 3
+$POS_Y 4
+$NODE_ID 1_1_0/0_3/4
+$QUANTERROR_NODE 0.005094829947
+$NR_VEC_MAPPED 1
+$MAPPED_VECS parser/histo/mer_aiem96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 4
+$POS_Y 4
+$NODE_ID 1_1_0/0_4/4
+$QUANTERROR_NODE 0.1605733484
+$NR_VEC_MAPPED 2
+$MAPPED_VECS parser/histo/koh_acnn96.html.idv parser/histo/koh_esann96.html.idv 
+$NR_SOMS_MAPPED 0
+$POS_X 5
+$POS_Y 4
+$NODE_ID 1_1_0/0_5/4
+$QUANTERROR_NODE 0.5709522367
+$NR_VEC_MAPPED 3
+$MAPPED_VECS parser/histo/koh_cbms97.html.idv parser/histo/koh_eann97.html.idv parser/histo/koh_icann98.html.idv 
+$NR_SOMS_MAPPED 0

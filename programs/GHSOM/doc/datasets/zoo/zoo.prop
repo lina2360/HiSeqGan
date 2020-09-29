@@ -1,0 +1,12 @@
+outputDirectory=../maps/zoo
+namePrefix=zoo
+vectorFileName=zoo.vec
+templateFileName=zoo.tv
+isNormalized=false
+randomSeed=7
+workingDirectory = ./
+
+xSize=15
+ySize=10
+learnRate=0.7
+numIterations=50000

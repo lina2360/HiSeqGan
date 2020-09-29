@@ -1,0 +1,13 @@
+workingDirectory=./
+outputDirectory=./output/wpg-credit-clean-item-seq
+namePrefix=wpg-credit-clean-item-seq
+vectorFileName=./data/wpg-credit-clean-item-seq_ghsom.in
+sparseData=yes
+isNormalized=false
+randomSeed=7
+xSize=2
+ySize=2
+learnRate=0.7
+numIterations=20000
+tau=0.1
+tau2=0.01

@@ -1,0 +1,11 @@
+$TYPE som
+$GRID_LAYOUT rectangular
+$GRID_TOPOLOGY planar
+$XDIM 2
+$YDIM 2
+$ZDIM 1
+$VEC_DIM 2
+19.17252923119249 92.86914325960235 SOM_MAP_wm5-normalize-experiment-12-item-seq_(0/0/0)
+22.74963247253423 98.9999999999997 SOM_MAP_wm5-normalize-experiment-12-item-seq_(1/0/0)
+16.416460901075457 89.39452953782963 SOM_MAP_wm5-normalize-experiment-12-item-seq_(0/1/0)
+23.44777700239491 95.64666219687551 SOM_MAP_wm5-normalize-experiment-12-item-seq_(1/1/0)

@@ -1,0 +1,14 @@
+$TYPE template
+$XDIM 7
+$YDIM 1000
+$VEC_DIM 10
+0 component_0 0 0 0 0 0.0
+1 component_1 0 0 0 0 0.0
+2 component_2 0 0 0 0 0.0
+3 component_3 0 0 0 0 0.0
+4 component_4 0 0 0 0 0.0
+5 component_5 0 0 0 0 0.0
+6 component_6 0 0 0 0 0.0
+7 component_7 0 0 0 0 0.0
+8 component_8 0 0 0 0 0.0
+9 component_9 0 0 0 0 0.0

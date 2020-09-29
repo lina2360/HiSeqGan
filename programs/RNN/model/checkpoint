@@ -1,0 +1,2 @@
+model_checkpoint_path: "high_all_wMSE_layers"
+all_model_checkpoint_paths: "high_all_wMSE_layers"

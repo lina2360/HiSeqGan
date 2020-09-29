@@ -1,0 +1,37 @@
+$TYPE som
+$GRID_TOPOLOGY planar
+$GRID_LAYOUT rectangular
+$XDIM 2
+$YDIM 2
+$ZDIM 1
+$VEC_DIM 3
+$STORAGE_DATE 2019/11/26 ¤W¤È 9:49
+$TRAINING_TIME 
+$LEARNRATE_TYPE exponential
+$LEARNRATE_INIT 0.7
+$NEIGHBORHOOD_TYPE exponential
+$NEIGHBORHOOD_INIT 1.0
+$RAND_INIT 7
+$ITERATIONS_TOTAL 20000
+$NR_TRAINVEC_TOTAL 87438
+$ADAPTIVE_COORDINATES_THRESHOLD 
+$VEC_NORMALIZED true
+$QUANTERROR_MAP 562.0475275300216
+$QUANTERROR_VEC 0.006427954979871699
+$URL_TRAINING_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wpg\GHSOM/\./data/wpg_ghsom.in
+$URL_TRAINING_VEC_DESCR 
+$URL_WEIGHT_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wpg\GHSOM/\./output/wpg\wpg_submap_lvl2_0x1.wgt
+$URL_QUANTERR_MAP 
+$URL_MAPPED_INPUT_VEC 
+$URL_MAPPED_INPUT_VEC_DESCR 
+$URL_UNIT_DESCR C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wpg\GHSOM/\./output/wpg\wpg_submap_lvl2_0x1.unit
+$URL_TEMPLATE_VECTOR null
+$URL_DATA_WINNER_MAPPING C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wpg\GHSOM/\./output/wpg\wpg_submap_lvl2_0x1.dwm
+$URL_CLASS_INFO 
+$URL_LABELS 
+$METRIC at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+$LAYER_REVISION $Revision: 4300 $
+$DESCRIPTION 
+$AVAILABLE_VIS 
+$DATA_TYPE unknown
+$DATA_DIM 

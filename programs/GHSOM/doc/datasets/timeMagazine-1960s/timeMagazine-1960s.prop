@@ -1,0 +1,12 @@
+outputDirectory=../../maps/timeMagazine-1960s
+namePrefix=timeMagazine-1960s
+vectorFileName=timeMagazine-1960s.vec
+templateFileName=timeMagazine-1960s.tv
+isNormalized=false
+randomSeed=7
+workingDirectory = ./
+
+xSize=15
+ySize=10
+learnRate=0.7
+numCycles=100

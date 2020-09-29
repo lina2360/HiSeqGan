@@ -1,0 +1,7 @@
+06-14 18:36:02 root         INFO     ./applications/wm5-normalize1/GHSOM/output/wm5-normalize1-item-seq\wm5-normalize1-item-seq.unit
+./applications/wm5-normalize1/GHSOM/output/wm5-normalize1-item-seq\wm5-normalize1-item-seq_submap_lvl2_0x1.unit
+./applications/wm5-normalize1/GHSOM/output/wm5-normalize1-item-seq\wm5-normalize1-item-seq_submap_lvl2_1x1.unit
+layer: [4, 6]
+max_layer: 2
+number_of_digits: [1, 1]
+

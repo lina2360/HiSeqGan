@@ -1,0 +1,48 @@
+03-13 20:52:12 root         INFO     ./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_0x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_0x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_1x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_1x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_2x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_2x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_2x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x0_0x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x0_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_0x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_0x3.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x3.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_2x2_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl4_1x0_0x0_1x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl4_1x1_0x1_0x1.unit
+layer: [9, 8, 6, 6]
+max_layer: 4
+number_of_digits: [1, 1, 1, 1]
+
+03-13 20:52:14 root         INFO     ./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_0x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_0x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_1x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_1x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_2x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_2x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl2_2x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x0_0x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x0_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_0x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_0x3.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x2.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_1x1_1x3.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl3_2x2_1x1.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl4_1x0_0x0_1x0.unit
+./applications/wm5_all_reshape/GHSOM/output/wm5_all_reshape-item-seq\wm5_all_reshape-item-seq_submap_lvl4_1x1_0x1_0x1.unit
+layer: [9, 8, 6, 6]
+max_layer: 4
+number_of_digits: [1, 1, 1, 1]
+

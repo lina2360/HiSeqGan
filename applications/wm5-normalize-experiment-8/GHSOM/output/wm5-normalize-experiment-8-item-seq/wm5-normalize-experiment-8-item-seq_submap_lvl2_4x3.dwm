@@ -1,0 +1,8 @@
+$FILE_FORMAT_VERSION 1.1
+$NUM_WINNERS 4
+$NUM_VECTORS 2
+$METRIC at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+23
+1 0 0 0 0 0.21162 1 1 0.21162 0 1 0.42358
+90
+0 1 0 0 0 0.21196 1 1 0.21196 1 0 0.42358

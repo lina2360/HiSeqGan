@@ -1,0 +1,20 @@
+outputDirectory=../maps/spambase
+namePrefix=spambase
+vectorFileName=spambase.vec
+templateFileName=spambase.tv
+isNormalized=false
+randomSeed=7
+workingDirectory = ./
+
+useDatabase=false
+databaseServerAddress=
+databaseName=vectors
+databaseUser=
+databasePassword=
+databaseTableNamePrefix=spambase
+
+xSize=16
+ySize=16
+learnRate=0.7
+#metricName=
+numCycles=100

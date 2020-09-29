@@ -1,0 +1,37 @@
+$TYPE som
+$GRID_TOPOLOGY planar
+$GRID_LAYOUT rectangular
+$XDIM 3
+$YDIM 4
+$ZDIM 1
+$VEC_DIM 4
+$STORAGE_DATE 2020/2/28 ¤U¤È 10:38
+$TRAINING_TIME 
+$LEARNRATE_TYPE exponential
+$LEARNRATE_INIT 0.7
+$NEIGHBORHOOD_TYPE exponential
+$NEIGHBORHOOD_INIT 1.0
+$RAND_INIT 7
+$ITERATIONS_TOTAL 20000
+$NR_TRAINVEC_TOTAL 2466
+$ADAPTIVE_COORDINATES_THRESHOLD 
+$VEC_NORMALIZED true
+$QUANTERROR_MAP 4.23577189370088
+$QUANTERROR_VEC 0.001717669056650803
+$URL_TRAINING_VEC D:\HiSeqGAN-System\.\applications\entropy-wm5-319\GHSOM/\./data/entropy-wm5-319_ghsom.in
+$URL_TRAINING_VEC_DESCR 
+$URL_WEIGHT_VEC D:\HiSeqGAN-System\.\applications\entropy-wm5-319\GHSOM/\./output/entropy-wm5-319\entropy-wm5-319_submap_lvl2_1x2.wgt
+$URL_QUANTERR_MAP 
+$URL_MAPPED_INPUT_VEC 
+$URL_MAPPED_INPUT_VEC_DESCR 
+$URL_UNIT_DESCR D:\HiSeqGAN-System\.\applications\entropy-wm5-319\GHSOM/\./output/entropy-wm5-319\entropy-wm5-319_submap_lvl2_1x2.unit
+$URL_TEMPLATE_VECTOR null
+$URL_DATA_WINNER_MAPPING D:\HiSeqGAN-System\.\applications\entropy-wm5-319\GHSOM/\./output/entropy-wm5-319\entropy-wm5-319_submap_lvl2_1x2.dwm
+$URL_CLASS_INFO 
+$URL_LABELS 
+$METRIC at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
+$LAYER_REVISION $Revision: 4300 $
+$DESCRIPTION 
+$AVAILABLE_VIS 
+$DATA_TYPE unknown
+$DATA_DIM 

@@ -1,0 +1,100 @@
+SOMToolbox How-To:
+------------------
+
+Create a directory anywhere in your home directory.
+
+Copy the 3 template files from /usr/local/somtoolbox/template/* to the directory you created.
+
+Copy your data vector files (in SOMLib format) to the same directory. (Note: all vector files may be .gz gzip compressed).
+
+Edit the file vector.tv (the template vector file):
+Change the value $VEC_DIM to the number of vector attributes in your vector file. The number of lines after the $VEC_DIM line must equal the number of vector attributes, each attribute is described by one line: 
+1 frequ_1 1 1 1 1 1.0
+first argument is increasing index number, 2nd argument is attribute description, rest of the line should be 1 1 1 1 1.0
+
+Edit the som.prop file:
+workingDirectory=<the directory you created>
+outputDirectory=<same as above or empty>
+namePrefix=<any project name you like>
+vectorFileName=<name of *normalized* vector file - see below>
+templateFileName=vector.tv (the template vector file from above)
+All other parameters control the SOM algorithm and can be experimented with.
+
+Edit the build.xml file:
+- Change the property "workdir" to your directory.
+- Change the property "prefix" to the namePrefix as set in the som.prop file above
+
+There are 3 targets in the build.xml file:
+- normalize (vector normalization)
+- train (SOM training)
+- run (run the SOMtoolbox application)
+
+In the target "normalize" 
+- change the 1st arg value to contain the name of your vector file
+- change the 2nd arg to the same, except for changing the file name to include .norm to reflect that the output is normalized.
+- use the same file name for vectorFileName= in the som.prop file (see above)!
+
+In the target "train" 
+- arg value must be the full path to the edited som.prop file (nothing to do if you did not change the filename)
+
+In the target "run"
+- if properties "workdir" and "prefix" are set properly, there should be nothing to change here
+- the path after the -p argument is the path to music files which might be played through the PlaySOM application (only applicable if vectors have been extracted from audio).
+
+In your directory, call the following commands in that order:
+ant normalize	(may take 0.5 - 2 minutes)
+ant train	(may take about 3 minutes)
+
+If an error occurs, please check the parameters provided.
+At this point check if 4 files in your directory have been created with the namePrefix provided in som.prop and the follwing extensions: .dwm.gz, .map.gz, .unit.gz, .wgt.gz
+Then call:
+
+ant run
+
+The SOMToolbox application (a.k.a. PlaySOM) will show up.
+
+Maximize the application window. 
+In the window center, press the middle mouse button to zoom out the map.
+
+Available Visualization methods from the menu:
+- Component Planes:
+Each vector attribute visualized individually in magnitude. (Open Dialog: choose vector.tv file)
+- Rhythm Patterns attributes: 
+only applicable to Rhythm Patterns 1440-dim vectors. shows different visualization of rhythm patterns attribute groups
+- Classic U-Matrix:
+basically distances between SOM units
+- D-Matrix:
+similar to U-Matrix, also considering diagonal neighbours
+- Quant. error and Mean quant. error
+The magnitude of the quantization error and mean q.e. of every unit
+- Smoothed Data Histograms:
+(Open-Dialogs request normalized vector file and <prefix>.dwm.gz files) a Cluster visualization based on unit counts (adjust SDH Control parameter to get different cluster visualizations)
+- Weighted SDH and Weighted SDH (norm.):
+similar to Smoothed Data Histograms, however with different weight factors.
+
+Note: The PlaySOM Control and the Icon-Bar are only useful when dealing with audio vector files. The Icons enable selection of SOM units and thus the creation of Playlists. Playlists can be refined in the PlaySOM Control section and then exported to a music player by the button "Play all".
+
+
+INSTALLING LOCALLY:
+Prerequisites:
+- Java VM
+- ant installed (ant.apache.org)
+
+Copy the complete /usr/local/somtoolbox directory to your computer, e.g.:
+scp -r username@athena.ifs.tuwien.ac.at:/usr/local/somtoolbox .
+
+In build.xml the basedir has to be adjusted to the directory where you put the somtoolbox program files.
+Then follow the same instructions as above locally.
+
+
+KNOWN BUGS:
+When doing 'normalize' under a Windows OS, the output file may contain , instead of . for comma (depending on your locale). Further steps will fail. Currently the solution is to use an editor to replace all occurences of , by . in the normalized vector file.
+
+Under Windows use double backslashes \\ as path separator in the som.prop file.
+
+The PlaySOM Control Playlist shrinks under certain screen resolutions. This is a Bug currently not solved.
+
+==================================================
+16.Nov.2005 by Thomas Lidy - lidy@ifs.tuwien.ac.at
+
+

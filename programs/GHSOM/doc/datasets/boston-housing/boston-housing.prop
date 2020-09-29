@@ -1,0 +1,11 @@
+outputDirectory=../maps/boston-housing
+namePrefix=boston-housing
+vectorFileName=boston-housing.vec
+templateFileName=boston-housing.tv
+xSize=10
+ySize=10
+learnRate=0.7
+randomSeed=11
+numIterations=15000
+isNormalized=true
+workingDirectory = ./

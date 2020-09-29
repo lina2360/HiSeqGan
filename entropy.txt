@@ -1,0 +1,23 @@
+0.1 0.01 61 3.105188376253054
+0.1 0.01 61 3.105188376253054
+0.1 0.01 61 3.105188376253054
+0.1 0.1 11 1.1614136120313718
+0.1 0.01 61 3.105188376253054
+0.1 0.01 61 3.105188376253054 wm5-normalize-experiment-1
+0.9 0.01 48 2.4145674952220513 wm5-normalize-experiment-2
+0.01 0.01 128 4.13864575904613 wm5-normalize-experiment-3
+0.1 0.1 11 1.1614136120313718 wm5-normalize-experiment-4
+0.1 0.001 182 4.408893918579214 wm5-normalize-experiment-5
+0.1 0.0 31 3.8983374974931833 wm5-normalize-experiment-1-item-seq
+0.1 0.05 35 4.026237355722643 wm5-normalize-experiment-2-item-seq
+0.1 0.05 48 5.053471959082388 wm5-normalize-experiment-3-item-seq
+0.1 0.05 37 4.219693932157146 wm5-normalize-experiment-4-item-seq
+0.1 0.05 25 3.6960949860268317 wm5-normalize-experiment-5-item-seq
+0.1 0.01 67 5.417589531511803 wm5-normalize-experiment-6-item-seq
+0.1 0.1 67 5.417589531511803 wm5-normalize-experiment-7-item-seq
+0.1 0.01 67 5.417589531511803 wm5-normalize-experiment-6-item-seq
+0.1 0.1 20 3.39820170668499 wm5-normalize-experiment-7-item-seq
+0.01 0.01 96 6.278485141538371 wm5-normalize-experiment-8-item-seq
+0.01 0.1 34 4.3101797193002644 wm5-normalize-experiment-9-item-seq
+0.1 0.01 74 5.704663964545841 wm5_reshape_less-item-seq
+0.1 0.01 55 3.062365167412771 wm5-normalize-item-seq

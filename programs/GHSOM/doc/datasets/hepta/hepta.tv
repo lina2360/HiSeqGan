@@ -1,0 +1,8 @@
+# Hepta Dataset, http://www.uni-marburg.de/fb12/datenbionik/data?language_sync=1
+$TYPE template
+$XDIM 7
+$YDIM 212
+$VEC_DIM 3
+0 X 1 1 1 1 1.0
+1 Y 1 1 1 1 1.0
+2 Z 1 1 1 1 1.0

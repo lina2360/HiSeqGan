@@ -1,0 +1,61 @@
+# SOMToolbox version 0.7.5-4.svn4367
+
+# 1. Properties specifiying input data and generated output data
+workingDirectory = <the directory with your data files>                                                                                              	default: './'
+outputDirectory = <directory where files will be created>                                                                                            	default: './'
+namePrefix = <will be used as prefix in the SOM files created>                                                                             REQUIRED  
+vectorFileName = <name of normalized input vector file containing the training data>                                                       REQUIRED  
+templateFileName = <name of template vector file (describing the component names); if absent, components will be named 'component_i'.>               
+sparseData = <use yes if vectors are sparse (e.g. text data), no if vectors are not sparse (audio!)>                                                 	default: 'true'
+isNormalized = <whether vectorFile has been previously normalized; currently not used>                                                               	default: 'true'
+randomSeed = <Seed value for random number generator; reusing the same value ensures repeatability of the training process.>                         	default: '7'
+numCacheBlocks = <How many blocs to divide the training data to; 1 means all data will be read at once.>                                             	default: '1'
+
+
+# 2. Database properties; alternative to section 1 (input and output data).
+useDatabase = <enables reading input and template vector from the database>                                                                          	default: 'true'
+databaseServerAddress = <server IP or name>                                                                                                          	default: 'localhost'
+databaseName = <name of the database to use>                                                                                                         	default: 'localhost'
+databaseUser = <username to access the database>                                                                                                     	default: 'root'
+databasePassword = <password to access the database>                                                                                                 	default: ''
+databaseTableNamePrefix = <prefix to prepend to all tables generated; should be changed for each training>                                           	default: 'localhost'
+
+
+# 3. SOM training properties
+xSize = <size of the map in x direction>                                                                                                   REQUIRED  
+ySize = <size of the map in y direction>                                                                                                   REQUIRED  
+zSize = <size of the map in z direction; if ommitted or set to 1, a 2-D SOM will be created.>                                                        	default: '1'
+learnRate = <the learning rate (alpha)>                                                                                                              	default: '0.75'
+sigma = <the neighbourhood size (sigma / hc_i)>                                                                                                      
+numIterations = <number of training iterations; required, unless numCycles is given.>                                                                
+numCycles = <number of training cycles; required, unless numIterations is given.>                                                                    
+metricName = <the distance metric to be used for vector comparison>                                                                                  	default: 'at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric'
+tau = <the tau parameter for the Growing Grid and GHSOM models>                                                                                      	default: '1.0'
+growthQualityMeasureName = <the measure used to determin whether growth is still needed, e.g. in the Growing Grid>                                   	default: 'QuantizationError.mqe'
+
+
+# 3b. Batch SOM gproperties
+batchSOM = <whether to use the batch learning process>                                                                                               	default: 'false'
+neighbour_width = <the neighbour width for the batch training>                                                                                       	default: '3'
+
+
+# 3c. SOM grid layout properties
+gridLayout = <One of triangular, rectangular, hexagonal>                                                                                             	default: 'rectangular'
+gridTopology = <One of planar, cylindrical, toroid, spherical>                                                                                       	default: 'planar'
+
+
+# 3d. Miscellaneous SOM properties
+usePCA = <whether to use PCA initialisation>                                                                                                         	default: 'false'
+dumpEvery = <COMMENT ME!>                                                                                                                            	default: '-1'
+adaptiveCoordinatesThreshold = <COMMENT ME!>                                                                                                         
+minimumFeatureDensity = <COMMENT ME!>                                                                                                                
+datumToUnitMappings = <COMMENT ME!>                                                                                                                  
+classselectionmode = <COMMENT ME!>                                                                                                                   
+selectedClasses = <COMMENT ME!>                                                                                                                      
+classInfoFileName = <the name of the class information file>                                                                                         
+
+
+# 4. GHSOM training properties (GHSOM requires SOM training properties as well)
+tau2 = <the tau2 parameter for the GHSOM>                                                                                                            	default: '1.0'
+expandQualityMeasureName = <TODO>                                                                                                                    	default: 'at.tuwien.ifs.somtoolbox.layers.quality.QuantizationError.qe'
+

@@ -1,0 +1,36 @@
+03-15 19:40:58 root         INFO     ./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_0x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_0x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_1x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_1x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_2x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_2x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_3x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_3x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_0x0_0x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_1x1_1x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_2x1_1x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_2x1_1x2.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl4_1x1_1x1_0x0.unit
+layer: [8, 8, 6, 9]
+max_layer: 4
+number_of_digits: [1, 1, 1, 1]
+
+03-15 19:41:00 root         INFO     ./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_0x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_0x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_1x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_1x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_2x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_2x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_3x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl2_3x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_0x0_0x0.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_1x1_1x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_2x1_1x1.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl3_2x1_1x2.unit
+./applications/wm5_minutes_normalize/GHSOM/output/wm5_minutes_normalize-item-seq\wm5_minutes_normalize-item-seq_submap_lvl4_1x1_1x1_0x0.unit
+layer: [8, 8, 6, 9]
+max_layer: 4
+number_of_digits: [1, 1, 1, 1]
+

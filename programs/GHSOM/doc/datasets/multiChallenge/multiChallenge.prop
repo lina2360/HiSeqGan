@@ -1,0 +1,9 @@
+outputDirectory=output-multiChallenge
+namePrefix=multiChallenge
+vectorFileName=multiChallenge.vec
+templateFileName=multiChallenge.tv
+xSize=15
+ySize=15
+learnRate=0.7
+numCycles=10
+sigma=10

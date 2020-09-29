@@ -1,0 +1,16 @@
+<div id="footer">
+  <p class="uplink"><a href="#top">^top</a></p>
+  <hr/>
+  <div class="edited">
+    <span>
+      Please post your comments via the <a href="contact.html">contact form</a>.
+    </span>
+    <span align="right">
+      <script type="text/javascript">
+        document.write(getPageInfo());
+      </script>
+    </span>
+  </div>  
+</div>
+
+<script type="text/javascript">window.onload = createTOC</script>
