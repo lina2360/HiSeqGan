@@ -105,7 +105,7 @@ When you have executed the above instructions, you will do the following, and ge
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
 ```
-
+<center><img src='./images/The-HiSeqGAN-framework.png' width='400px'></center>
 ### Step 2 : Use SeqGAN generate sequence for sequence synthesis
 Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
 
