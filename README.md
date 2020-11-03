@@ -129,6 +129,8 @@ python execute-rnn.py --data=wm5-normalize --target=id --generated_num=55 --tota
 - First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 5712 original data, so here we use SeqGAN to generate 960 time series data.
 After SeqGAN has generated the data, we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
+<center><img src='./image/high3.jpg' width='1000px'></center>
+
 ### Step 3 :  Compare the accuracy of sequence prediction by RNN, HiSeqGAN
 - Execute the following command to compare the accuracy of sequence prediction by RNN, HiSeqGAN.
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
@@ -146,6 +148,9 @@ The RNN has the same setting as the previous experiment but this time it has to 
 ```math
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
 ```
+
+<center><img src='./image/high4.jpg' width='1000px'></center>
+
 ### Step 4 : From Cluster Prediction to Actual Value Prediction
 When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
