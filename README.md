@@ -107,6 +107,11 @@ When you have executed the above instructions, you will do the following, and ge
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
 ```
+
+```bash
+python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
+```
+
 <center><img src='./image/high2.jpg' width='800px'></center>
 
 ### Step 2 : Use SeqGAN generate sequence for sequence synthesis
