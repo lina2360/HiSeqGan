@@ -97,6 +97,8 @@ When you have executed the above instructions, you will do the following, and ge
     - The files consists of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit.
     - The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
+  
+<center><img src='./image/high1.jpg' width='1000px'></center>
 
 #### Generate the cluster sequence base on item
 
@@ -105,7 +107,7 @@ When you have executed the above instructions, you will do the following, and ge
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
 ```
-<center><img src='./image/high1.jpg' width='1000px'></center>
+<center><img src='./image/high2.jpg' width='1000px'></center>
 
 ### Step 2 : Use SeqGAN generate sequence for sequence synthesis
 Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
