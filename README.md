@@ -112,7 +112,7 @@ id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,we
 python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
 
-<center><img src='./image/high2.jpg' width='800px'></center>
+<center><img src='./image/high2.png' width='800px'></center>
 
 ### Step 2 : Use SeqGAN generate sequence for sequence synthesis
 Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
@@ -134,7 +134,7 @@ python execute-rnn.py --data=wm5-normalize --target=id --generated_num=55 --tota
 - First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 5712 original data, so here we use SeqGAN to generate 960 time series data.
 After SeqGAN has generated the data, we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
-<center><img src='./image/high3.jpg' width='1000px'></center>
+<center><img src='./image/high3.png' width='1000px'></center>
 
 ### Step 3 :  Compare the accuracy of sequence prediction by RNN, HiSeqGAN
 - Execute the following command to compare the accuracy of sequence prediction by RNN, HiSeqGAN.
