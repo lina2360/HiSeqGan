@@ -157,7 +157,6 @@ When we find the predicted cluster, we will use the average and standard deviati
 ```bash
 python draw_ratio_chart.py
 ```
-<center><img src='./images/Cluster Prediction to Actual Value Prediction.png' width='400px'></center>
 
 ## Use cases
 - Supply chain demand forecasting
