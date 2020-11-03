@@ -98,7 +98,7 @@ When you have executed the above instructions, you will do the following, and ge
     - The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
   
-<center><img src='./image/high1.jpg' width='1000px'></center>
+<center><img src='./image/high1.jpg' width='1200px'></center>
 
 #### Generate the cluster sequence base on item
 
