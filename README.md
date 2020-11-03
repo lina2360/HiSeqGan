@@ -32,8 +32,8 @@ In the experiment we are divided into four parts
 ### Prerequisites
 Please download this repository and put the data in `./raw/data` folder. 
 
-### Step 1 : Data Preprocessing
-- Execute the following command to transform data from high-dimensional data into hierarchical data. And label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
+### Step 1 : Running unsupervised clustering with GHSOM  to transform data from high-dimensional data into hierarchical symbolic labels
+- Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
   - __tau1__ : Which represents the same-layer SOM map similarity.
   - __tau2__ : The depth of the GHSOM structure.
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
@@ -45,10 +45,10 @@ Please download this repository and put the data in `./raw/data` folder.
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
-#### Use GHSOM to transform data from high-dimensional data into hierarchical data
+#### Use GHSOM to cluster data that have similar attribute values
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
-When you have executed the above instructions, you will do the following, and generate data in `applications/$data/` folder.
+When you have executed the above instructions, you will generate data in `applications/$data/` folder.
 
 - Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wpg_ghsom.in](./program/GHSOM/data/wpg_ghsom.in) 
 
@@ -100,9 +100,9 @@ When you have executed the above instructions, you will do the following, and ge
   
 <center><img src='./image/high1.png' width='1000px'></center>
 
-#### Generate the cluster sequence base on item
+#### Relabel original data with symbolic labels 
 
-- We will generate the cluster sequence based on the fields given by `$index` and `$date_column`.
+- Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster seqeunce is based on the fields given by `$index` and `$date_column`.
 ```csv
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
