@@ -136,7 +136,10 @@ After SeqGAN has generated the data, we will add them to original data to verify
 
 <center><img src='./image/high3.png' width='1000px'></center>
 
-### Step 3 :  Compare the accuracy of sequence prediction by RNN, HiSeqGAN
+### Step 3 : Data efficiency (RNN SeqGAN prediction)
+
+
+### Step 4 :  Compare the accuracy of sequence prediction by RNN, HiSeqGAN
 - Execute the following command to compare the accuracy of sequence prediction by RNN, HiSeqGAN.
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
   - __index__ : Set the field as the index for clustering.
@@ -156,12 +159,10 @@ The RNN has the same setting as the previous experiment but this time it has to 
 
 <center><img src='./image/high4.jpg' width='1000px'></center>
 
-### Step 4 : From Cluster Prediction to Actual Value Prediction
+### Step 5 : From Cluster Prediction to Actual Value Prediction
 When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
-```bash
-python draw_ratio_chart.py
-```
+
 
 ## Use cases
 - Supply chain demand forecasting
