@@ -19,7 +19,7 @@ In the experiment we are divided into five parts
 - _Data Preprocessing_
   - Use GHSOM to transform data from high-dimensional data into hierarchical data
   - Generate the cluster sequence base on item
-- _Use HiSeqGAN to generate sequence data and perform sequence synthesis
+- _Use HiSeqGAN to generate sequence data and perform sequence synthesis_
 - _Use RNN to compare the accuracy of the original data with the sequence synthesis data in sequence prediction_
 - _Compare the accuracy of Naive Bayes, RNN, HiSeqGAN for time series data prediction_
 - _From cluster prediction to actual value prediction_
