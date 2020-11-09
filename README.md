@@ -50,7 +50,7 @@ Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provid
 
 When you have executed the above instructions, you will generate data in `applications/$data/` folder.
 
-- Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wpg_ghsom.in](./program/GHSOM/data/wpg_ghsom.in) 
+- Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) 
 
 - The .in file format is as follows :
     ```bash
