@@ -123,7 +123,7 @@ After SeqGAN has generated the data,STEP3 we will add them to original data to v
 python execute-rnn.py --data=wm5-normalize --target=id --generated_num=55 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
-<center><img src='./image/high3.png' width='1000px'></center>
+<center><img src='./image/SeqGANGenerateSequence.png' width='1000px'></center>
 
 ### Step 3 : Data efficiency (RNN SeqGAN prediction)
 Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
