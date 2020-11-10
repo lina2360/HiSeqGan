@@ -109,12 +109,10 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 <center><img src='./image/WithSymbolicLabels.png' width='1000px'></center>
 
 ### Step 2 : Use SeqGAN generate sequence for sequence synthesis
-Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
+First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 5712 original data, so here we use SeqGAN to generate 960 time series data.
+After SeqGAN has generated the data,STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
-In this experiment, we will use time series data of length 96
-$`Data{_{raw}}`$ generate sequence data of the same length. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
-
-- Execute the following command to generate sequence for sequence synthesis and use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis.
+- Execute the following command to generate sequence for sequence synthesis .
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
   - __index__ : Set the field as the index for clustering.
   - __target__ : Set the field as the index for clustering.
@@ -125,12 +123,11 @@ $`Data{_{raw}}`$ generate sequence data of the same length. This data is merged 
 python execute-rnn.py --data=wm5-normalize --target=id --generated_num=55 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
-- First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 5712 original data, so here we use SeqGAN to generate 960 time series data.
-After SeqGAN has generated the data, we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
-
 <center><img src='./image/high3.png' width='1000px'></center>
 
 ### Step 3 : Data efficiency (RNN SeqGAN prediction)
+Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
+In this experiment, we will use time series data of length 96 $`Data{_{raw}}`$ generate sequence data of the same length. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 
 ### Step 4 :  Compare the accuracy of sequence prediction by RNN, HiSeqGAN
