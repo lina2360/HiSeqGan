@@ -148,7 +148,7 @@ The RNN has the same setting as the previous experiment but this time it has to 
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
 ```
 
-<center><img src='./image/high4.jpg' width='1000px'></center>
+<center><img src='./image/CompareTheAccuracyOfSequencePrediction.jpg' width='1000px'></center>
 
 ### Step 5 : From Cluster Prediction to Actual Value Prediction
 When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
