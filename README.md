@@ -26,7 +26,8 @@ In the experiment we are divided into five parts
 ### Prerequisites
 Please download this repository and put the data in `./raw/data` folder. 
 
-### Step 1 : Running unsupervised clustering with GHSOM  to transform data from high-dimensional data into hierarchical symbolic labels
+### Step 1 : Adbtraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
+
 - Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
   - __tau1__ : Which represents the same-layer SOM map similarity.
   - __tau2__ : The depth of the GHSOM structure.
@@ -39,7 +40,7 @@ Please download this repository and put the data in `./raw/data` folder.
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
-#### Use GHSOM to cluster data that have similar attribute values
+#### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
 When you have executed the above instructions, you will generate data in `applications/$data/` folder.
@@ -156,8 +157,8 @@ The RNN has the same setting as the previous experiment but this time it has to 
 
 <center><img src='./image/CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
 
-### Step 5 : From Cluster Prediction to Actual Value Prediction
-When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
+### Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
+The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimesional values that can be clusted into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
 
 
