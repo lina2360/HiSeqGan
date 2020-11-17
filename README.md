@@ -128,7 +128,7 @@ python execute-rnn.py --data=wm5-normalize --target=id --generated_num=55 --tota
 
 ### Step 3 : Synthesis efficiency: Use RNN to evaluate quality of seqeucense synthesized by HiSeqGAN
 Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
-In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the same length. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
+In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the  length 55. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 ```bash
 python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
