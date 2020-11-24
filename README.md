@@ -134,7 +134,7 @@ In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ 
 python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
 
-<center><img src='./image/DataEfficiency.png' width='1000px'></center>
+<center><img src='./image/2DataEfficiency.png' width='1000px'></center>
 
 
 ### Step 4 :  Prediction accuracy: Compare accuracy of sequence prediction with RNN and HiSeqGAN
@@ -155,7 +155,7 @@ There has the same setting as the previous experiment but this time it has to us
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
 ```
 
-<center><img src='./image/CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
+<center><img src='./image/2CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
 
 ### Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
 The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimesional values that can be clusted into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
