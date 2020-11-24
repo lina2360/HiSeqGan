@@ -110,7 +110,7 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 <center><img src='./image/WithSymbolicLabels.png' width='1000px'></center>
 
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
-First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 5712 original data, so here we use SeqGAN to generate 960 time series data.
+First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
 After SeqGAN has generated the data,STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 - Execute the following command to generate sequence for sequence synthesis .
@@ -121,14 +121,14 @@ After SeqGAN has generated the data,STEP3 we will add them to original data to v
   - __total_batch__ : Number of times the entire dataset was trained.
   - __batch_size__ : The batch size will determine the number of samples we train at a time.
 ```bash
-python execute-rnn.py --data=wm5-normalize --target=id --generated_num=55 --total_batch=100 --batch_size=5 --seq_length=18
+python execute-rnn.py --data=wm5-normalize --target=id --generated_num=856 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
 <center><img src='./image/SeqGANGenerateSequence.png' width='1000px'></center>
 
 ### Step 3 : Synthesis efficiency: Use RNN to evaluate quality of seqeucense synthesized by HiSeqGAN
 Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
-In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the  length 55. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
+In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the  length 856. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 ```bash
 python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
@@ -149,7 +149,7 @@ python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week
 python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
-The RNN has the same setting as the previous experiment but this time it has to use its prediction to predict next periods.For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize ***n*** sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$, and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
+The RNN has the same setting as the previous experiment but this time it has to use its prediction to predict next periods.For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize 9856 sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$, and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
 
 ```math
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
