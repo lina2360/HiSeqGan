@@ -149,7 +149,7 @@ python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week
 python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
-The RNN has the same setting as the previous experiment but this time it has to use its prediction to predict next periods.For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize 9856 sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$, and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
+There has the same setting as the previous experiment but this time it has to use its prediction to predict next periods.For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize 9856 sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$, and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
 
 ```math
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
