@@ -45,6 +45,8 @@ Please download this repository and put the data in `./raw/data` folder.
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
+<center><img src='./image/mainframe.png' width='800px'></center>
+
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
