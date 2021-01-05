@@ -35,8 +35,6 @@ Please download this repository and put the data in `./raw/data` folder.
 
 ### Step 1 : Adbtraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 
-<center><img src='./image/ghsom.png' width='300px'></center>
-
 - Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
   - __tau1__ : Which represents the same-layer SOM map similarity.
   - __tau2__ : The depth of the GHSOM structure.
@@ -52,6 +50,9 @@ python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --targe
 
 
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
+
+<center><img src='./image/ghsom.png' width='300px'></center>
+
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
 When you have executed the above instructions, you will generate data in `applications/$data/` folder.
