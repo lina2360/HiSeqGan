@@ -35,7 +35,7 @@ Please download this repository and put the data in `./raw/data` folder.
 
 ### Step 1 : Adbtraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 
-<center><img src='./image/ghsom.png' width='400px'></center>
+<center><img src='./image/ghsom.png' width='300px'></center>
 
 - Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
   - __tau1__ : Which represents the same-layer SOM map similarity.
