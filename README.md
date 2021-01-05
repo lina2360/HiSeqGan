@@ -35,6 +35,8 @@ Please download this repository and put the data in `./raw/data` folder.
 
 ### Step 1 : Adbtraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 
+<center><img src='./image/ghsom.png' width='400px'></center>
+
 - Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
   - __tau1__ : Which represents the same-layer SOM map similarity.
   - __tau2__ : The depth of the GHSOM structure.
@@ -47,7 +49,7 @@ Please download this repository and put the data in `./raw/data` folder.
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
-<center><img src='./image/ghsom.png' width='400px'></center>
+
 
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
@@ -119,10 +121,10 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 <center><img src='./image/WithSymbolicLabels.png' width='1000px'></center>
 
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
-First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
-After SeqGAN has generated the data,STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 <center><img src='./image/hiseq.png' width='700px'></center>
+First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
+After SeqGAN has generated the data,STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 - Execute the following command to generate sequence for sequence synthesis .
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
