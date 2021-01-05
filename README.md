@@ -154,6 +154,7 @@ python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week
 
 
 ### Step 4 :  Prediction accuracy: Compare accuracy of sequence prediction with RNN and HiSeqGAN
+<center><img src='./image/Accurate.png' width='800px'></center>
 - Execute the following command to compare the accuracy of sequence prediction by RNN, HiSeqGAN.
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
   - __index__ : Set the field as the index for clustering.
