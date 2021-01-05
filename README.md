@@ -107,7 +107,7 @@ When you have executed the above instructions, you will generate data in `applic
 <center><img src='./image/ClusteringWithGHSOM.png' width='1000px'></center>
 
 #### Relabel original data with symbolic labels 
-<center><img src='./image/ghsomlabel.png' width='700px'></center>
+<center><img src='./image/ghsomlabel.png' width='400px'></center>
 
 - Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster seqeunce is based on the fields given by `$index` and `$date_column`.
 ```csv
