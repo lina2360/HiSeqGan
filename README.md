@@ -4,6 +4,8 @@
 ## Abstract
 High-dimensional data sequences constantly appear in practice. State-of-the-art models such as recurrent neural networks suffer prediction accuracy from complex relations among values of attributes. Adopting unsupervised clustering that clusters data based on their attribute value similarity results data in lower dimensions that can be structured in a hierarchical relation. It is essential to consider these data relations to improve the performance of training models. In this work, we propose a new approach to synthesize and predict sequences of data that are structured in a hierarchy.
 
+<center><img src='./image/mainframe.png' width='800px'></center>
+
 ## Environment
 python:
 tensorflow:
@@ -45,7 +47,7 @@ Please download this repository and put the data in `./raw/data` folder.
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
-<center><img src='./image/mainframe.png' width='800px'></center>
+<center><img src='./image/ghsom.png' width='800px'></center>
 
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
