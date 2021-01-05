@@ -122,7 +122,7 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
 
-<center><img src='./image/hiseq.png' width='700px'></center>
+<center><img src='./image/hiseq.PNG' width='700px'></center>
 First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
 After SeqGAN has generated the data,STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
