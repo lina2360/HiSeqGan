@@ -145,7 +145,7 @@ python execute-rnn.py --data=wm5-normalize --target=id --generated_num=856 --tot
 
 <center><img src='./image/RNN.png' width='600px'></center>
 
-Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
+- Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
 In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the  length 856. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 ```bash
@@ -179,7 +179,7 @@ There has the same setting as the previous experiment but this time it has to us
 <center><img src='./image/2CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
 
 ### Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
-The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimesional values that can be clusted into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
+- The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimesional values that can be clusted into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
 
 
