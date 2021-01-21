@@ -22,7 +22,7 @@ To evaluate the prediction on clusters between two labels, we propose three-dime
 
 ## Experiments
 
-In the experiment we are divided into five parts
+In the experiment, we are divided into five parts
 - _Data Preprocessing_
   - Use GHSOM to transform data from high-dimensional data into hierarchical data
   - Generate the cluster sequence base on item
@@ -31,11 +31,11 @@ In the experiment we are divided into five parts
 - _Compare the accuracy of Naive Bayes, RNN, HiSeqGAN for time series data prediction_
 - _From cluster prediction to actual value prediction_
 ### Prerequisites
-Please download this repository and put the data in `./raw/data` folder. 
+Please download this repository and put the data in the `./raw/data` folder. 
 
 ### Step 1 : Abstraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 
-- Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster seqence base on `$index` and `$date_column`.
+- Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `$index` and `$date_column`.
   - __tau1__ : Which represents the same-layer SOM map similarity.
   - __tau2__ : The depth of the GHSOM structure.
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
@@ -55,7 +55,7 @@ python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --targe
 
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
-When you have executed the above instructions, you will generate data in `applications/$data/` folder.
+When you have executed the above instructions, you will generate data in the `applications/$data/` folder.
 
 - Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) 
 
@@ -98,10 +98,10 @@ When you have executed the above instructions, you will generate data in `applic
     tau2=0.01
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
-
+  
 - When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. 
   - The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program.<br>
-    - The files consists of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit.
+    - The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit.
     - The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
   
@@ -110,7 +110,7 @@ When you have executed the above instructions, you will generate data in `applic
 #### Relabel original data with symbolic labels 
 <center><img src='./image/ghsomlabel.png' width='450px'></center>
 
-- Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster seqeunce is based on the fields given by `$index` and `$date_column`.
+- Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
 ```csv
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
@@ -125,10 +125,10 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
 
 <center><img src='./image/hiseq.PNG' width='700px'></center>
-First we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
-After SeqGAN has generated the data,STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
+First, we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
+After SeqGAN has generated the data, STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
-- Execute the following command to generate sequence for sequence synthesis .
+- Execute the following command to generate a sequence for sequence synthesis.
   - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
   - __index__ : Set the field as the index for clustering.
   - __target__ : Set the field as the index for clustering.
@@ -141,12 +141,12 @@ python execute-rnn.py --data=wm5-normalize --target=id --generated_num=856 --tot
 
 <center><img src='./image/SeqGANGenerateSequence.png' width='1000px'></center>
 
-### Step 3 : Synthesis efficiency: Use RNN to evaluate quality of seqeucense synthesized by HiSeqGAN
+### Step 3 : Synthesis efficiency: Use RNN to evaluate the quality of sequence synthesized by HiSeqGAN
 
 <center><img src='./image/RNN.png' width='600px'></center>
 
 - Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
-In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the  length 856. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
+In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generate sequence data of the length 856. This data is merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 ```bash
 python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
@@ -155,7 +155,7 @@ python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week
 <center><img src='./image/2DataEfficiency.png' width='1000px'></center>
 
 
-### Step 4 :  Prediction accuracy: Compare accuracy of sequence prediction with RNN and HiSeqGAN
+### Step 4 :  Prediction accuracy: Compare the accuracy of sequence prediction with RNN and HiSeqGAN
 
 <center><img src='./image/Accurate.png' width='600px'></center>
 
@@ -170,7 +170,7 @@ python execute-efficiency.py --data=wm5-normalize --index=id --train_column=week
 python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
-- There has the same setting as the previous experiment but this time it has to use its prediction to predict next periods.For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize 9856 sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$, and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
+- There has the same setting as the previous experiment but this time it has to use its prediction to predict the next periods. For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize 9856 sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use the following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$ and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
 
 ```math
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
@@ -179,7 +179,7 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 <center><img src='./image/2CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
 
 ### Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
-- The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimesional values that can be clusted into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
+- The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimensional values that can be clustered into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
 
 
