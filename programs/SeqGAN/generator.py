@@ -1,4 +1,5 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
 from tensorflow.python.ops import tensor_array_ops, control_flow_ops
 import os
 
@@ -25,7 +26,7 @@ class Generator(object):
 
         self.expected_reward = tf.Variable(tf.zeros([self.sequence_length]))
 
-        with tf.variable_scope('generator'):
+        with tf.compat.v1.variable_scope('generator'):
             self.g_embeddings = tf.Variable(self.init_matrix([self.num_emb, self.emb_dim]))
             self.g_params.append(self.g_embeddings)
             self.g_recurrent_unit = self.create_recurrent_unit(self.g_params)  # maps h_tm1 to h_t for generator
@@ -149,8 +150,8 @@ class Generator(object):
         return outputs
 
     def init_matrix(self, shape):
-        print(tf.random_normal(shape, stddev=0.1))
-        return tf.random_normal(shape, stddev=0.1)
+        print(tf.compat.v1.random_normal(shape, stddev=0.1))
+        return tf.compat.v1.random_normal(shape, stddev=0.1)
 
     def init_vector(self, shape):
         return tf.zeros(shape)
