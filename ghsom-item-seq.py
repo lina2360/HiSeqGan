@@ -59,16 +59,17 @@ def create_ghsom_prop_file(name, tau1 = 0.1, tau2 = 0.01, sparseData ='yes', isN
 def ghsom_clustering(name):
     source_path = name.replace('-item-seq','')
     try:
-        print('cmd=','.\programs\GHSOM\somtoolbox.bat GHSOM .\\applications\%s\GHSOM\%s_ghsom.prop -h' % (source_path,name))
-        os.system('.\programs\GHSOM\somtoolbox.bat GHSOM .\\applications\%s\GHSOM\%s_ghsom.prop -h' % (source_path,name))
+        print('cmd=','./programs\GHSOM\somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (source_path,name))
+        os.system('./programs/GHSOM/somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (source_path,name))
     except Exception as e:
         print('Error:',e)
 # extract output data
 def extract_ghsom_output(name, current_path):
+   
     source_path = name.replace('-item-seq','')
-    print('cmd=','7z e applications\%s\GHSOM\output\%s -o%s\\applications\%s\GHSOM\output\%s' % (source_path,name,current_path,source_path,name))
-    os.system('7z e applications\%s\GHSOM\output\%s -o%s\\applications\%s\GHSOM\output\%s' % (source_path,name,current_path,source_path,name))
-
+    print('cmd=','7z e applications/%s/GHSOM/output/%s -o%s//applications/%s/GHSOM/output/%s' % (source_path,name,current_path,source_path,name))
+    os.system('7z e applications/%s/GHSOM/output/%s -o%s//applications/%s/GHSOM/output/%s' % (source_path,name,current_path,source_path,name))
+    print("!11111111111111111111111")
 def save_ghsom_cluster_label(name):
     os.system('python ./programs/data_processing/save_cluster_with_clustered_label_sequence.py --name=%s' % name)
     print('Success transfer cluster label of item sequence data.')
@@ -154,5 +155,6 @@ else:
 
     except Exception as e:
         print('Failed to create /applications/%s folder due to :%s' % (args.data, str(e)))
+# save_ghsom_cluster_label_with_coordinate(seq_name)
 # save_ghsom_cluster_label(args.data)
-format_rnn_input_integer(args.data)
+# format_rnn_input_integer(args.data)

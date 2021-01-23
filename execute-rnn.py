@@ -150,9 +150,9 @@ else:
     print('Success to create /applications/%s/SeqGAN/save folder.' % (args.data))
 
 
-create_seqgan_input_file(prefix, target)
+# create_seqgan_input_file(prefix, target)
 execute_sequence_gan(prefix,generated_num,total_batch,batch_size,seq_length)
-clustering_sequence_gan_output(prefix)
+# clustering_sequence_gan_output(prefix)
 
 # rnn_all_wmse(prefix,'rnn')
 # rnn_all_center(prefix,'rnn')
