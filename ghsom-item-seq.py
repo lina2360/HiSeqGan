@@ -59,7 +59,7 @@ def create_ghsom_prop_file(name, tau1 = 0.1, tau2 = 0.01, sparseData ='yes', isN
 def ghsom_clustering(name):
     source_path = name.replace('-item-seq','')
     try:
-        print('cmd=','./programs\GHSOM\somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (source_path,name))
+        print('cmd=','./programs/GHSOM/somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (source_path,name))
         os.system('./programs/GHSOM/somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (source_path,name))
     except Exception as e:
         print('Error:',e)
