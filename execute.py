@@ -54,7 +54,7 @@ def create_ghsom_prop_file(name, tau1 = 0.1, tau2 = 0.01, sparseData ='yes', isN
 # clustering high-dimensional data
 def ghsom_clustering(name):
     try:
-        print('cmd=','./programs\GHSOM\somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (name,name))
+        print('cmd=','./programs/GHSOM/somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (name,name))
         os.system('./programs/GHSOM/somtoolbox.sh GHSOM .//applications/%s/GHSOM/%s_ghsom.prop -h' % (name,name))
     except Exception as e:
         print('Error:',e)
