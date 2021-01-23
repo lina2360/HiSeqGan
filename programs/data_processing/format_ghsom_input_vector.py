@@ -11,7 +11,7 @@ import numpy as np
 # args = parser.parse_args()
 
 def format_ghsom_input_vector(name, index, train_column):
-    #source_path = name.replace('-item-seq','')
+    source_path = name.replace('-item-seq','')
     
     train_column = train_column.split(',')
 

@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 from pandas import ExcelWriter
-import openpyxl
-from pymongo import MongoClient
+# import openpyxl
+# from pymongo import MongoClient
 import argparse
 import get_ghsom_dim
 
@@ -93,6 +93,10 @@ def format_cluster_info_to_dict(unit_file_name, source_data, saved_data_type=Non
         for i in range(number_of_digits[layer_index-1]-digit):
             zero = zero + '0'
         
+        # create cluster string by map index
+        # x_string = str(x_clustered_string) + '-' + str(x_position)
+        # y_string = str(y_clustered_string) + '-' + str(y_position)
+        cluster_string = str(parent_clustered_string) + zero + str(map_index+1)
         
         # create cluster string by map index
         cluster_string = str(parent_clustered_string) + zero + str(map_index+1)
@@ -114,7 +118,10 @@ def format_cluster_info_to_dict(unit_file_name, source_data, saved_data_type=Non
             
             # if current cluster is leaf node then insert label
             # df_source.iloc[index, :]['clustered_label'] = cluster_string
-            df_source.set_value(index, 'clustered_label', cluster_string)
+            # df_source.set_value(index, 'clustered_label', cluster_string)
+            df_source.at[index, 'clustered_label'] = cluster_string
+            # df_source.at[index, 'x_label'] = x_string
+            # df_source.at[index, 'y_label'] =  y_string
 
         # format data base on different visualization ways
         if str(saved_data_type) == 'tree_structure':
@@ -167,13 +174,12 @@ def get_map_pos(text_file):
 
 
 # connect to mongoDB
-client = MongoClient()
-db = client['result']
+# client = MongoClient()
+# db = client['result']
 
 Groups_info_flat = []
 saved_file_type = 'result_detail'
-result = format_cluster_info_to_dict(
-    prefix, df_source, saved_file_type, 'flat')
+result = format_cluster_info_to_dict(prefix, df_source, saved_file_type, 'flat')
 # print(Groups_info_flat)
 
 df_source.to_csv('./applications/%s/data/%s_with_clustered_label.csv' % (source_path, prefix), index=False)

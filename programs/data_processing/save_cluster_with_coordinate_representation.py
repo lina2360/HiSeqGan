@@ -2,8 +2,8 @@
 import numpy as np
 import pandas as pd
 from pandas import ExcelWriter
-import openpyxl
-from pymongo import MongoClient
+# import openpyxl
+# from pymongo import MongoClient
 from fractions import Fraction
 import argparse
 
@@ -160,8 +160,8 @@ def get_map_pos(text_file):
     return column_position_dict
 
 # connect to mongoDB
-client = MongoClient()
-db = client['result']
+# client = MongoClient()
+# db = client['result']
 
 Groups_info_flat = []
 saved_file_type = 'result_detail'

@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 from pandas import ExcelWriter
-import openpyxl
-from pymongo import MongoClient
+# import openpyxl
+# from pymongo import MongoClient
 import argparse
 import get_ghsom_dim
 print("????????????????????????")
@@ -94,7 +94,8 @@ def format_cluster_info_to_dict(unit_file_name, source_data, saved_data_type=Non
             # if current cluster is leaf node then insert label
             
             # df_source.iloc[index]['clustered_label'] = cluster_string
-            df_source.set_value(index, 'clustered_label', cluster_string)
+            # df_source.set_value(index, 'clustered_label', cluster_string)
+            df_source.at[index, 'clustered_label'] = cluster_string
 
         # format data base on different visualization ways
         if str(saved_data_type) == "tree_structure":
@@ -147,8 +148,8 @@ def get_map_pos(text_file):
 
 
 # connect to mongoDB
-client = MongoClient()
-db = client['result']
+# client = MongoClient()
+# db = client['result']
 
 Groups_info_flat = []
 saved_file_type = "result_detail"
