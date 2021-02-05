@@ -54,6 +54,8 @@ python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --targe
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 
 <center><img src='./image/hipic1.png' width='800px'></center>
+在step 1程式執行的第一部分，輸入指令後首先會先根據我們的原始資料名稱(ex.wm5_normolize)
+而建立我們往後產生資料而存放的資料夾。資料夾建立完成後接著產生GHSOM的input file和prop file。
 
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
@@ -109,8 +111,17 @@ When you have executed the above instructions, you will generate data in the `ap
   
 #### Relabel original data with symbolic labels 
 <center><img src='./image/hipic2.png' width='800px'></center>
+第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
+而產生了with_cluster_label.csv這個檔案。
+
 <center><img src='./image/hipic3.png' width='800px'></center>
+分完群也上過標籤後，第三部分再給予每個分群座標位置，最終每筆資料將產生屬於自己的xy座標(相同座標代表相同集群)
+，目的是為了之後算loss function。
+
 <center><img src='./image/hipic4.png' width='800px'></center>
+最後第四階段剛開始使用第二階段產生的with_cluster_label.csv，因為原本此檔案的標籤是浮點數形式，
+但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
+rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下來的第五部分需要把每位id分群成一個標籤而準備的資料。
 
 - Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
 ```csv
@@ -121,6 +132,8 @@ id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,we
 ```bash
 python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
+
+<center><img src='./image/WithSymbolicLabels.png' width='800px'></center>
 
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
 
