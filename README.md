@@ -134,6 +134,10 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 ```
 
 <center><img src='./image/WithSymbolicLabels.png' width='800px'></center>
+因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆
+有一個標籤代表其資料屬性(rnn_input_data_integer.csv)」，然而最終目的是希望將「每個id的全部資料」降維成一個標籤，
+因此第五部分再次將「每個id的每週資料皆有一個標籤代表其資料屬性」的資料用ghsom分群成
+「每個id皆有一個標籤」代表其整體屬性，也就是產生rnn_input_item_seq_with_cluster_integer.csv。
 
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
 
