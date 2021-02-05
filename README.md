@@ -14,6 +14,7 @@ GPU:
 
 ## GHSOM & Hierarchical data encoding
 GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
+
 <img src='./image/ghsom.png' width='300px'><img src='./image/ghsomlabel.png' width='450px'>
 
 ## HiSeqGAN
