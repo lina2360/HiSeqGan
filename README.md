@@ -53,16 +53,14 @@ python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --targe
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 
 <center><img src='./image/hipic1.png' width='800px'></center>
-在step 1程式執行的第一部分，輸入指令後首先會先根據我們的原始資料名稱(ex.wm5_normolize)
-而建立我們往後產生資料而存放的資料夾。資料夾建立完成後接著產生GHSOM的input file和prop file。
 
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
-When you have executed the above instructions, you will generate data in the `applications/$data/` folder.
+First, when you have executed the above instructions, you will generate data in the `applications/$data/` folder.(ex.applications/wm5_normalize)
 
 - Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) 
 
-- The .in file format is as follows :
+- The .in file format is as follows (create_ghsom_input_file) :
     ```bash
     $TYPE inputvec
     $XDIM 2592
@@ -84,7 +82,7 @@ When you have executed the above instructions, you will generate data in the `ap
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
   
-- Then GHSOM property file is generated as follows : 
+- Then GHSOM property file is generated as follows (create_ghsom_prop_file): 
     ```bash
     workingDirectory=./
     outputDirectory=./output/wm5-normalize
