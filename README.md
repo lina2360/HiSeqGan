@@ -47,15 +47,12 @@ Please download this repository and put the data in the `./raw/data` folder.
 ```bash
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
-<center><img src='./image/hipic1.png' width='800px'></center>
-<center><img src='./image/hipic2.png' width='800px'></center>
-<center><img src='./image/hipic3.png' width='800px'></center>
-<center><img src='./image/hipic4.png' width='800px'></center>
-
 
 #### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 
 <center><img src='./image/ghsom.png' width='300px'></center>
+
+<center><img src='./image/hipic1.png' width='800px'></center>
 
 Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
 
@@ -113,6 +110,11 @@ When you have executed the above instructions, you will generate data in the `ap
 
 #### Relabel original data with symbolic labels 
 <center><img src='./image/ghsomlabel.png' width='450px'></center>
+
+<center><img src='./image/hipic2.png' width='800px'></center>
+<center><img src='./image/hipic3.png' width='800px'></center>
+<center><img src='./image/hipic4.png' width='800px'></center>
+
 
 - Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
 ```csv
