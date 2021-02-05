@@ -120,6 +120,13 @@ First, when you have executed the above instructions, you will generate data in 
 但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
 rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下來的第五部分需要把每位id分群成一個標籤而準備的資料。
 
+#### Generate for each student a symbolic label that represents their weekly records over the semester
+<center><img src='./image/WithSymbolicLabels.png' width='800px'></center>
+因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆
+有一個標籤代表其資料屬性(rnn_input_data_integer.csv)」，然而最終目的是希望將「每個id的全部資料」降維成一個標籤，
+因此第五部分再次將「每個id的每週資料皆有一個標籤代表其資料屬性」的資料用ghsom分群成
+「每個id皆有一個標籤」代表其整體屬性，也就是產生rnn_input_item_seq_with_cluster_integer.csv。
+
 - Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
 ```csv
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
@@ -129,12 +136,6 @@ id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,we
 ```bash
 python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
-
-<center><img src='./image/WithSymbolicLabels.png' width='800px'></center>
-因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆
-有一個標籤代表其資料屬性(rnn_input_data_integer.csv)」，然而最終目的是希望將「每個id的全部資料」降維成一個標籤，
-因此第五部分再次將「每個id的每週資料皆有一個標籤代表其資料屬性」的資料用ghsom分群成
-「每個id皆有一個標籤」代表其整體屬性，也就是產生rnn_input_item_seq_with_cluster_integer.csv。
 
 ### Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
 
