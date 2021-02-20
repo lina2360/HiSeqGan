@@ -165,7 +165,16 @@ After SeqGAN has generated the data, STEP3 we will add them to original data to 
 python execute-rnn.py --data=wm5-normalize --target=id --generated_num=856 --total_batch=100 --batch_size=5 --seq_length=18
 ```
 
-<center><img src='./image/SeqGANGenerateSequence.png' width='1000px'></center>
+<center><img src='./image/step2_1.png' width='800px'></center>
+STEP2開始，首先先建立log紀錄文件和資料相關設定，還有一樣建立step2執行過程中存放資料的資料夾。接著讀取前面step1
+最後產生的每個id有一個標籤的csv檔，產生segqan 需要的的input資料。
+
+<center><img src='./image/step2_2.png' width='800px'></center>
+第二部分開始執行seqgan，～。
+
+<center><img src='./image/step2_3.png' width='800px'></center>
+第三部分就是seqgan執行完後，將原始資料和生成資料存成新的一個檔案(rnn_input_item_seq_with_cluster_label_seqgan_train.csv)
+結束step2的目的產生seqgan資料，將在下一階段使用rnn來評估精準性。
 
 ### Step 3 : Synthesis efficiency: Use RNN to evaluate the quality of sequence synthesized by HiSeqGAN
 
