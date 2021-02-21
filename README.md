@@ -110,14 +110,17 @@ First, when you have executed the above instructions, you will generate data in 
   
 #### Relabel original data with symbolic labels 
 <center><img src='./image/hipic2.png' width='800px'></center>
+In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week in each student id(ex.extract_ghsom_output's picture) and then make a cluster with a label(ex.with_cluster_label.csv).
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
 而產生了with_cluster_label.csv這個檔案。
 
 <center><img src='./image/hipic3.png' width='800px'></center>
+After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
 分完群也上過標籤後，第三部分再給予每個分群座標位置，最終每筆資料將產生屬於自己的xy座標(相同座標代表相同集群)
 ，目的是為了之後算loss function。
 
 <center><img src='./image/hipic4.png' width='800px'></center>
+In the last part, we want to have  Integer labels but the label we generate in the second part is  Float labels. Therefore , we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
 最後第四階段剛開始使用第二階段產生的with_cluster_label.csv，因為原本此檔案的標籤是浮點數形式，
 但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
 rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下來的第五部分需要把每位id分群成一個標籤而準備的資料。
