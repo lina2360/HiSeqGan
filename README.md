@@ -170,7 +170,8 @@ STEP2開始，首先先建立log紀錄文件和資料相關設定，還有一樣
 最後產生的每個id有一個標籤的csv檔，產生segqan 需要的的input資料。
 
 <center><img src='./image/step2_2.png' width='800px'></center>
-第二部分開始執行seqgan，～。
+第二部分開始執行seqgan，generator會先生出一組序列，讓已看過真實資料的discriminator評斷generator
+產的資料的真假，如果看起來不真generator就需要重新產生序列，直到discriminator滿意為止。。
 
 <center><img src='./image/step2_3.png' width='800px'></center>
 第三部分就是seqgan執行完後，將原始資料和生成資料存成新的一個檔案(rnn_input_item_seq_with_cluster_label_seqgan_train.csv)
