@@ -171,7 +171,8 @@ STEP2開始，首先先建立log紀錄文件和資料相關設定，還有一樣
 
 <center><img src='./image/step2_2.png' width='800px'></center>
 第二部分開始執行seqgan，generator會先生出一組序列，讓已看過真實資料的discriminator評斷generator
-產的資料的真假，如果看起來不真generator就需要重新產生序列，直到discriminator滿意為止。。
+產的資料的真假，如果看起來不真generator就需要重新產生序列，直到discriminator滿意為止。
+我們的目標為將144筆的原始資料，希望產生856筆資料，使整體資料共有1000筆，將拿來用在之後第三階段使用rnn來評估產生的序列的品質。
 
 <center><img src='./image/step2_3.png' width='800px'></center>
 第三部分就是seqgan執行完後，將原始資料和生成資料存成新的一個檔案(rnn_input_item_seq_with_cluster_label_seqgan_train.csv)
