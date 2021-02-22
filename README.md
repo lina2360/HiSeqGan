@@ -224,6 +224,8 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 \max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
 ```
 <center><img src='./image/step4_1.png' width='800px'></center>
+<center><img src='./image/step4_2.png' width='800px'></center>
+<center><img src='./image/step4_3.png' width='800px'></center>
 <center><img src='./image/2CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
 
 ### Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
