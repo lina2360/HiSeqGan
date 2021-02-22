@@ -5,7 +5,7 @@
 ## Abstract
 High-dimensional data sequences constantly appear in practice. State-of-the-art models such as recurrent neural networks suffer prediction accuracy from complex relations among values of attributes. Adopting unsupervised clustering that clusters data based on their attribute value similarity results in data in lower dimensions that can be structured in a hierarchical relation. It is essential to consider these data relations to improve the performance of training models. In this work, we propose a new approach to synthesize and predict sequences of data that are structured in a hierarchy.
 
-<center><img src='./image/mainframe.png' width='800px'></center>
+<center><img src='./image/mainframe.png' width='700px'></center>
 
 ## Environment
 python:
