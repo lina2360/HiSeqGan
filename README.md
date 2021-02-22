@@ -226,8 +226,8 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 <center><img src='./image/step4_1.png' width='800px'></center>
 <center><img src='./image/step4_2.png' width='800px'></center>
 <center><img src='./image/step4_3.png' width='800px'></center>
-<center><img src='./image/step4_4.png' width='800px'></center>
-<center><img src='./image/2CompareTheAccuracyOfSequencePrediction.png' width='1000px'></center>
+<center><img src='./image/step4_4.png' width='900px'></center>
+
 
 ### Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
 - The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimensional values that can be clustered into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
