@@ -9,7 +9,7 @@ High-dimensional data sequences constantly appear in practice. State-of-the-art 
 
 ## Environment
 - python:3.8.5
-- tensorflow:2.4.0<\n>
+- tensorflow:2.4.0
 - GPU:
 
 ## GHSOM & Hierarchical data encoding
