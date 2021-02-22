@@ -8,8 +8,8 @@ High-dimensional data sequences constantly appear in practice. State-of-the-art 
 <center><img src='./image/mainframe.png' width='700px'></center>
 
 ## Environment
-python:3.8.5
-tensorflow:2.4.0
+python:3.8.5<\n>
+tensorflow:2.4.0<\n>
 GPU:
 
 ## GHSOM & Hierarchical data encoding
