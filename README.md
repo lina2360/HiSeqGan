@@ -8,9 +8,9 @@ High-dimensional data sequences constantly appear in practice. State-of-the-art 
 <center><img src='./image/mainframe.png' width='700px'></center>
 
 ## Environment
-python:3.8.5<\n>
-tensorflow:2.4.0<\n>
-GPU:
+- python:3.8.5
+- tensorflow:2.4.0<\n>
+- GPU:
 
 ## GHSOM & Hierarchical data encoding
 GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
