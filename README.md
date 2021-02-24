@@ -40,7 +40,7 @@ Please download this repository and put the data in the `./raw/data` folder.
 ### Environment
 - Python: 3.8.5
 - TensorFlow: 2.4.0
-- GPU:
+- GPU: NVIDIA GeForce GTX 1080
 
 In the experiment, we are divided into five parts
 - _Data Preprocessing_
