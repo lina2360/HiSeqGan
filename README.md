@@ -1,6 +1,6 @@
 # HiSeqGAN
-Hierarchical Sequence Synthesis and Prediction
-#### Author
+A Novel Approach to Hierarchical Sequence Synthesis and Prediction
+### Authors
 * Yun-Chieh Tien (106356004@nccu.edu.tw)
 * Chen-Min Hsu (107356019@nccu.edu.tw)
 * I-Li Chen (109356049@nccu.edu.tw)
@@ -58,15 +58,17 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 
 ## Step 1 : Abstraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 
-- Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `$index` and `$date_column`.
-  - __tau1__ : Which represents the same-layer SOM map similarity.
-  - __tau2__ : The depth of the GHSOM structure.
-  - __data__ : Set the data name which map the ***.csv*** file in raw-data folder.
-  - __index__ : Set the field as the index for clustering.
-  - __target__ : Set the field as the index for clustering.
-  - __date_column__ : Fields sorted by time, which use this column to generate a cluster sequence.
-  - __train_column__ : Field to be clustering.
-```bash
+Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`.
+
+* *tau1*: Which represents the same-layer SOM map similarity.
+* *tau2*: The depth of the GHSOM structure.
+* *data*: Set the data name which map the ***.csv*** file in raw-data folder.
+* *index*: Set the field as the index for clustering.
+* *target*: Set the field as the index for clustering.
+* *date_column*: Fields sorted by time, which use this column to generate a cluster sequence.
+* *train_column*: Field to be clustering.
+
+```
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
@@ -267,4 +269,4 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 - The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimensional values that can be clustered into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
 - - -
-<center>Copy 2021 &copy; Authors, ReadMe Co-Editor: Cheng-Hsi Yang (106308049@nccu.edu.tw). All rights reserved</center>
+<center>Copy 2021 &copy; Document Co-Editor: Cheng-Hsi Yang (106308049@nccu.edu.tw). All rights reserved</center>
