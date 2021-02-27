@@ -1,5 +1,10 @@
-# HiSeqGAN : Hierarchical Sequence Synthesis and Prediction
-- Author : Yun-Chieh Tien (106356004@nccu.edu.tw), Chen-Min Hsu (107356019@nccu.edu.tw),  I-Li Chen (109356049@nccu.edu.tw) and Fang Yu (yuf@nccu.edu.tw)
+# HiSeqGAN
+Hierarchical Sequence Synthesis and Prediction
+#### Author
+* Yun-Chieh Tien (106356004@nccu.edu.tw)
+* Chen-Min Hsu (107356019@nccu.edu.tw)
+* I-Li Chen (109356049@nccu.edu.tw)
+* Fang Yu (yuf@nccu.edu.tw)
 
 ## Abstract
 High-dimensional sequenced data often appears in practice. State-of-the-art recurrent neural network (RNN) models suffer prediction accuracy problem from complex relations amongst values of attributes. Adopting unsupervised clustering that categorize data based on their attribute similarity, results in data of lower dimensions that can be structured in a hierarchical fashion. It is essential to consider these data relations to improve model training performance. In this study, we propose a new approach to synthesize and predict sequences of hierarchical data.
@@ -20,7 +25,7 @@ High-dimensional sequenced data often appears in practice. State-of-the-art recu
 
 <center><img src='./image/mainframe.png' width='700px'></center>
 
-### GHSOM & Hierarchical data encoding
+### GHSOM & Hierarchical Data Encoding
 GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
 
 <img src='./image/ghsom.png' width='300px'><img src='./image/ghsomlabel.png' width='450px'>
@@ -262,4 +267,4 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 - The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimensional values that can be clustered into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
 
 - - -
-<center>Copy 2019 &copy; Mindy Hsu. All rights reserved</center>
+<center>Copy 2021 &copy; Authors, ReadMe Co-Editor: Cheng-Hsi Yang (106308049@nccu.edu.tw). All rights reserved</center>
