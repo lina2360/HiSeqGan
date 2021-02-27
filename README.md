@@ -2,12 +2,12 @@
 - Author : Yun-Chieh Tien (106356004@nccu.edu.tw), Chen-Min Hsu (107356019@nccu.edu.tw),  I-Li Chen (109356049@nccu.edu.tw) and Fang Yu (yuf@nccu.edu.tw)
 
 ## Abstract
-High-dimensional data sequences constantly appear in practice. State-of-the-art models such as recurrent neural networks suffer prediction accuracy from complex relations among values of attributes. Adopting unsupervised clustering that clusters data based on their attribute value similarity results in data in lower dimensions that can be structured in a hierarchical relation. It is essential to consider these data relations to improve the performance of training models. In this work, we propose a new approach to synthesize and predict sequences of data that are structured in a hierarchy.
+High-dimensional sequenced data often appears in practice. State-of-the-art recurrent neural network (RNN) models suffer prediction accuracy problem from complex relations amongst values of attributes. Adopting unsupervised clustering that categorize data based on their attribute similarity, results in data of lower dimensions that can be structured in a hierarchical fashion. It is essential to consider these data relations to improve model training performance. In this study, we propose a new approach to synthesize and predict sequences of hierarchical data.
 
 ### Prospects
-- Supply chain demand forecasting
-- Predict final grades base on students' learning situation
-- Use credit rating data to predict whether customers will bounce
+- Demand forecasting for supply chain management 
+- Predict final grades base on students' current learning situation
+- Use credit ratings to predict whether customers will bounce
 
 ### Contributions
 - Input generation: provide more data to train a  model such as RNN
@@ -38,6 +38,7 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 1. Data Preprocessing 
   * Use GHSOM to transform data from high-dimensional data into hierarchical data
   * Generate the cluster sequence base on item
+<!--- How to fix the typesetting? --->
 2. Use HiSeqGAN to generate sequence data and perform sequence synthesis.
 3. Use RNN to compare the accuracy of the original data with the sequence synthesis data in sequence prediction.
 4. Compare the accuracy of Naive Bayes, RNN, HiSeqGAN for time series data prediction.
@@ -123,19 +124,26 @@ First, when you have executed the above instructions, you will generate data in 
 ### Relabel original data with symbolic labels 
 <center><img src='./image/hipic2.png' width='700px'></center>
 In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week in each student id(ex.extract_ghsom_output's picture) and then make a cluster with a label(ex.with_cluster_label.csv).
+
+<!---
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
 而產生了with_cluster_label.csv這個檔案。
+--->
 
 <center><img src='./image/hipic3.png' width='700px'></center>
 After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
+<!---
 分完群也上過標籤後，第三部分再給予每個分群座標位置，最終每筆資料將產生屬於自己的xy座標(相同座標代表相同集群)
 ，目的是為了之後算loss function。
+--->
 
 <center><img src='./image/hipic4.png' width='900px'></center>
 In the fourth part, we want to have  Integer labels but the label we generate in the second part is  Float labels. Therefore , we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
+<!---
 最後第四階段剛開始使用第二階段產生的with_cluster_label.csv，因為原本此檔案的標籤是浮點數形式，
 但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
 rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下來的第五部分需要把每位id分群成一個標籤而準備的資料。
+--->
 
 ### Generate for each student a symbolic label that represents their weekly records over the semester
 
@@ -151,24 +159,27 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 
 <center><img src='./image/item-seq1.png' width='900px'></center>
 Because our raw data have a lot of weekly columns we use GHSOM to reduct weekly columns' dimensions to the label(ex.rnn_input_data_integer.csv). However, our goal is "each student " has a cluster label. Thus, in the fifth part, we need to achieve this goal. First, we create a new folder to store our data for step2 and then read item-seq data to generate GHSOM's input file和prop file.
-因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆
+<!---因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆
 有一個標籤代表其資料屬性(rnn_input_data_integer.csv)」，然而最終目的是希望將「每個id的全部資料」降維成一個標籤，
 因此第五部分再次將「每個id的每週資料皆有一個標籤代表其資料屬性」的資料用ghsom分群成
 「每個id皆有一個標籤」代表其整體屬性。
 要使每個id皆有一個標籤的第一步，一樣是先建立資料夾，跟前面不同的是這邊讀取的是item-seq data，然後開始
 產生GHSOM的input file和prop file。
+--->
 
 <center><img src='./image/item-seq2.png' width='900px'></center>
 In the second part, it also starts to generate GHSOM clusters(ex.extract_ghsom_output),and give each student a cluster label(ex.rnn_input_item_seq_with_cluster.csv).
-第二部分開始執行ghsom，一樣會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個id擁有一個標籤，
+<!---第二部分開始執行ghsom，一樣會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個id擁有一個標籤，
 而產生了rnn_input_item_seq_with_cluster.csv這個檔案。
+--->
 
 <center><img src='./image/item-seq3.png' width='900px'></center>
 In the last part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore , we use ''format_rnn_input_integer'' this function to format our labels(rnn_input_item_seq_with_cluster_integer.csv). 
+<!---
 最後第三階段使用第二階段產生的rnn_input_item_seq_with_cluster.csv，因為原本此檔案的標籤是浮點數形式，
 但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
 rnn_input_item_seq_with_cluster_integer.csv這個檔案。到這邊完成Step 1。
-
+--->
 
 ## Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
 First, we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
@@ -187,19 +198,25 @@ python execute-rnn.py --data=wm5-normalize --target=id --generated_num=856 --tot
 
 <center><img src='./image/step2_1.png' width='800px'></center>
 First, it would generate a log file, data settings, and create folders to store data generated by step2. Next, read "rnn_input_item_seq_with_cluster.csv" and generate a seqGAN input file.
+<!---
 STEP2開始，首先先建立log紀錄文件和資料相關設定，還有一樣建立step2執行過程中存放資料的資料夾。接著讀取前面step1
 最後產生的每個id有一個標籤的csv檔，產生segqan 需要的的input資料。
+--->
 
 <center><img src='./image/step2_2.png' width='800px'></center>
 Second, we will start to execute seqGAN, the generator would generate a sequence similar to raw sequence data, and the discriminator will evaluate those sequences. If the sequence is not similar to raw sequences it will recreate a new one unstill the discriminator is satisfied.
+<!---
 第二部分開始執行seqgan，generator會先生出一組序列，讓已看過真實資料的discriminator評斷generator
 產的資料的真假，如果看起來不真generator就需要重新產生序列，直到discriminator滿意為止。
 我們的目標為將144筆的原始資料，希望產生856筆資料，使整體資料共有1000筆，將拿來用在之後第三階段使用rnn來評估產生的序列的品質。
+--->
 
 <center><img src='./image/step2_3.png' width='800px'></center>
 After executing seqGAN, it makes raw data and data generated by HiseqGAN combine to a new data(ex.rnn_input_item_seq_with_cluster_label_seqgan_train.csv). The data will be used in the next step to evaluate the quality of the sequence synthesized by HiSeqGAN. 
+<!---
 第三部分就是seqgan執行完後，將原始資料和生成資料存成新的一個檔案(rnn_input_item_seq_with_cluster_label_seqgan_train.csv)
 結束step2的目的產生seqgan資料，將在下一階段使用rnn來評估精準性。
+--->
 
 ## Step 3 : Synthesis efficiency: Use RNN to evaluate the quality of sequence synthesized by HiSeqGAN
 
