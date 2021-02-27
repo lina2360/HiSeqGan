@@ -60,13 +60,13 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 
 Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`.
 
-* *tau1*: Which represents the same-layer SOM map similarity.
-* *tau2*: The depth of the GHSOM structure.
-* *data*: Set the data name which map the ***.csv*** file in raw-data folder.
-* *index*: Set the field as the index for clustering.
-* *target*: Set the field as the index for clustering.
-* *date_column*: Fields sorted by time, which use this column to generate a cluster sequence.
-* *train_column*: Field to be clustering.
+* *tau1* : Which represents the same-layer SOM map similarity.
+* *tau2* : The depth of the GHSOM structure.
+* *data* : Set the data name which map the ***.csv*** file in raw-data folder.
+* *index* : Set the field as the index for clustering.
+* *target* : Set the field as the index for clustering.
+* *date_column* : Fields sorted by time, which use this column to generate a cluster sequence.
+* *train_column* : Field to be clustering.
 
 ```
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
