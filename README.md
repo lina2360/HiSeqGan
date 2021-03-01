@@ -24,7 +24,7 @@ High-dimensional sequenced data often appears in practice. State-of-the-art recu
 ## Methodology
 
 <center><img src='./image/mainframe.png' width='700px'></center>
-Our mainframework consists of three parts, as shown in Fig. 1. The first part is Phase
+Our mainframe consists of three parts, as shown in Fig. 1. The first part is Phase
 Space Partition. We use GHSOM  as the means of partition sample space
 in an unsupervised fashion. We adopt HiSeqGAN  for symbolic labeling and sequence
 synthesis, where we use two methods to calculate the symbol distance, the first one uses
