@@ -24,6 +24,14 @@ High-dimensional sequenced data often appears in practice. State-of-the-art recu
 ## Methodology
 
 <center><img src='./image/mainframe.png' width='700px'></center>
+- Our mainframework consists of three parts, as shown in Fig. 1. The first part is Phase
+Space Partition. We use GHSOM  as the means of partition sample space
+in an unsupervised fashion. We adopt HiSeqGAN  for symbolic labeling and sequence
+synthesis, where we use two methods to calculate the symbol distance, the first one uses
+coordinates and cosine similarity. The second one uses the HiSeqGAN to synthesize
+discrete sequences. Finally,the last part of the prediction is based on a large set of synthesized
+sequences. Given partial information (a prefiex), we look for sequences that match the
+prefiex and use their suffix to predict the future states of the given information.
 
 ### GHSOM & Hierarchical Data Encoding
 GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
