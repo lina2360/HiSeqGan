@@ -31,7 +31,7 @@ coordinates and cosine similarity. The second one uses the HiSeqGAN to synthesiz
 discrete sequences. Finally,the last part of the prediction is based on a large set of synthesized
 sequences. Given partial information (a prefiex), we look for sequences that match the
 prefiex and use their suffix to predict the future states of the given information.
-<center><img src='./image/mainframe.png' width='700px'></center>
+<center><img src='./image/mainframe.png' width='900px'></center>
 
 ### GHSOM & Hierarchical Data Encoding
 GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
