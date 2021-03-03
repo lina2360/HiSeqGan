@@ -282,8 +282,6 @@ Next, we will execute seqGAN and use length oo with 1~10 week time-series data t
 In this stage, the accuracy of different layers will be generated at the end.
 <!---SEQGAN accurate，在這個階段最後會產生出不同layer的accuracy.--->
 <center><img src='./image/step4_4.png' width='900px'></center>
-RNN accurate
-<!--- --->
 Finally, the result that hiseqGAN generated time-series data have good predict which is our second prospects 'predict sequence data'.
 <!---
 結果可知利用hiseqgan產生的預測資料擁有良好的預測效果，也因此成為我們的第二項貢獻「產生預測資料」。
