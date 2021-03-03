@@ -273,18 +273,21 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 ```
 <center><img src='./image/step4_1.png' width='800px'></center>
 The same with STEP2, we will set up data and create seqGAN input data.
-和step2前面一樣，我們會先建立資料設定和產生seqgan的input資料。
+<!---和step2前面一樣，我們會先建立資料設定和產生seqgan的input資料。--->
 <center><img src='./image/step4_2.png' width='800px'></center>
 Next, we will execute seqGAN and use length oo with 1~10 week time-series data to train and predict complete length ooo with 1~18 week data, and then compare seqGAN data and RNN data's accuracy.
-接著進行seqgan，我們將以oo筆資料的1~10周的欄位做訓練並預測產生出完整的1~18周的ooo筆資料，最後再比較使用seqgan生成的
-資料與使用RNN來預測並生出的資料的差異
+<!---接著進行seqgan，我們將以oo筆資料的1~10周的欄位做訓練並預測產生出完整的1~18周的ooo筆資料，最後再比較使用seqgan生成的
+資料與使用RNN來預測並生出的資料的差異--->
 <center><img src='./image/step4_3.png' width='800px'></center>
-SEQGAN accurate，在這個階段最後會產生出不同layer的accuracy.
+In this stage, the accuracy of different layers will be generated at the end.
+<!---SEQGAN accurate，在這個階段最後會產生出不同layer的accuracy.--->
 <center><img src='./image/step4_4.png' width='900px'></center>
 RNN accurate
+<!--- --->
 Finally, the result that hiseqGAN generated time-series data have good predict which is our second prospects 'predict sequence data'.
+<!---
 結果可知利用hiseqgan產生的預測資料擁有良好的預測效果，也因此成為我們的第二項貢獻「產生預測資料」。
-
+--->
 
 ## Step 5 : Concretization: From Cluster Prediction to Actual Value Prediction
 - The previous steps show how the abstract domain data can be constructed and predicted. In the last step, we show how to concretize the abstract domain data back to the actual values. This is done by mapping the cluster to the high dimensional values that can be clustered into the cluster. When we find the predicted cluster, we will use the average and standard deviation of the original cluster to simulate the original value and compare it with the real value.
