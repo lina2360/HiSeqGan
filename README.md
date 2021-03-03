@@ -248,8 +248,8 @@ In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ 
 python execute-efficiency.py --data=wm5-normalize
 ```
 
-<center><img src='./image/step3_1.png' width='600px'></center>
-<center><img src='./image/step3_2.png' width='600px'></center>
+<center><img src='./image/step3_1.png' width='300px'></center>
+<center><img src='./image/step3_2.png' width='300px'></center>
 
 
 ## Step 4 :  Prediction accuracy: Compare the accuracy of sequence prediction with RNN and HiSeqGAN
