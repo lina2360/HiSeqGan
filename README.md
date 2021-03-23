@@ -62,6 +62,7 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 
 ## Step 1 : Abstraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 <!-- Figures that needs editing: 5, 6, 7, 8, 9, 10, 11 -->
+<!-- Document structure should be reconsidered -->
 Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`.
 
 ```
@@ -77,9 +78,8 @@ python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --targe
 * *train_column* : Field to be clustering.
 
 ### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
-
-<center><img src='./image/hipic1.png' width='700px'></center>
-
+<!--<center><img src='./image/hipic1.png' width='700px'></center>-->
+<center><img src='./image/step1_a.png' width='700px'></center>
 First, when you have executed the above instructions, you will generate data in the `applications/$data/` folder. (ex.applications/wm5_normalize) Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program developed by Vienna University of Technology.
 
 1. Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) 
@@ -124,30 +124,28 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
   
-4. When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. 
-&nbsp; * The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program.<br>
-&nbsp;&nbsp; * The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit.
-&nbsp;&nbsp; * The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
+4. When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
   
-### Relabel original data with symbolic labels 
-<center><img src='./image/hipic2.png' width='700px'></center>
-In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week in each student id(ex.extract_ghsom_output's picture) and then make a cluster with a label(ex.with_cluster_label.csv).
+### Relabel original data with symbolic labels
+<!--<center><img src='./image/hipic2.png' width='700px'></center>-->
+In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (ex. extract_ghsom_output's picture) and then make a cluster with a label (ex. with_cluster_label.csv). After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
 
 <!---
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
 而產生了with_cluster_label.csv這個檔案。
 --->
 
-<center><img src='./image/hipic3.png' width='700px'></center>
-After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
+<!--<center><img src='./image/hipic3.png' width='700px'></center>-->
+<!--After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.-->
 <!---
 分完群也上過標籤後，第三部分再給予每個分群座標位置，最終每筆資料將產生屬於自己的xy座標(相同座標代表相同集群)
 ，目的是為了之後算loss function。
 --->
 
 <center><img src='./image/hipic4.png' width='900px'></center>
-In the fourth part, we want to have  Integer labels but the label we generate in the second part is  Float labels. Therefore , we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
+<!-- The editable file of hipic4 is lost, it has to be reconstructed -->
+<!--In the fourth part, we want to have  Integer labels but the label we generate in the second part is  Float labels. Therefore , we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.-->
 <!---
 最後第四階段剛開始使用第二階段產生的with_cluster_label.csv，因為原本此檔案的標籤是浮點數形式，
 但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
