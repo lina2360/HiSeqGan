@@ -1,5 +1,5 @@
 # HiSeqGAN
-A Novel Approach to Hierarchical Sequence Synthesis and Prediction
+A Novel Approach to Hierarchical Sequence Synthesis and Prediction.
 ### Authors
 * Yun-Chieh Tien (106356004@nccu.edu.tw)
 * Chen-Min Hsu (107356019@nccu.edu.tw)
@@ -10,26 +10,19 @@ A Novel Approach to Hierarchical Sequence Synthesis and Prediction
 High-dimensional sequenced data often appears in practice. State-of-the-art recurrent neural network (RNN) models suffer prediction accuracy problem from complex relations amongst values of attributes. Adopting unsupervised clustering that categorize data based on their attribute similarity, results in data of lower dimensions that can be structured in a hierarchical fashion. It is essential to consider these data relations to improve model training performance. In this study, we propose a new approach to synthesize and predict sequences of hierarchical data.
 
 ### Prospects
-- Demand forecasting for supply chain management 
-- Predict final grades base on students' current learning situation
-- Use credit ratings to predict whether customers will bounce
+* Demand forecasting for supply chain management
+* Predict final grades base on students' current learning situation
+* Use credit ratings to predict whether customers will bounce
 
 ### Contributions
-- Input generation: provide more data to train a  model such as RNN
-- Sequence prediction: achieve higher accuracy for predicting high dimensional data sequence
+* Input generation: provide more data to train a  model such as RNN
+* Sequence prediction: achieve higher accuracy for predicting high dimensional data sequence
 
 <!--- The insertion of these two parts doesn't make sense now, the whole 'Abstract' paragraph would need a thorough overhaul --->
 <!--- There should be a distinct indication between these two parts --->
 
 ## Methodology
-
-Our mainframe consists of three parts, as shown in Fig. 1. The first part is Phase
-Space Partition. We use GHSOM  as the means of partition sample space
-in an unsupervised fashion. We adopt HiSeqGAN  for symbolic labeling and sequence
-synthesis, where we use two methods to calculate the symbol distance, the first one uses
-coordinates and cosine similarity. The second one uses the HiSeqGAN to synthesize
-discrete sequences. Finally,the last part of the prediction is based on a large set of synthesized
-sequences. Given partial information (a prefiex), we look for sequences that match the
+Our mainframe consists of three parts, as shown in Fig. 1. The first part is Phase Space Partition. We use GHSOM  as the means of partition sample space in an unsupervised fashion. We adopt HiSeqGAN  for symbolic labeling and sequence synthesis, where we use two methods to calculate the symbol distance, the first one uses coordinates and cosine similarity. The second one uses the HiSeqGAN to synthesize discrete sequences. Finally,the last part of the prediction is based on a large set of synthesized sequences. Given partial information (a prefiex), we look for sequences that match the
 prefiex and use their suffix to predict the future states of the given information.
 <center><img src='./image/mainframe.png' width='900px'></center>
 
@@ -37,7 +30,6 @@ prefiex and use their suffix to predict the future states of the given informati
 GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
 
 <img src='./image/ghsom.png' width='300px'><img src='./image/ghsomlabel.png' width='450px'>
-
 <img src='./image/coordinate.png' width='900px'>
 
 ### HiSeqGAN
@@ -53,8 +45,8 @@ To evaluate the prediction on clusters between two labels, we propose three-dime
 ## Prerequisites
 Please download this repository and put the data in the `./raw/data` folder. In the experiment, we are divided into five parts
 1. Data Preprocessing 
-  * Use GHSOM to transform data from high-dimensional data into hierarchical data
-  * Generate the cluster sequence base on item
+&nbsp; * Use GHSOM to transform data from high-dimensional data into hierarchical data
+&nbsp; * Generate the cluster sequence base on item
 <!--- How to fix the typesetting? --->
 2. Use HiSeqGAN to generate sequence data and perform sequence synthesis.
 3. Use RNN to compare the accuracy of the original data with the sequence synthesis data in sequence prediction.
@@ -69,8 +61,12 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 <!--- It may be a good idea to include versions of packages used--->
 
 ## Step 1 : Abstraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
-
+<!-- Figures that needs editing: 5, 6, 7, 8, 9, 10, 11 -->
 Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`.
+
+```
+python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
+```
 
 * *tau1* : Which represents the same-layer SOM map similarity.
 * *tau2* : The depth of the GHSOM structure.
@@ -80,21 +76,15 @@ Execute the following command to transform data from high-dimensional data into 
 * *date_column* : Fields sorted by time, which use this column to generate a cluster sequence.
 * *train_column* : Field to be clustering.
 
-```
-python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
-```
-
 ### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
 
 <center><img src='./image/hipic1.png' width='700px'></center>
 
-Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program provided by Vienna University of Technology. 
+First, when you have executed the above instructions, you will generate data in the `applications/$data/` folder. (ex.applications/wm5_normalize) Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program developed by Vienna University of Technology.
 
-First, when you have executed the above instructions, you will generate data in the `applications/$data/` folder.(ex.applications/wm5_normalize)
+1. Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) 
 
-- Before converting high-dimensional data into hierarchical data, please convert the data into a specific format (.in file). ex. [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) 
-
-- The .in file format is as follows (create_ghsom_input_file) :
+2. The .in file format is as follows (create_ghsom_input_file) :
     ```bash
     $TYPE inputvec
     $XDIM 2592
@@ -116,7 +106,7 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
   
-- Then GHSOM property file is generated as follows (create_ghsom_prop_file): 
+3. Then GHSOM property file is generated as follows (create_ghsom_prop_file): 
     ```bash
     workingDirectory=./
     outputDirectory=./output/wm5-normalize
@@ -134,10 +124,10 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
   
-- When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. 
-  - The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program.<br>
-    - The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit.
-    - The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
+4. When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. 
+&nbsp; * The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program.<br>
+&nbsp;&nbsp; * The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit.
+&nbsp;&nbsp; * The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
   
 ### Relabel original data with symbolic labels 
@@ -166,42 +156,39 @@ rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下
 
 ### Generate for each student a symbolic label that represents their weekly records over the semester
 
-- Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
+Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
 ```csv
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
 ```
-
 ```bash
 python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
 
 <center><img src='./image/item-seq1.png' width='900px'></center>
 Because our raw data have a lot of weekly columns we use GHSOM to reduct weekly columns' dimensions to the label(ex.rnn_input_data_integer.csv). However, our goal is "each student " has a cluster label. Thus, in the fifth part, we need to achieve this goal. First, we create a new folder to store our data for step2 and then read item-seq data to generate GHSOM's input file和prop file.
-<!---因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆
-有一個標籤代表其資料屬性(rnn_input_data_integer.csv)」，然而最終目的是希望將「每個id的全部資料」降維成一個標籤，
-因此第五部分再次將「每個id的每週資料皆有一個標籤代表其資料屬性」的資料用ghsom分群成
-「每個id皆有一個標籤」代表其整體屬性。
-要使每個id皆有一個標籤的第一步，一樣是先建立資料夾，跟前面不同的是這邊讀取的是item-seq data，然後開始
-產生GHSOM的input file和prop file。
+
+<!---
+因為原始資料欄位多，前面的ghsom是先把多維資料降維成一個標籤，得到了「每個id的每週資料皆有一個標籤代表其資料屬性(rnn_input_data_integer.csv)」
+然而最終目的是希望將「每個id的全部資料」降維成一個標籤，因此第五部分再次將「每個id的每週資料皆有一個標籤代表其資料屬性」的資料用ghsom分群成「每個id皆有一個標籤」代表其整體屬性。
+要使每個id皆有一個標籤的第一步，一樣是先建立資料夾，跟前面不同的是這邊讀取的是item-seq data，然後開始產生GHSOM的input file和prop file。
 --->
 
 <center><img src='./image/item-seq2.png' width='900px'></center>
 In the second part, it also starts to generate GHSOM clusters(ex.extract_ghsom_output),and give each student a cluster label(ex.rnn_input_item_seq_with_cluster.csv).
-<!---第二部分開始執行ghsom，一樣會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個id擁有一個標籤，
-而產生了rnn_input_item_seq_with_cluster.csv這個檔案。
+<!---
+第二部分開始執行ghsom，一樣會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個id擁有一個標籤，而產生了rnn_input_item_seq_with_cluster.csv這個檔案。
 --->
 
 <center><img src='./image/item-seq3.png' width='900px'></center>
 In the last part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore , we use ''format_rnn_input_integer'' this function to format our labels(rnn_input_item_seq_with_cluster_integer.csv). 
 <!---
-最後第三階段使用第二階段產生的rnn_input_item_seq_with_cluster.csv，因為原本此檔案的標籤是浮點數形式，
-但我們希望其表現方式為整數，因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了
-rnn_input_item_seq_with_cluster_integer.csv這個檔案。到這邊完成Step 1。
+最後第三階段使用第二階段產生的rnn_input_item_seq_with_cluster.csv，因為原本此檔案的標籤是浮點數形式，但我們希望其表現方式為整數，
+因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了rnn_input_item_seq_with_cluster_integer.csv這個檔案。到這邊完成Step 1。
 --->
 
 ## Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
-First, we use SeqGAN to generate data $`Data{_{HiSeqGAN}}`$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
+First, we use SeqGAN to generate data $Data{_{HiSeqGAN}}$. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
 After SeqGAN has generated the data, STEP3 we will add them to original data to verify adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 - Execute the following command to generate a sequence for sequence synthesis.
@@ -211,6 +198,7 @@ After SeqGAN has generated the data, STEP3 we will add them to original data to 
   - __generated_num__ : The number that how many sequences are generated.
   - __total_batch__ : Number of times the entire dataset was trained.
   - __batch_size__ : The batch size will determine the number of samples we train at a time.
+
 ```bash
 python execute-rnn.py --data=wm5-normalize --target=id --generated_num=856 --total_batch=100 --batch_size=5 --seq_length=18
 ```
@@ -242,7 +230,7 @@ After executing seqGAN, it makes raw data and data generated by HiseqGAN combine
 <center><img src='./image/RNN.png' width='600px'></center>
 
 - Use RNN to compare the accuracy of sequence prediction between the original data and the data for sequence synthesis. Please refer to this [paper]((https://arxiv.org/abs/1609.05473)) for the principle of [SeqGAN](https://github.com/LantaoYu/SeqGAN).
-In this experiment, we will use time series data of length 144 $`Data{_{raw}}`$ generated sequence data of the length 856. This data was merged into the original data to become $`Data{_{HiSeqGAN}}`$, and compared with $`Data{_{raw}}`$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
+In this experiment, we will use time series data of length 144 $Data{_{raw}}$ generated sequence data of the length 856. This data was merged into the original data to become $Data{_{HiSeqGAN}}$, and compared with $Data{_{raw}}$ to verify whether adding SeqGAN data can improve the accuracy of time series prediction of RNN.
 
 ```bash
 python execute-efficiency.py --data=wm5-normalize
@@ -268,8 +256,8 @@ python execute-seqgan.py --data=wm5-normalize --target=id --generated_num=55 --t
 
 - There has the same setting as the previous experiment but this time it has to use its prediction to predict the next periods. For our HiSeqGAN model, we use $`Data{_{raw}}`$ with week 1 to 10 to synthesize 9856 sequences with week 1 to 18 (denoted as the set $`S`$). Then for each item ($`Y^{item}`$), we use the following algorithm to find a synthesized sequence Y that has its prefix best match to $`Y^{item}`$ and then use the postfix (clusters on week 2 to 18) of the selected synthesized sequence for prediction.
 
-```math
-\max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})
+```
+$\max_{Y\in S}{\tt SequenceSimilarity}(Y_{1:t},Y^{item})$
 ```
 <center><img src='./image/step4_1.png' width='800px'></center>
 The same with STEP2, we will set up data and create seqGAN input data.
