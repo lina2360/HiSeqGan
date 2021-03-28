@@ -27,7 +27,7 @@ prefiex and use their suffix to predict the future states of the given informati
 <center><img src='./image/mainframe.png' width='900px'></center>
 
 ### GHSOM & Hierarchical Data Encoding
-GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure(Figure 2). Use decimal encoding to label the clusters(Figure 3). After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector(Figure 4).
+GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure(Figure 2). Use decimal encoding to label those partitions(Figure 3). After using the decimal number to label partitions, we converse each number to the two-dimensional coordinate vector(Figure 4).Two-dimensional coordinate vector is used to Label error which is defined as the ladder distance of two partitions  and the distance between the two partitions in the smallest common  ancestor partition.We need to  cuculate the cosine similarity of the two coordination for Label error.
 
 <img src='./image/ghsom.png' width='300px'><img src='./image/ghsomlabel.png' width='450px'>
 <img src='./image/coordinate.png' width='900px'>
