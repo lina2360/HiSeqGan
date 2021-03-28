@@ -27,7 +27,7 @@ prefiex and use their suffix to predict the future states of the given informati
 <center><img src='./image/mainframe.png' width='900px'></center>
 
 ### GHSOM & Hierarchical Data Encoding
-GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure. Use decimal encoding to label the clusters. After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector.
+GHSOM is a self-organizing map that grows hierarchically based on data distribution. The GHSOM map results in data in clusters of a tree-like structure(Figure 2). Use decimal encoding to label the clusters(Figure 3). After using the decimal number to label clusters, we converse each number to the two-dimensional coordinate vector(Figure 4).
 
 <img src='./image/ghsom.png' width='300px'><img src='./image/ghsomlabel.png' width='450px'>
 <img src='./image/coordinate.png' width='900px'>
