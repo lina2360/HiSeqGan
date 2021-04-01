@@ -107,7 +107,7 @@ First, when you have executed the above instructions, you will generate data in 
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
 
 3.In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (ex. extract_ghsom_output) and then make a cluster with a label (ex. with_cluster_label.csv). After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
-  
+
 4. Then GHSOM property file is generated as follows (create_ghsom_prop_file): 
     ```bash
     workingDirectory=./
