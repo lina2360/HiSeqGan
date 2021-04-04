@@ -130,7 +130,7 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 
-2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (save_ghsom_cluster_label)(ex.[wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). 
+2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (save_ghsom_cluster_label)([wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). 
 
 3. After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function(save_ghsom_with_coordinnate_representation_label).
  
@@ -164,11 +164,15 @@ rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下
 
 ### Generate for each student a symbolic label that represents their weekly records over the semester
 
-Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.
+Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))
+
+<!--
 ```csv
 id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 102205089,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5521,5524,5521,5521,5521,5521,5521,5560
 ```
+-->
+
 ```bash
 python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
