@@ -87,7 +87,7 @@ First, when you have executed the above instructions, you will generate data in 
 
 1. Before converting high-dimensional data into hierarchical data, we would convert the data into a specific format first(.in file and .prop file).
 
-   The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/GHSOM/data/wm5-normalize_ghsom.in) :
+   The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.in) :
     
     ```bash
     $TYPE inputvec
@@ -111,7 +111,7 @@ First, when you have executed the above instructions, you will generate data in 
     
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
 
-   Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./applications/GHSOM/data/wm5-normalize_ghsom.prop) : 
+   Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.prop) : 
     
     ```bash
     workingDirectory=./
@@ -187,7 +187,7 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 <!-- The editable files of 'seq' are lost, it has to be reconstructed -->
 
 5. Because our raw data have a lot of weekly columns we use GHSOM to reduct weekly columns' dimensions to the label([rnn_input_data_integer.csv](./applications/wm5-normalize/data/rnn_input_data_integer.csv)). However, our goal is "each student " has a cluster label. Thus, we need to achieve this goal. 
-   First, we create a new folder to store our data for step2 and then read [wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv) to generate [wm5-normalize-item-seq_ghsom.in](./applications/GHSOM/data/wm5-normalize-item-seq_ghsom.in) and [wm5-normalize-item-seq_ghsom.prop](./applications/GHSOM/data/wm5-normalize-item-seq_ghsom.prop). 
+   First, we create a new folder to store our data for step2 and then read [wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv) to generate [wm5-normalize-item-seq_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize-item-seq_ghsom.in) and [wm5-normalize-item-seq_ghsom.prop](./applications/wm5-normalize/GHSOM/data/wm5-normalize-item-seq_ghsom.prop). 
 6. In the second part(ghsom_clustering), it also starts to generate GHSOM clusters (extract_ghsom_output),and give each student a cluster label ([rnn_input_item_seq_with_cluster.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster.csv)). 
 7. In the last part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use "format_rnn_input_integer" function to format our labels ([rnn_input_item_seq_with_cluster_integer.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster_integer.csv)).
 
