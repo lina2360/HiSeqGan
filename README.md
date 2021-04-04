@@ -140,7 +140,7 @@ When GHSOM finished clustering, it will generate the output in `applications/$da
 ### Relabel original data with symbolic labels
 <!---<center><img src='./image/hipic2.png' width='700px'></center>--->
 
-4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use "format_rnn_input_integer" function to format our labels ([wm5-normalize_with_clustered_label_integer.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label_integer.csv))(This data for next step[rnn_input_data_integer.csv](./applications/wm5-normalize/data/rnn_input_data_integer.csv))and use "format_rnn_input_float" to create "item-seq.csv" data ([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))which is needed in the next part.
+4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use "format_rnn_input_integer" function to format our labels ([wm5-normalize_with_clustered_label_integer.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label_integer.csv))(This data for next step [rnn_input_data_integer.csv](./applications/wm5-normalize/data/rnn_input_data_integer.csv))and use "format_rnn_input_float" to create "item-seq.csv" data ([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))which is needed in the next part.
 <!---
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
 而產生了with_cluster_label.csv這個檔案。
