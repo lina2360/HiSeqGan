@@ -234,7 +234,9 @@ STEP2開始，首先先建立log紀錄文件和資料相關設定，還有一樣
 最後產生的每個id有一個標籤的csv檔，產生segqan 需要的的input資料。
 --->
 
+
 2. Second, we will start to execute seqGAN, the generator would generate a sequence similar to raw sequence data, and the discriminator will evaluate those sequences. If the sequence is not similar to raw sequences it will recreate a new one unstill the discriminator is satisfied.
+
 <!---
 第二部分開始執行seqgan，generator會先生出一組序列，讓已看過真實資料的discriminator評斷generator
 產的資料的真假，如果看起來不真generator就需要重新產生序列，直到discriminator滿意為止。
