@@ -241,7 +241,7 @@ python execute-efficiency.py --data=wm5-normalize
 ```
 
 <center><img src='./image/step3_2.png' width='900px'></center>
-
+--->
 
 <!---
 ## Step 4 :  Prediction accuracy: Compare the accuracy of sequence prediction with RNN and HiSeqGAN
