@@ -177,6 +177,10 @@ id,week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,we
 python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,week2,week3,week4,week5,week6,week7,week8,week9,week10,week11,week12,week13,week14,week15,week16,week17,week18
 ```
 
+* *data* : Set the data name which map the ***.csv*** file in raw-data folder.
+* *index* : Set the field as the index for clustering.
+* *train_column* : Field to be clustering.
+
 <center><img src='./image/item-seq1.png' width='900px'></center>
 <!-- The editable files of 'seq' are lost, it has to be reconstructed -->
 Because our raw data have a lot of weekly columns we use GHSOM to reduct weekly columns' dimensions to the label(ex.rnn_input_data_integer.csv). However, our goal is "each student " has a cluster label. Thus, in the fifth part, we need to achieve this goal. First, we create a new folder to store our data for step2 and then read item-seq data to generate GHSOM's input file和prop file. In the second part, it also starts to generate GHSOM clusters(ex.extract_ghsom_output),and give each student a cluster label (ex. rnn_input_item_seq_with_cluster.csv). In the last part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use ''format_rnn_input_integer'' this function to format our labels (rnn_input_item_seq_with_cluster_integer.csv).
