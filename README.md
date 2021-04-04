@@ -130,12 +130,12 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 
-2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (ex.[wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
+2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (ex.[wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). 
+
+3. After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
  
 When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
-
-3. (暫)
   
 ### Relabel original data with symbolic labels
 <!---<center><img src='./image/hipic2.png' width='700px'></center>--->
