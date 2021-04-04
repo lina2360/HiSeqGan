@@ -188,7 +188,7 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 
 5. Because our raw data have a lot of weekly columns we use GHSOM to reduct weekly columns' dimensions to the label([rnn_input_data_integer.csv](./applications/wm5-normalize/data/rnn_input_data_integer.csv)). However, our goal is "each student " has a cluster label. Thus, we need to achieve this goal. 
    First, we create a new folder to store our data for step2 and then read [wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv) to generate [wm5-normalize-item-seq_ghsom.in](./program/GHSOM/data/wm5-normalize-item-seq_ghsom.in) and [wm5-normalize-item-seq_ghsom.prop](./program/GHSOM/data/wm5-normalize-item-seq_ghsom.prop). 
-6. In the second part, it also starts to generate GHSOM clusters (extract_ghsom_output),and give each student a cluster label ([rnn_input_item_seq_with_cluster.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster.csv)). 
+6. In the second part(ghsom_clustering), it also starts to generate GHSOM clusters (extract_ghsom_output),and give each student a cluster label ([rnn_input_item_seq_with_cluster.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster.csv)). 
 7. In the last part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use "format_rnn_input_integer" function to format our labels ([rnn_input_item_seq_with_cluster_integer.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster_integer.csv)).
 
 <!---
