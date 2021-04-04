@@ -88,6 +88,7 @@ First, when you have executed the above instructions, you will generate data in 
 1. Before converting high-dimensional data into hierarchical data, we would convert the data into a specific format first(.in file and .prop file).
 
     The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) :
+    
     ```bash
     $TYPE inputvec
     $XDIM 2592
@@ -107,9 +108,10 @@ First, when you have executed the above instructions, you will generate data in 
     -0.1790610684364638 -0.07175541524866726 -0.1750380112847939 -0.17473997015507464 10
     ....
     ```
+    
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
 
-    Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./program/GHSOM/data/wm5-normalize_ghsom.prop) : 
+   Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./program/GHSOM/data/wm5-normalize_ghsom.prop) : 
     
     ```bash
     workingDirectory=./
