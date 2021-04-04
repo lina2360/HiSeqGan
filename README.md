@@ -135,10 +135,11 @@ First, when you have executed the above instructions, you will generate data in 
 When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
 
-3.(暫)
+3. (暫)
   
 ### Relabel original data with symbolic labels
-<!--<center><img src='./image/hipic2.png' width='700px'></center>-->
+<!---<center><img src='./image/hipic2.png' width='700px'></center>--->
+
 4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
 <!---
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
