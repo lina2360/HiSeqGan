@@ -66,7 +66,7 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 ## Step 1 : Abstraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
 <!-- Figures that needs editing: 5, 6, 7, 8, 9, 10, 11 -->
 <!-- Document structure should be reconsidered -->
-Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`.
+Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`. our example data is [wm5-normalize.csv](./raw-data/wm5-normalize.csv).
 
 ```
 python execute.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
