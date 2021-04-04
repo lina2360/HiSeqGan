@@ -50,9 +50,11 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 &nbsp; * Generate the cluster sequence base on item.
 <!--- How to fix the typesetting? --->
 2. Use HiSeqGAN to generate sequence data and perform sequence synthesis.
-<!---3. Use RNN to compare the accuracy of the original data with the sequence synthesis data in sequence prediction.
+<!---
+3. Use RNN to compare the accuracy of the original data with the sequence synthesis data in sequence prediction.
 4. Compare the accuracy of Naive Bayes, RNN, HiSeqGAN for time series data prediction.
-5. From cluster prediction to actual value prediction---!>
+5. From cluster prediction to actual value prediction
+---!>
 
 
 ### Environment
