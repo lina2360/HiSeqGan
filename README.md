@@ -130,17 +130,17 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 
-2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (ex.[wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). 
+2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (save_ghsom_cluster_label)(ex.[wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). 
 
-3. After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
+3. After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function(save_ghsom_with_coordinnate_representation_label).
  
 When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
   
 ### Relabel original data with symbolic labels
 <!---<center><img src='./image/hipic2.png' width='700px'></center>--->
-
-4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
+***
+4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use "format_rnn_input_integer" function to format our labels ([wm5-normalize_with_clustered_label_integer.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label_integer.csv))and use "format_rnn_input_float" to create "item-seq.csv" data ([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))which is needed in the next part.
 <!---
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
 而產生了with_cluster_label.csv這個檔案。
