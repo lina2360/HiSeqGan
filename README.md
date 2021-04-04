@@ -87,7 +87,7 @@ First, when you have executed the above instructions, you will generate data in 
 
 1. Before converting high-dimensional data into hierarchical data, we would convert the data into a specific format first(.in file and .prop file).
 
-    The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) :
+   The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./program/GHSOM/data/wm5-normalize_ghsom.in) :
     
     ```bash
     $TYPE inputvec
@@ -130,14 +130,16 @@ First, when you have executed the above instructions, you will generate data in 
     ```
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 
-2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (ex. extract_ghsom_output) and then make a cluster with a label (ex. with_cluster_label.csv). After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
+2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (ex.[wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). After making each cluster with a label, we need to generate a cluster a coordinate representation intends to calculate the loss function.
  
-3. When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
+When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
+
+3.(暫)
   
 ### Relabel original data with symbolic labels
 <!--<center><img src='./image/hipic2.png' width='700px'></center>-->
-In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
+4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use ''format_rnn_input_integer'' this function to format our labels and use "format_rnn_input_float"create "item-seq.csv" data which is needed in the next part.
 <!---
 第二部分開始執行ghsom，會先產生ghsom分群(ex.extract_ghsom_output的圖)，接著希望每個分群加上標籤，
 而產生了with_cluster_label.csv這個檔案。
