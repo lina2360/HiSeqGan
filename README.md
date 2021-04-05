@@ -91,45 +91,10 @@ In the first section, we use GHSOM for clustering based on attribute similarity.
 
    The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.in) :
     
-    ```bash
-    $TYPE inputvec
-    $XDIM 2592
-    $YDIM 1
-    $VECDIM 4
-
-    -0.1790610684364638 -0.1226313575601998 -0.1750380112847939 -0.20189812383183994 0
-    -0.1790610684364638 -0.1226313575601998 -0.17147628582521554 -0.14252913672449252 1
-    -0.1672316632659255 -0.04817875905551803 -0.17305927491836148 -0.17410838518584754 2
-    -0.1790610684364638 -0.11270434442624225 -0.1750380112847939 -0.13621328703222152 3
-    -0.1790610684364638 -0.013434213086666534 -0.1750380112847939 -0.18926642444729794 4
-    -0.16469679072938154 -0.1226313575601998 -0.17187203309850205 -0.03958078674047519 5
-    -0.1790610684364638 -0.06182840211470969 -0.1750380112847939 -0.17221363027816625 6
-    -0.1790610684364638 -0.1226313575601998 -0.1750380112847939 -0.17284521524739332 7
-    -0.1790610684364638 -0.0568648955477309 -0.1750380112847939 -0.17726631003198304 8
-    -0.1790610684364638 -0.08044155174088014 -0.1750380112847939 -0.17095046033971206 9
-    -0.1790610684364638 -0.07175541524866726 -0.1750380112847939 -0.17473997015507464 10
-    ....
-    ```
-    
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
 
-   Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./applications/wm5-normalize/GHSOM/wm5-normalize_ghsom.prop) : 
-    
-    ```bash
-    workingDirectory=./
-    outputDirectory=./output/wm5-normalize
-    namePrefix=wm5-normalize
-    vectorFileName=./data/wm5-normalize_ghsom.in
-    sparseData=yes
-    isNormalized=false
-    randomSeed=7
-    xSize=2
-    ySize=2
-    learnRate=0.7
-    numIterations=20000
-    tau=0.1
-    tau2=0.01
-    ```
+   Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./applications/wm5-normalize/GHSOM/wm5-normalize_ghsom.prop) :
+   
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 
 2. In the second part, we will start to run GHSOM. First, GHSOM would generate a cluster for each week for each student id (extract_ghsom_output) and then make a cluster with a label (save_ghsom_cluster_label)([wm5-normalize_with_clustered_label.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label.csv)). 
@@ -234,6 +199,8 @@ python execute-hiseqgan.py --data=wm5-normalize --target=id --generated_num=856 
 2. Second, we will start to execute HiSeqGAN, the generator would generate a sequence similar to raw sequence data, and the discriminator will evaluate those sequences. If the sequence is not similar to raw sequences it will recreate a new one unstill the discriminator is satisfied.This step will read [seqGAN_input_data.txt](./applications/wm5-normalize/SeqGAN/seqGAN_input_data.txt) , [generater_sample.txt](./applications/wm5-normalize/SeqGAN/save/generater_sample.txt) and [experiment-log.txt](./applications/wm5-normalize/SeqGAN/save/experiment-log.txt).In the end it will create [seqGAN_output_data.txt](./applications/wm5-normalize/SeqGAN/seqGAN_output_data.txt)
 
 3. Finally,because we want to combine raw sequence data and generated sequence data , read [rnn_input_item_seq_with_cluster_integer.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster_integer.csv) and [seqGAN_output_data.txt](./applications/wm5-normalize/SeqGAN/seqGAN_output_data.txt) and then create a new data  [rnn_input_item_seq_with_cluster_label_seqgan_train.csv](./applications/wm5-normalize/data/rnn_input_item_seq_with_cluster_label_seqgan_train.csv) which combines raw sequence and generated sequence.
+
+<!---放一張input output結果圖--->
 
 
 <!---
