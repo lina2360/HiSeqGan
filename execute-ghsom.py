@@ -66,6 +66,11 @@ def extract_ghsom_output(name, current_path):
 def save_ghsom_cluster_label(name):
     os.system('python ./programs/data_processing/save_cluster_with_clustered_label.py --name=%s ' % name)
     print('Success transfer cluster label.')
+
+def save_ghsom_cluster_map(name):
+    os.system('python ./programs/data_processing/save_cluster_with_clustered_map_cell.py --name=%s' % name)    #if cluster cells
+    #os.system('python ./programs/data_processing/save_cluster_with_clustered_map.py --name=%s' % name)
+    print('Success transfer cluster label to clustered map')
     
 
 
@@ -112,7 +117,7 @@ else:
         ##############################
         # create a folder for GHSOM
         os.makedirs('%s/applications/%s/GHSOM' % (current_path, args.data))
-
+        os.makedirs('%s/applications/%s/graphs' % (current_path, args.data))
         # # create a folder for GHSOM prop
         # os.makedirs('%s/applications/%s/GHSOM/prop' % (current_path, args.data))
 
@@ -127,12 +132,12 @@ else:
         ghsom_clustering(args.data)
         extract_ghsom_output(args.data, current_path)
         save_ghsom_cluster_label(args.data)
+        save_ghsom_cluster_map(args.data)
         
-        save_ghsom_cluster_label_with_coordinate(args.data)
+        # save_ghsom_cluster_label_with_coordinate(args.data)
+
         format_rnn_input_integer(args.data,args.target,args.date_column)
         format_RNN_input_float(args.data,args.target,args.date_column)
         # compute_entropy(args.data)
     except Exception as e:
         print('Failed to create /applications/%s folder due to :%s' % (args.data, str(e)))
-
-# map_cluster_center_ponit(args.data)
