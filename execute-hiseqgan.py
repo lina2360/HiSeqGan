@@ -49,35 +49,6 @@ console.setFormatter(formatter)
 # 加入 hander 到 root logger
 logging.getLogger('').addHandler(console)
 
-##############################
-# RNN Settings
-##############################
-# Run RNN 
-def rnn_all_wmse(name,input_type):
-    try:
-        # os.system('python ./programs/RNN/app_all.py --name=%s' % (name))
-        os.system('python ./programs/RNN/app_all.py --name=%s --input_type=%s' % (name,input_type))
-        # logging.info(output)
-    except Exception as e:
-        print('Error:',e)
-
-def rnn_all_center(name,input_type):
-    try:
-        # os.system('python ./programs/RNN/app_all.py --name=%s' % (name))
-        os.system('python ./programs/RNN/app_all_item_center_point_real.py --name=%s --input_type=%s' % (name,input_type))
-        # logging.info(output)
-    except Exception as e:
-        print('Error:',e)
-
-def rnn_all_week(name,input_type):
-    try:
-        # os.system('python ./programs/RNN/app_all.py --name=%s' % (name))
-        os.system('python ./programs/RNN/app_all_week.py --name=%s --input_type=%s' % (name,input_type))
-        # logging.info(output)
-    except Exception as e:
-        print('Error:',e)
-
-
 # create SeqGAN input file 
 def create_seqgan_input_file(name, target):
     try:
@@ -150,14 +121,6 @@ else:
     print('Success to create /applications/%s/SeqGAN/save folder.' % (args.data))
 
 
-# create_seqgan_input_file(prefix, target)
+create_seqgan_input_file(prefix, target)
 execute_sequence_gan(prefix,generated_num,total_batch,batch_size,seq_length)
-# clustering_sequence_gan_output(prefix)
-
-# rnn_all_wmse(prefix,'rnn')
-# rnn_all_center(prefix,'rnn')
-# rnn_all_wmse(prefix,'seqgan')
-# rnn_all_center(prefix,'seqgan')
-
-# rnn_all_week(prefix,'rnn')
-# rnn_all_week(prefix,'seqgan')
+clustering_sequence_gan_output(prefix)
