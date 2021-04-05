@@ -5,7 +5,7 @@ $XDIM 2
 $YDIM 2
 $ZDIM 1
 $VEC_DIM 18
-$STORAGE_DATE 2020/9/25 ¤U¤È 3:20
+$STORAGE_DATE 4/5/21, 7:23 PM
 $TRAINING_TIME 
 $LEARNRATE_TYPE exponential
 $LEARNRATE_INIT 0.7
@@ -18,15 +18,15 @@ $ADAPTIVE_COORDINATES_THRESHOLD
 $VEC_NORMALIZED true
 $QUANTERROR_MAP 3.0799896683542384E-15
 $QUANTERROR_VEC 2.1388817141348877E-17
-$URL_TRAINING_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize\GHSOM/\./data/wm5-normalize-item-seq_ghsom.in
+$URL_TRAINING_VEC /mnt/c/Users/soslab/Desktop/HiSeqGan-master/./applications/wm5-normalize/GHSOM/./data/wm5-normalize-item-seq_ghsom.in
 $URL_TRAINING_VEC_DESCR 
-$URL_WEIGHT_VEC C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize\GHSOM/\./output/wm5-normalize-item-seq\wm5-normalize-item-seq_submap_lvl3_2x1_3x0.wgt
+$URL_WEIGHT_VEC /mnt/c/Users/soslab/Desktop/HiSeqGan-master/./applications/wm5-normalize/GHSOM/./output/wm5-normalize-item-seq/wm5-normalize-item-seq_submap_lvl3_2x1_3x0.wgt
 $URL_QUANTERR_MAP 
 $URL_MAPPED_INPUT_VEC 
 $URL_MAPPED_INPUT_VEC_DESCR 
-$URL_UNIT_DESCR C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize\GHSOM/\./output/wm5-normalize-item-seq\wm5-normalize-item-seq_submap_lvl3_2x1_3x0.unit
+$URL_UNIT_DESCR /mnt/c/Users/soslab/Desktop/HiSeqGan-master/./applications/wm5-normalize/GHSOM/./output/wm5-normalize-item-seq/wm5-normalize-item-seq_submap_lvl3_2x1_3x0.unit
 $URL_TEMPLATE_VECTOR null
-$URL_DATA_WINNER_MAPPING C:\Users\soslab\Desktop\HiSeqGAN-System\.\applications\wm5-normalize\GHSOM/\./output/wm5-normalize-item-seq\wm5-normalize-item-seq_submap_lvl3_2x1_3x0.dwm
+$URL_DATA_WINNER_MAPPING /mnt/c/Users/soslab/Desktop/HiSeqGan-master/./applications/wm5-normalize/GHSOM/./output/wm5-normalize-item-seq/wm5-normalize-item-seq_submap_lvl3_2x1_3x0.dwm
 $URL_CLASS_INFO 
 $URL_LABELS 
 $METRIC at.tuwien.ifs.somtoolbox.layers.metrics.L2Metric
