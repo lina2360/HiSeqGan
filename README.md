@@ -63,7 +63,7 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 
 <!--- It may be a good idea to include versions of packages used--->
 
-## Step 1 : Abstraction
+## Step 1 : GHSOM clustering
 <!-- Figures that needs editing: 5, 6, 7, 8, 9, 10, 11 -->
 <!-- Document structure should be reconsidered -->
 The objective of this step is to prepare the data by ***abstracting high dimensional data with symbolic labels using unsupervised clustering GHSOM***. Execute the following command to transform data from high-dimensional to a hierarchical form. Each cluster would be labeled according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`. The link to our example data is [wm5-normalize.csv](./raw-data/wm5-normalize.csv).
