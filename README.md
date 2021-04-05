@@ -87,6 +87,7 @@ python execute-ghsom.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id -
 <center><img src='./image/step1_a.png' width='700px'></center>
 In the first section, we use GHSOM for clustering based on attribute similarity. After the data has been prepared following the instructions above, you will generate data in the  `applications/$data/`  folder. (ex.applications/wm5_normalize) Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program developed by Vienna University of Technology.
 <!--- "you will generate data..." means we're to use the generated data located in that folder? --->
+
 1. Before converting high-dimensional data into hierarchical data, we would convert the data into a specific format first(.in file and .prop file).
 
    * The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.in) 
