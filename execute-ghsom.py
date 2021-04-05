@@ -136,7 +136,3 @@ else:
         print('Failed to create /applications/%s folder due to :%s' % (args.data, str(e)))
 
 # map_cluster_center_ponit(args.data)
-save_ghsom_cluster_label_with_coordinate(args.data)
-format_rnn_input_integer(args.data,args.target,args.date_column)
-format_RNN_input_float(args.data,args.target,args.date_column)
-# ghsom_clustering(args.data)
