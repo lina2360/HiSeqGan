@@ -90,11 +90,11 @@ In the first section, we use GHSOM for clustering based on attribute similarity.
 
 1. Before converting high-dimensional data into hierarchical data, we would convert the data into a specific format first(.in file and .prop file).
 
-   * The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.in) 
+  * The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.in) 
     
   > Reference from : http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html#input_vectors
 
-   * Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./applications/wm5-normalize/GHSOM/wm5-normalize_ghsom.prop) 
+  * Then GHSOM property file is generated as follows (create_ghsom_prop_file) [wm5-normalize_ghsom.prop](./applications/wm5-normalize/GHSOM/wm5-normalize_ghsom.prop) 
    
   > Reference from : http://www.ifs.tuwien.ac.at/dm/somtoolbox/examples/PROPERTIES
 
