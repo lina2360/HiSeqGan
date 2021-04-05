@@ -82,7 +82,7 @@ python execute-ghsom.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id -
 * *train_column* : Field to be clustering.
 <!--- What does the last two attributes mean exactly? --->
 
-### Section 1-A: Construct The Abstract Domain
+### Section 1-A: Construct The Abstract Domain - Clusters
 <!--<center><img src='./image/hipic1.png' width='700px'></center>-->
 <center><img src='./image/step1_a.png' width='700px'></center>
 In the first section, we use GHSOM for clustering based on attribute similarity. After the data has been prepared following the instructions above, you will generate data in the  `applications/$data/`  folder. (ex.applications/wm5_normalize) Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program developed by Vienna University of Technology.
