@@ -211,7 +211,7 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 --->
 
 ## Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
-We use SeqGAN to generate data $ Data{_{HiSeqGAN}} $. There are 144 original data, so here we use SeqGAN to generate 856 time series data.
+We use SeqGAN to generate data $Data{_{HiSeqGAN}}$ . There are 144 original data, so here we use SeqGAN to generate 856 time series data.
 
 Execute the following command to generate a sequence for sequence synthesis.
 
