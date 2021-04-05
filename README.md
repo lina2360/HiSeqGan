@@ -63,28 +63,30 @@ Please download this repository and put the data in the `./raw/data` folder. In 
 
 <!--- It may be a good idea to include versions of packages used--->
 
-## Step 1 : Abstraction: Abstracting High Dimensional Data with Symbolic Labels using unsupervised clustering GHSOM
+## Step 1 : Abstraction
 <!-- Figures that needs editing: 5, 6, 7, 8, 9, 10, 11 -->
 <!-- Document structure should be reconsidered -->
-Execute the following command to transform data from high-dimensional data into hierarchical data, and label each cluster according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`. Our example data is [wm5-normalize.csv](./raw-data/wm5-normalize.csv).
+The objective of this step is to prepare the data by ***abstracting high dimensional data with symbolic labels using unsupervised clustering GHSOM***. Execute the following command to transform data from high-dimensional to a hierarchical form. Each cluster would be labeled according to its position in each layer. Then generate cluster sequence base on `index` and `date_column`. The link to our example data is [wm5-normalize.csv](./raw-data/wm5-normalize.csv).
+<!-- "position in each layer"? -->
 
 ```
 python execute-ghsom.py --tau1=0.1 --tau2=0.01 --data=wm5-normalize --index=id --target=id --date_column=week --train_column=TA_video,TA_text,Teacher_video,Teacher_text
 ```
 
-* *tau1* : Which represents the same-layer SOM map similarity.
-* *tau2* : The depth of the GHSOM structure.
-* *data* : Set the data name which map the ***.csv*** file in raw-data folder.
-* *index* : Set the field as the index for clustering.
-* *target* : Set the field as the index for clustering.
+* *tau1* : the same-layer SOM map similarity.
+* *tau2* : the depth of the GHSOM structure.
+* *data* : to set the data name which map the ***.csv*** file in raw-data folder.
+* *index* : to set the field as the index for clustering.
+* *target* : to set the field as the index for clustering.
 * *date_column* : Fields sorted by time, which use this column to generate a cluster sequence.
 * *train_column* : Field to be clustering.
+<!--- What does the last two attributes mean exactly? --->
 
-### Construct the Abstract Domain: Use GHSOM to cluster data that have similar attribute values
+### Section 1-A: Construct The Abstract Domain
 <!--<center><img src='./image/hipic1.png' width='700px'></center>-->
 <center><img src='./image/step1_a.png' width='700px'></center>
-First, when you have executed the above instructions, you will generate data in the  `applications/$data/`  folder. (ex.applications/wm5_normalize) Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program developed by Vienna University of Technology.
-
+In the first section, we use GHSOM for clustering based on attribute similarity. After the data has been prepared following the instructions above, you will generate data in the  `applications/$data/`  folder. (ex.applications/wm5_normalize) Here we use the [GHSOM](http://www.ifs.tuwien.ac.at/~andi/ghsom/) program developed by Vienna University of Technology.
+<!--- "you will generate data..." means we're to use the generated data located in that folder? --->
 1. Before converting high-dimensional data into hierarchical data, we would convert the data into a specific format first(.in file and .prop file).
 
    The .in file format is as follows (create_ghsom_input_file) [wm5-normalize_ghsom.in](./applications/wm5-normalize/GHSOM/data/wm5-normalize_ghsom.in) :
@@ -137,7 +139,7 @@ First, when you have executed the above instructions, you will generate data in 
 When GHSOM finished clustering, it will generate the output in `applications/$data/GHSOM/output/$data` folder. It contains  `.html`, `.map`, `.unit`, `.wgt`. The `.unit` file describes the units of the trained Self-Organizing Map. It is written by the SOM training program. The files consist of two blocks, the first one describing the general SOM structure, the second giving a specific description of every unit. The first 3 parameter entries are given as a sanity check to find out whether the given SOM map file and weight vector file match. If any of the 3 first parameters does not match the program should print a detailed error message and exit.
   > Reference from http://www.ifs.tuwien.ac.at/~andi/somlib/download/SOMLib_Datafiles.html
   
-### Relabel original data with symbolic labels
+### Section 1-B: Relabel With Symbolic Labels
 <!---<center><img src='./image/hipic2.png' width='700px'></center>--->
 
 4. In the fourth part, we want to have Integer labels but the label we generate in the second part is Float labels. Therefore, we use "format_rnn_input_integer" function to format our labels ([wm5-normalize_with_clustered_label_integer.csv](./applications/wm5-normalize/data/wm5-normalize_with_clustered_label_integer.csv))(This data for next step [rnn_input_data_integer.csv](./applications/wm5-normalize/data/rnn_input_data_integer.csv))and use "format_rnn_input_float" to create "item-seq.csv" data ([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))which is needed in the next part.
@@ -162,9 +164,8 @@ When GHSOM finished clustering, it will generate the output in `applications/$da
 rnn_input_data_integer.csv這個檔案。另外產生item-seq.csv是為了接下來的第五部分需要把每位id分群成一個標籤而準備的資料。
 --->
 
-### Generate for each student a symbolic label that represents their weekly records over the semester
-
-Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))
+### Section 1-C: Label Generating
+Here, we generate a symbolic label for each student that represents their weekly records over the semester. Given the GHSOM map, each weekly data can then be represented as a label that encodes their cluster. We can then generate for each student a cluster sequence that represents their weekly records over the semester. The cluster sequence is based on the fields given by `$index` and `$date_column`.([wm5-normalize-item-seq.csv](./raw-data/wm5-normalize-item-seq.csv))
 
 <!--
 ```csv
@@ -210,10 +211,8 @@ python ghsom-item-seq.py --data=wm5-normalize --index=id --train_column=week1,we
 因此透過format_rnn_input_integer這個方法轉換成我想要看到的整數標籤而得到了rnn_input_item_seq_with_cluster_integer.csv這個檔案。到這邊完成Step 1。
 --->
 
-## Step 2 : Sequence Synthesis: Use HiSeqGAN to generate cluster sequence
-We use SeqGAN to generate data $Data{_{HiSeqGAN}}$ . There are 144 original data, so here we use SeqGAN to generate 856 time series data.
-
-Execute the following command to generate a sequence for sequence synthesis.
+## Step 2 : Sequence Synthesis
+The objective of this step is to ***use HiSeqGAN to generate cluster sequence***. We use SeqGAN to generate data $Data_{HiSeqGAN}$ . There are 144 original data, so here we use SeqGAN to generate 856 time series data. Execute the following command to generate a sequence for sequence synthesis.
 
 ```bash
 python execute-hiseqgan.py --data=wm5-normalize --target=id --generated_num=856 --total_batch=100 --batch_size=5 --seq_length=18
